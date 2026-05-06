@@ -236,7 +236,12 @@ export default function App() {
           </>
         )}
       </main>
-      <footer className="border-t border-white/10 px-4 py-8 text-center font-mono text-xs uppercase tracking-[0.2em] text-slate-500">Vercel ready React study website with offline PDF notes</footer>
+      <footer className="border-t border-white/10 px-4 py-8 text-center font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+        <p>Vercel ready React study website with offline PDF notes</p>
+        <p className="mt-4">
+          MADE WITH LOVE AND PAIN BY <a href="https://github.com/srijeetcoder" target="_blank" rel="noreferrer" className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">srijeetcode</a>
+        </p>
+      </footer>
     </div>
   );
 }
