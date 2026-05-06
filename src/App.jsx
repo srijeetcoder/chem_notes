@@ -172,27 +172,27 @@ const topicOptions = [
 ];
 
 function notesForTopic(topic) {
-  const selectedSections =
-    topic === "Mixed CA3 Revision"
-      ? sections
-      : sections.filter((section) => section.title === topic);
+  if (topic === "Mixed CA3 Revision") {
+    return sections.map((section) => {
+      return section.title + "
+      " + section.intro + "
+      " + section.formulas.join("
+      ") + "
+      " + section.lessons.map((lesson) => lesson.title + ". " + lesson.explain + " " + lesson.points.join(" ")).join("
+      ");
+    }).join("
 
-  return selectedSections
-    .map((section) => {
-      return [
-        section.title,
-        section.intro,
-        ...(section.formulas || []),
-        ...(section.lessons || []).map((lesson) => {
-          return [
-            lesson.title,
-            lesson.explain || lesson.concept || "",
-            ...(lesson.points || lesson.keyPoints || [])
-          ].join("\n");
-        })
-      ].join("\n");
-    })
-    .join("\n\n");
+");
+  }
+
+  const selected = sections.find((section) => section.title === topic);
+  if (!selected) return "";
+  return selected.title + "
+  " + selected.intro + "
+  " + selected.formulas.join("
+  ") + "
+  " + selected.lessons.map((lesson) => lesson.title + ". " + lesson.explain + " " + lesson.points.join(" ")).join("
+  ");
 }
 
 function accent(color) {
@@ -345,14 +345,7 @@ function AIQuiz() {
         })
       });
 
-     const rawText = await response.text();
-
-let data;
-try {
-  data = JSON.parse(rawText);
-} catch {
-  throw new Error(rawText || "API returned empty response. Run with vercel dev.");
-}
+      const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Quiz generation failed");
       if (!Array.isArray(data.questions)) throw new Error("Invalid quiz format returned");
 
