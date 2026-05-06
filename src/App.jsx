@@ -236,11 +236,13 @@ export default function App() {
           </>
         )}
       </main>
-      <footer className="border-t border-white/10 px-4 py-8 text-center font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
-        <p>Vercel ready React study website with offline PDF notes</p>
-        <p className="mt-4">
-          MADE WITH LOVE AND PAIN BY <a href="https://github.com/srijeetcoder" target="_blank" rel="noreferrer" className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">srijeetcode</a>
-        </p>
+      <footer className="border-t border-white/10 px-4 py-12 text-center font-mono uppercase tracking-[0.15em]">
+        <p className="text-xs text-slate-500 mb-8">Vercel ready React study website with offline PDF notes</p>
+        <div className="inline-flex items-center justify-center rounded-xl border border-cyan-400/40 bg-cyan-400/10 px-6 py-4 shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all hover:bg-cyan-400/20">
+          <p className="text-sm font-bold text-slate-200">
+            MADE WITH ❤️ AND 💧 BY <a href="https://github.com/srijeetcoder" target="_blank" rel="noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline transition-colors underline-offset-4 ml-1">srijeetcode</a>
+          </p>
+        </div>
       </footer>
     </div>
   );
