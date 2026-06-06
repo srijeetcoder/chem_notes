@@ -1,0 +1,100 @@
+export const unit3Notes = [
+  {
+    unitNumber: 3,
+    unitTitle: "Intermolecular Forces and Potential Energy Surfaces",
+    topicTitle: "Ionic, dipolar and van der Waals interactions",
+    definition: "Intermolecular forces are the electrostatic attractive or repulsive forces that act between neighboring molecules, ions, or atoms. They include strong ionic forces, dipole-dipole forces, hydrogen bonding, and weak van der Waals forces (Keesom, Debye, and London dispersion forces).",
+    explanation: "Intermolecular forces determine the physical state, boiling point, melting point, and solubility of substances. They are weaker than intramolecular covalent or ionic chemical bonds. 1. Ionic interactions: The strongest attractive forces, occurring between full oppositely charged ions (energy ∝ 1/r). 2. Dipole-dipole interactions: Occur between polar molecules with permanent dipoles, where the positive end of one aligns with the negative end of another (energy ∝ 1/r³ for stationary, 1/r⁶ for rotating). A strong type of this is hydrogen bonding, which occurs when H is bonded to highly electronegative N, O, or F. 3. van der Waals interactions: The sum of three forces: Keesom forces (permanent dipole-dipole), Debye forces (permanent dipole-induced dipole, energy ∝ 1/r⁶), and London dispersion forces (temporary dipole-induced dipole, energy ∝ 1/r⁶, present in all molecules, even non-polar ones like He or CH₄). At very close distances, electron cloud overlap causes strong repulsion, described by the Lennard-Jones potential.",
+    formulas: [
+      "V(r) = 4ε * [(σ/r)¹² - (σ/r)⁶] (Lennard-Jones Potential)",
+      "E_ion-ion ∝ 1/r, E_dipole-dipole ∝ 1/r³",
+      "E_dispersion ∝ 1/r⁶"
+    ],
+    equations: [
+      "Dipole moment: μ = q * d (q = charge, d = separation distance)"
+    ],
+    applications: [
+      "Explaining why water has an anomalously high boiling point (100°C) compared to H2S (-60°C) due to intermolecular hydrogen bonding.",
+      "Predicting the solubility of substances (like dissolves like; polar compounds dissolve in polar water, non-polar in hexane).",
+      "Designing polymers, adhesives, and self-cleaning surfaces by tailoring surface energy and adhesion forces."
+    ],
+    importantPoints: [
+      "London dispersion forces are the only intermolecular forces present in non-polar molecules.",
+      "Dispersion forces increase with molecular weight and surface area because larger electron clouds are more polarizable.",
+      "In the Lennard-Jones potential, the r⁻¹² term represents short-range Pauli repulsion, and the r⁻⁶ term represents long-range van der Waals attraction.",
+      "Hydrogen bonds are stronger than typical dipole-dipole interactions because of hydrogen's small size, which allows close approach."
+    ],
+    commonQuestions: [
+      "Explain the different types of intermolecular forces. Arrange them in order of decreasing strength.",
+      "What is the Lennard-Jones potential? Explain the physical meaning of the attractive and repulsive terms in the equation.",
+      "Why does neon (atomic weight 20) boil at -246°C while water (molecular weight 18) boils at 100°C?"
+    ],
+    shortAnswer: "Intermolecular forces act between molecules. They range from strong ionic attractions to weaker van der Waals forces. van der Waals forces include dipole-dipole, dipole-induced dipole, and London dispersion forces (temporary dipole-induced dipole, ∝ 1/r⁶). The balance between attraction and repulsion is described by the Lennard-Jones potential.",
+    longAnswer: "Intermolecular forces are electrostatic interactions that govern the physical properties of matter. The strongest are ionic forces, which occur between fully charged ions and follow Coulomb's law. Dipole-dipole forces occur between polar molecules (like HCl) due to the attraction of permanent dipoles. Hydrogen bonding is a strong form of dipole-dipole interaction that occurs when hydrogen is bonded to N, O, or F. This bonding creates a highly polar bond, and hydrogen's small size allows neighboring dipoles to approach closely, yielding energies of 10-40 kJ/mol. This bonding explains why water is liquid at room temperature while H2S is a gas. van der Waals forces are weaker and are classified into three types. Keesom forces are interactions between permanent rotating dipoles. Debye forces occur when a polar molecule induces a temporary dipole in a neighboring non-polar molecule. London dispersion forces are present in all molecules and arise from temporary fluctuations in electron density that create an instantaneous dipole, which in turn induces a dipole in a neighboring molecule. The energy of these three van der Waals interactions is inversely proportional to the sixth power of distance (1/r⁶). At very close distances, the Pauli exclusion principle prevents electron clouds from overlapping, causing repulsion. The Lennard-Jones potential models this balance: V(r) = 4ε * [(σ/r)¹² - (σ/r)⁶], where ε is the well depth, σ is the distance where the potential is zero, and r is the distance between particles. The r⁻¹² term represents the steep, short-range repulsion, while the r⁻⁶ term represents the long-range attraction."
+  },
+  {
+    unitNumber: 3,
+    unitTitle: "Intermolecular Forces and Potential Energy Surfaces",
+    topicTitle: "Equations of state of real gases and critical phenomena",
+    definition: "An equation of state is a thermodynamic equation relating state variables (pressure P, volume V, and temperature T) of a gas. Real gases deviate from the Ideal Gas Law (PV = nRT) at high pressures and low temperatures due to intermolecular forces and finite molecular volumes.",
+    explanation: "The Ideal Gas Law assumes gas molecules have zero volume and experience no intermolecular forces. To account for real gas behavior, Johannes van der Waals modified the ideal equation. He introduced a correction term for pressure (a/V²) to account for intermolecular attractions, which reduce the impact force of molecules against the container wall. He also added a correction term for volume (b) to account for the finite volume occupied by the gas molecules themselves (excluded volume). This yields the van der Waals equation of state: (P + a/V²)(V - b) = RT (for 1 mole). Critical phenomena occur at the critical point, defined by critical temperature (Tc), pressure (Pc), and volume (Vc). Above Tc, a gas cannot be liquefied, regardless of the pressure applied. Below Tc, compressing the gas causes a phase transition to a liquid. At the critical point, the liquid and gas phases have identical densities, and the boundary between them disappears.",
+    formulas: [
+      "(P + an² / V²) * (V - nb) = nRT (van der Waals equation)",
+      "T_c = 8a / (27Rb), P_c = a / (27b²), V_c = 3b (Critical constants)",
+      "Z = PV / (nRT) (Compressibility factor; Z = 1 for ideal gas)"
+    ],
+    equations: [
+      "At critical point: (dP/dV)_T = 0 and (d²P/dV²)_T = 0 (Inflection point on P-V isotherm)"
+    ],
+    applications: [
+      "Industrial liquefaction of gases (e.g., nitrogen, oxygen, helium) by cooling them below their critical temperatures.",
+      "Using supercritical fluids (like supercritical CO₂ above its critical point: 31°C, 73 atm) for decaffeinating coffee and extracting essential oils.",
+      "Designing high-pressure gas storage and pipeline systems in chemical engineering."
+    ],
+    importantPoints: [
+      "The van der Waals constant 'a' measures the strength of intermolecular attraction; polar gases (like NH₃) have higher 'a' values than noble gases.",
+      "The constant 'b' represents the excluded volume, which is approximately four times the actual volume of the gas molecules.",
+      "The compressibility factor Z indicates deviation from ideality: Z < 1 indicates that attractive forces dominate, while Z > 1 indicates that repulsive forces dominate (high pressure).",
+      "At the critical point, the van der Waals equation exhibits a point of inflection on the P-V isotherm, allowing the derivation of critical constants in terms of a and b."
+    ],
+    commonQuestions: [
+      "Derive the van der Waals equation of state for a real gas. Explain the physical significance of the constants 'a' and 'b'.",
+      "Define critical temperature, critical pressure, and critical volume. Express them in terms of the van der Waals constants.",
+      "What is the compressibility factor Z? Explain its variation with pressure for hydrogen and carbon dioxide gases at room temperature."
+    ],
+    shortAnswer: "Real gases deviate from PV = nRT due to intermolecular forces and molecular volume. The van der Waals equation, (P + a/V²)(V - b) = RT, corrects for these factors. The critical point represents the limit of gas-liquid coexistence, defined by Tc, Pc, and Vc, above which the gas cannot be liquefied.",
+    longAnswer: "The Ideal Gas Law (PV = nRT) assumes that gas molecules are non-interacting point masses. Real gases deviate from this behavior at high pressure (where molecules are forced close together) and low temperature (where kinetic energy is low, allowing intermolecular forces to take effect). Johannes van der Waals corrected these assumptions. He accounted for intermolecular attractions by adding a term to the pressure: P_ideal = P_real + an²/V², where 'a' is a constant representing the attraction strength. He accounted for the physical volume of the molecules by subtracting their volume from the total volume: V_ideal = V_real - nb, where 'b' is the excluded volume. For 1 mole of gas, this yields: (P + a/V²)(V - b) = RT. Plotting P against V at different temperatures generates isotherms. At high temperatures, the curves are hyperbolic, resembling ideal behavior. As temperature decreases, a loop appears. The isotherm at the critical temperature (Tc) has an inflection point, representing the critical point. At this point, the first and second derivatives of pressure with respect to volume are zero: (dP/dV)_T = 0 and (d²P/dV²)_T = 0. Solving these equations using the van der Waals formula yields the critical constants: Vc = 3b, Pc = a/(27b²), and Tc = 8a/(27Rb). These constants define the critical state, above which the gas behaves as a supercritical fluid, a state that combines the diffusivity of a gas with the density and solvent properties of a liquid."
+  },
+  {
+    unitNumber: 3,
+    unitTitle: "Intermolecular Forces and Potential Energy Surfaces",
+    topicTitle: "Potential energy surfaces: introduction and representations",
+    definition: "A Potential Energy Surface (PES) is a mathematical function or coordinate plot that describes the potential energy of a molecular system as a function of its atomic geometries under the Born-Oppenheimer approximation.",
+    explanation: "The Born-Oppenheimer approximation assumes that since atomic nuclei are much heavier than electrons, we can consider the nuclei as stationary while calculating the electronic energy. By solving the electronic Schrödinger equation for many fixed nuclear geometries, we get the potential energy of the system as a function of the nuclear coordinates. For a diatomic molecule, the PES is a simple one-dimensional curve plotting energy against bond length (the Morse potential). This curve shows a minimum energy point (the equilibrium bond length, re) and an asymptotic limit at high distances (dissociation energy). For a system with N atoms, the potential energy depends on 3N - 6 coordinates (3N - 5 for linear). The resulting multidimensional PES is a hypersurface. We represent these surfaces using 3D plots or 2D contour maps (similar to topographical maps). On a PES, stable molecules and intermediates occupy energy minima (valleys), while transition states correspond to saddle points (the energy maximum along the minimum energy reaction pathway).",
+    formulas: [
+      "V(r) = D_e * [1 - e^(-a*(r - r_e))]² (Morse Potential for diatomic molecules)",
+      "Degrees of freedom = 3N - 6 (Non-linear system coordinates)"
+    ],
+    equations: [
+      "F_i = -dV/dq_i (Force acting on a nucleus along coordinate q_i)"
+    ],
+    applications: [
+      "Modeling chemical reaction pathways to identify transition states and calculate activation energies.",
+      "Simulating molecular dynamics to study protein folding and chemical reaction rates.",
+      "Predicting vibrational spectra by calculating the curvature of the PES around its minima."
+    ],
+    importantPoints: [
+      "A minimum point on a PES represents a stable molecular structure, where all force derivatives are zero and the second derivatives are positive.",
+      "A transition state is a first-order saddle point, which represents an energy minimum in all directions except the reaction coordinate, where it is a maximum.",
+      "The Born-Oppenheimer approximation is required to define a PES; if nuclear and electronic motions couple strongly (non-adiabatic effects), the concept of a PES breaks down.",
+      "Reaction coordinates show the path of least energy connecting reactants, transition states, and products on the PES."
+    ],
+    commonQuestions: [
+      "What is a Potential Energy Surface (PES)? Explain how it is constructed using the Born-Oppenheimer approximation.",
+      "Describe the Morse potential energy curve for a diatomic molecule. Label the equilibrium bond distance and dissociation energy.",
+      "Explain the terms: local minimum, global minimum, transition state, and reaction coordinate in the context of a PES."
+    ],
+    shortAnswer: "A Potential Energy Surface (PES) maps a molecular system's energy against its atomic coordinates under the Born-Oppenheimer approximation. Stable molecules are located at energy minima, while transition states are located at first-order saddle points (saddle-like energy maxima along the reaction pathway). Diatomic systems are modeled using the Morse potential curve.",
+    longAnswer: "A Potential Energy Surface (PES) is a concept in quantum chemistry that relates molecular energy to molecular geometry. It is based on the Born-Oppenheimer approximation, which separates nuclear and electronic motion. Since nuclei are thousands of times heavier than electrons, we can solve the electronic Schrödinger equation for fixed nuclear positions. Plotting the resulting energies against the coordinates of the nuclei generates the PES. For a diatomic molecule, the surface is a one-dimensional curve of potential energy V(r) versus internuclear distance r. It is modeled by the Morse potential: V(r) = De * [1 - e^(-a(r-re))]², where De is the depth of the energy well (dissociation energy), re is the equilibrium bond length, and 'a' controls the width of the potential. For a polyatomic system with N atoms, the PES is a multidimensional surface with 3N-6 independent coordinates. We represent these surfaces using 3D energy plots or 2D contour maps. On these maps, valleys and basins represent stable chemical species: local minima represent isomers or intermediates, and the lowest point is the global minimum. A chemical reaction is represented by a path crossing these valleys. The reactants and products are minima, connected by a path of least energy called the reaction coordinate. The highest energy point along this path is the transition state, which is a first-order saddle point. At this point, the system is at an energy maximum along the reaction coordinate but at an energy minimum in all other perpendicular directions."
+  }
+];

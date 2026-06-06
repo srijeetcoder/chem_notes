@@ -1,3 +1,4 @@
+/* global process */
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Only POST is allowed" });
@@ -146,5 +147,4 @@ JSON format:
       error: error.message || "Server error"
     });
   }
-  console.log("Gemini key loaded:", !!process.env.GEMINI_API_KEY);
 }
