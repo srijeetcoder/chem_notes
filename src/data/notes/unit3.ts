@@ -63,7 +63,46 @@ export const unit3Notes = [
       "What is the compressibility factor Z? Explain its variation with pressure for hydrogen and carbon dioxide gases at room temperature."
     ],
     shortAnswer: "Real gases deviate from PV = nRT due to intermolecular forces and molecular volume. The van der Waals equation, (P + a/V²)(V - b) = RT, corrects for these factors. The critical point represents the limit of gas-liquid coexistence, defined by Tc, Pc, and Vc, above which the gas cannot be liquefied.",
-    longAnswer: "The Ideal Gas Law (PV = nRT) assumes that gas molecules are non-interacting point masses. Real gases deviate from this behavior at high pressure (where molecules are forced close together) and low temperature (where kinetic energy is low, allowing intermolecular forces to take effect). Johannes van der Waals corrected these assumptions. He accounted for intermolecular attractions by adding a term to the pressure: P_ideal = P_real + an²/V², where 'a' is a constant representing the attraction strength. He accounted for the physical volume of the molecules by subtracting their volume from the total volume: V_ideal = V_real - nb, where 'b' is the excluded volume. For 1 mole of gas, this yields: (P + a/V²)(V - b) = RT. Plotting P against V at different temperatures generates isotherms. At high temperatures, the curves are hyperbolic, resembling ideal behavior. As temperature decreases, a loop appears. The isotherm at the critical temperature (Tc) has an inflection point, representing the critical point. At this point, the first and second derivatives of pressure with respect to volume are zero: (dP/dV)_T = 0 and (d²P/dV²)_T = 0. Solving these equations using the van der Waals formula yields the critical constants: Vc = 3b, Pc = a/(27b²), and Tc = 8a/(27Rb). These constants define the critical state, above which the gas behaves as a supercritical fluid, a state that combines the diffusivity of a gas with the density and solvent properties of a liquid."
+    longAnswer: "The Ideal Gas Law (PV = nRT) assumes that gas molecules are non-interacting point masses. Real gases deviate from this behavior at high pressure (where molecules are forced close together) and low temperature (where kinetic energy is low, allowing intermolecular forces to take effect). Johannes van der Waals corrected these assumptions. He accounted for intermolecular attractions by adding a term to the pressure: P_ideal = P_real + an²/V², where 'a' is a constant representing the attraction strength. He accounted for the physical volume of the molecules by subtracting their volume from the total volume: V_ideal = V_real - nb, where 'b' is the excluded volume. For 1 mole of gas, this yields: (P + a/V²)(V - b) = RT. Plotting P against V at different temperatures generates isotherms. At high temperatures, the curves are hyperbolic, resembling ideal behavior. As temperature decreases, a loop appears. The isotherm at the critical temperature (Tc) has an inflection point, representing the critical point. At this point, the first and second derivatives of pressure with respect to volume are zero: (dP/dV)_T = 0 and (d²P/dV²)_T = 0. Solving these equations using the van der Waals formula yields the critical constants: Vc = 3b, Pc = a/(27b²), and Tc = 8a/(27Rb). These constants define the critical state, above which the gas behaves as a supercritical fluid, a state that combines the diffusivity of a gas with the density and solvent properties of a liquid.",
+    derivation: [
+      {
+        title: "Step 1 — Expressing P as a function of V from van der Waals equation",
+        steps: [
+          "For 1 mole of a real gas, the van der Waals equation is: $\\left(P + \\dfrac{a}{V^2}\\right)(V-b) = RT$",
+          "Solving for pressure $P$: $P = \\dfrac{RT}{V-b} - \\dfrac{a}{V^2}$"
+        ]
+      },
+      {
+        title: "Step 2 — Applying critical inflection point conditions",
+        steps: [
+          "At the critical point ($T = T_c, V = V_c, P = P_c$), the P-V isotherm has a point of inflection.",
+          "This means the first and second derivatives of pressure with respect to volume at constant temperature are zero:",
+          "First derivative: $\\left(\\dfrac{\\partial P}{\\partial V}\\right)_T = -\\dfrac{RT_c}{(V_c - b)^2} + \\dfrac{2a}{V_c^3} = 0 \\implies \\dfrac{RT_c}{(V_c - b)^2} = \\dfrac{2a}{V_c^3}$  (Equation 1)",
+          "Second derivative: $\\left(\\dfrac{\\partial^2 P}{\\partial V^2}\\right)_T = \\dfrac{2RT_c}{(V_c - b)^3} - \\dfrac{6a}{V_c^4} = 0 \\implies \\dfrac{2RT_c}{(V_c - b)^3} = \\dfrac{6a}{V_c^4}$  (Equation 2)"
+        ]
+      },
+      {
+        title: "Step 3 — Solving for critical constants Vc, Tc, and Pc",
+        steps: [
+          "Divide Equation 2 by Equation 1 to eliminate $RT_c$ and $a$:",
+          "$\\dfrac{2}{(V_c - b)} = \\dfrac{3}{V_c} \\implies 2V_c = 3V_c - 3b \\implies \\boxed{V_c = 3b}$",
+          "Substitute $V_c = 3b$ back into Equation 1:",
+          "$\\dfrac{RT_c}{(3b - b)^2} = \\dfrac{2a}{(3b)^3} \\implies \\dfrac{RT_c}{4b^2} = \\dfrac{2a}{27b^3} \\implies \\boxed{T_c = \\dfrac{8a}{27Rb}}$",
+          "Substitute $V_c = 3b$ and $T_c = \\dfrac{8a}{27Rb}$ into the pressure equation:",
+          "$P_c = \\dfrac{R \\cdot \\left(\\dfrac{8a}{27Rb}\\right)}{3b - b} - \\dfrac{a}{(3b)^2} = \\dfrac{8a/27b}{2b} - \\dfrac{a}{9b^2} = \\dfrac{4a}{27b^2} - \\dfrac{3a}{27b^2} \\implies \\boxed{P_c = \\dfrac{a}{27b^2}}$"
+        ]
+      },
+      {
+        title: "Step 4 — Deriving the critical compressibility factor (RTc / PcVc = 8/3)",
+        steps: [
+          "The critical compressibility factor $Z_c$ is the ratio $\\dfrac{RT_c}{P_c V_c}$ at the critical point.",
+          "Substitute the derived expressions for $V_c$, $P_c$, and $T_c$:",
+          "$\\dfrac{RT_c}{P_c V_c} = \\dfrac{R \\left(\\dfrac{8a}{27Rb}\\right)}{\\left(\\dfrac{a}{27b^2}\\right) (3b)} = \\dfrac{\\dfrac{8a}{27b}}{\\dfrac{3a}{27b}}$",
+          "Simplifying the ratio gives: $\\boxed{\\dfrac{RT_c}{P_c V_c} = \\dfrac{8}{3} \\approx 2.67}$",
+          "This ratio is a constant for all van der Waals gases, though real gases typically have experimental values around 3.0 to 3.8."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 3,

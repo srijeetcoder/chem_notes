@@ -30,7 +30,40 @@ export const unit1Notes = [
       "Why did the wave mechanical model replace Bohr's planetary model of the atom?"
     ],
     shortAnswer: "The Schrödinger equation (Hψ = Eψ) mathematically describes electron behavior in atoms by treating them as waves rather than particles. The square of the wave function (|ψ|²) defines the probability density of locating an electron, replacing Bohr's circular orbits with three-dimensional probability regions called orbitals.",
-    longAnswer: "The Schrödinger wave equation represents the foundation of the wave mechanical model of the atom. Developed by Erwin Schrödinger in 1926, it incorporates wave-particle duality (de Broglie hypothesis) to describe subatomic particles. The time-independent version is written as: ∇²ψ + (8π²m / h²)(E - V)ψ = 0, where ∇² is the Laplacian operator (d²/dx² + d²/dy² + d²/dz²), m is electron mass, h is Planck's constant, E is total energy, V is potential energy, and ψ is the wave function. The physical significance of ψ was explained by Max Born: while ψ represents the wave amplitude and can have positive, negative, or complex values, its square |ψ|² is always positive and real, representing the probability density of finding the electron. The wave mechanical model resolves the limitations of the Bohr model by showing that electrons do not orbit the nucleus in fixed planetary pathways. Instead, they occupy orbitals, which are three-dimensional probability clouds. Orbitals are obtained by solving the equation under specific boundary conditions, giving rise naturally to the principal, azimuthal, and magnetic quantum numbers."
+    longAnswer: "The Schrödinger wave equation represents the foundation of the wave mechanical model of the atom. Developed by Erwin Schrödinger in 1926, it incorporates wave-particle duality (de Broglie hypothesis) to describe subatomic particles. The time-independent version is written as: ∇²ψ + (8π²m / h²)(E - V)ψ = 0, where ∇² is the Laplacian operator (d²/dx² + d²/dy² + d²/dz²), m is electron mass, h is Planck's constant, E is total energy, V is potential energy, and ψ is the wave function. The physical significance of ψ was explained by Max Born: while ψ represents the wave amplitude and can have positive, negative, or complex values, its square |ψ|² is always positive and real, representing the probability density of finding the electron. The wave mechanical model resolves the limitations of the Bohr model by showing that electrons do not orbit the nucleus in fixed planetary pathways. Instead, they occupy orbitals, which are three-dimensional probability clouds. Orbitals are obtained by solving the equation under specific boundary conditions, giving rise naturally to the principal, azimuthal, and magnetic quantum numbers.",
+    derivation: [
+      {
+        title: "Step 1 — de Broglie wavelength for a particle",
+        steps: [
+          "de Broglie (1924) postulated that every particle with momentum $p$ has an associated wavelength: $\\lambda = \\dfrac{h}{p}$",
+          "The total mechanical energy is $E = KE + V = \\dfrac{p^2}{2m} + V$, so the kinetic energy is $KE = E - V$",
+          "Combining: $p = \\sqrt{2m(E-V)}$, hence the de Broglie wavelength becomes $\\lambda = \\dfrac{h}{\\sqrt{2m(E-V)}}$"
+        ]
+      },
+      {
+        title: "Step 2 — Classical 1D wave equation",
+        steps: [
+          "The classical wave equation for a standing wave $\\psi$ of wavelength $\\lambda$ along the x-axis is: $\\dfrac{d^2\\psi}{dx^2} + \\dfrac{4\\pi^2}{\\lambda^2}\\psi = 0$",
+          "Substituting $\\lambda = \\dfrac{h}{\\sqrt{2m(E-V)}}$ into the equation above: $\\dfrac{4\\pi^2}{\\lambda^2} = \\dfrac{4\\pi^2 \\cdot 2m(E-V)}{h^2} = \\dfrac{8\\pi^2 m(E-V)}{h^2}$"
+        ]
+      },
+      {
+        title: "Step 3 — Schrödinger's time-independent equation (1D)",
+        steps: [
+          "Substituting into the wave equation: $\\dfrac{d^2\\psi}{dx^2} + \\dfrac{8\\pi^2 m}{h^2}(E - V)\\psi = 0$",
+          "Rearranging: $-\\dfrac{h^2}{8\\pi^2 m}\\dfrac{d^2\\psi}{dx^2} + V\\psi = E\\psi$",
+          "Recognising $\\hbar = \\dfrac{h}{2\\pi}$, we write the Hamiltonian operator as $\\hat{H} = -\\dfrac{\\hbar^2}{2m}\\nabla^2 + V$, giving the compact operator form: $\\boxed{\\hat{H}\\psi = E\\psi}$"
+        ]
+      },
+      {
+        title: "Step 4 — Extension to 3D (Laplacian form)",
+        steps: [
+          "In three dimensions, the second derivative is replaced by the Laplacian $\\nabla^2 = \\dfrac{\\partial^2}{\\partial x^2} + \\dfrac{\\partial^2}{\\partial y^2} + \\dfrac{\\partial^2}{\\partial z^2}$",
+          "The complete 3D time-independent Schrödinger equation is: $\\nabla^2\\psi + \\dfrac{8\\pi^2 m}{h^2}(E - V)\\psi = 0$",
+          "Physical interpretation: Solutions $\\psi_{nlm}$ under boundary conditions give quantized energies $E_n$ and quantum numbers $n, l, m_l$ naturally, without postulating them as in the Bohr model."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 1,
@@ -63,7 +96,54 @@ export const unit1Notes = [
       "Estimate the absorption wavelength of butadiene by treating its π-electrons as particles in a one-dimensional box."
     ],
     shortAnswer: "For a particle in a 1D box of length L, solving the Schrödinger equation under boundary conditions yields normalized wave functions ψ_n = √(2/L) sin(nπx/L) and quantized energy levels E_n = n²h²/(8mL²). The model shows that energy is quantized, and the particle has a non-zero minimum energy (zero-point energy) at n=1.",
-    longAnswer: "The one-dimensional particle in a box model is a key quantum mechanics problem that illustrates energy quantization. Consider a particle of mass m confined in a box of width L along the x-axis, with potential energy V(x) = 0 for 0 < x < L, and V(x) = ∞ for x ≤ 0 and x ≥ L. The wave function ψ(x) must be zero outside the box. Inside the box, the Schrödinger equation is: d²ψ/dx² + (8π²mE/h²)ψ = 0. We define k² = 8π²mE/h², simplifying the equation to d²ψ/dx² + k²ψ = 0. The general solution is ψ(x) = A sin(kx) + B cos(kx). Applying the first boundary condition at x = 0 (ψ(0) = 0) gives B = 0. The second boundary condition at x = L (ψ(L) = 0) gives A sin(kL) = 0. Since A cannot be zero (otherwise the wave function is zero everywhere), sin(kL) = 0, which means kL = nπ (for n = 1, 2, 3...). Thus, k = nπ/L. Substituting this back gives E_n = n²h²/(8mL²), proving that energy is quantized. To find amplitude A, we normalize the wave function: ∫ |ψ|² dx = 1 from 0 to L. Ranging the integral of A² sin²(nπx/L) dx = 1 gives A = √(2/L). The final normalized wave function is ψ_n(x) = √(2/L) sin(nπx/L). Zero-point energy (n=1) is E₁ = h²/(8mL²), which shows the particle retains kinetic energy even at absolute zero temperature because confining its position (L) increases momentum uncertainty according to Heisenberg's uncertainty principle."
+    longAnswer: "The one-dimensional particle in a box model is a key quantum mechanics problem that illustrates energy quantization. Consider a particle of mass m confined in a box of width L along the x-axis, with potential energy V(x) = 0 for 0 < x < L, and V(x) = ∞ for x ≤ 0 and x ≥ L. The wave function ψ(x) must be zero outside the box. Inside the box, the Schrödinger equation is: d²ψ/dx² + (8π²mE/h²)ψ = 0. We define k² = 8π²mE/h², simplifying the equation to d²ψ/dx² + k²ψ = 0. The general solution is ψ(x) = A sin(kx) + B cos(kx). Applying the first boundary condition at x = 0 (ψ(0) = 0) gives B = 0. The second boundary condition at x = L (ψ(L) = 0) gives A sin(kL) = 0. Since A cannot be zero (otherwise the wave function is zero everywhere), sin(kL) = 0, which means kL = nπ (for n = 1, 2, 3...). Thus, k = nπ/L. Substituting this back gives E_n = n²h²/(8mL²), proving that energy is quantized. To find amplitude A, we normalize the wave function: ∫ |ψ|² dx = 1 from 0 to L. Ranging the integral of A² sin²(nπx/L) dx = 1 gives A = √(2/L). The final normalized wave function is ψ_n(x) = √(2/L) sin(nπx/L). Zero-point energy (n=1) is E₁ = h²/(8mL²), which shows the particle retains kinetic energy even at absolute zero temperature because confining its position (L) increases momentum uncertainty according to Heisenberg's uncertainty principle.",
+    derivation: [
+      {
+        title: "Step 1 — Set up the Schrödinger equation inside the box (V = 0)",
+        steps: [
+          "Inside the box ($0 < x < L$), $V = 0$, so the TISE reduces to: $\\dfrac{d^2\\psi}{dx^2} = -\\dfrac{8\\pi^2 mE}{h^2}\\psi$",
+          "Define the wave vector $k^2 = \\dfrac{8\\pi^2 mE}{h^2}$, so the equation becomes $\\dfrac{d^2\\psi}{dx^2} + k^2\\psi = 0$",
+          "This is a standard SHM-type ODE. The general solution is: $\\psi(x) = A\\sin(kx) + B\\cos(kx)$"
+        ]
+      },
+      {
+        title: "Step 2 — Apply boundary conditions to quantize k",
+        steps: [
+          "Boundary condition 1: $\\psi(0) = 0 \\Rightarrow B\\cos(0) = B = 0$. So $\\psi(x) = A\\sin(kx)$",
+          "Boundary condition 2: $\\psi(L) = 0 \\Rightarrow A\\sin(kL) = 0$. Since $A \\ne 0$, we need $\\sin(kL) = 0$",
+          "$\\sin(kL) = 0 \\Rightarrow kL = n\\pi$ where $n = 1, 2, 3, \\ldots$ (integers, excluding 0)",
+          "Therefore: $k_n = \\dfrac{n\\pi}{L}$ and $\\psi_n(x) = A\\sin\\!\\left(\\dfrac{n\\pi x}{L}\\right)$"
+        ]
+      },
+      {
+        title: "Step 3 — Derive the quantized energy levels",
+        steps: [
+          "From $k_n = \\dfrac{n\\pi}{L}$ and the definition $k^2 = \\dfrac{8\\pi^2 mE}{h^2}$:",
+          "$\\dfrac{n^2\\pi^2}{L^2} = \\dfrac{8\\pi^2 mE_n}{h^2}$",
+          "Solving for $E_n$: $\\boxed{E_n = \\dfrac{n^2 h^2}{8mL^2}}$ for $n = 1, 2, 3, \\ldots$",
+          "Zero-point energy ($n = 1$): $E_1 = \\dfrac{h^2}{8mL^2} \\ne 0$ — the particle can never be fully at rest (Heisenberg uncertainty)"
+        ]
+      },
+      {
+        title: "Step 4 — Normalize the wave function",
+        steps: [
+          "Normalization condition: $\\int_0^L |\\psi_n(x)|^2\\, dx = 1$",
+          "$A^2 \\int_0^L \\sin^2\\!\\left(\\dfrac{n\\pi x}{L}\\right) dx = A^2 \\cdot \\dfrac{L}{2} = 1$",
+          "Therefore $A = \\sqrt{\\dfrac{2}{L}}$ and the normalized wave function is: $\\boxed{\\psi_n(x) = \\sqrt{\\dfrac{2}{L}}\\sin\\!\\left(\\dfrac{n\\pi x}{L}\\right)}$"
+        ]
+      },
+      {
+        title: "Step 5 — Worked Example: Energy levels of a confined electron",
+        steps: [
+          "Problem: An electron is confined in a 1D box of width $L = 1\\text{ \\AA} = 10^{-10}\\text{ m}$. Calculate its ground state energy ($E_1$) and the energy separation ($\\Delta E$) between the first excited state ($n=2$) and the ground state.",
+          "Constants: $m_e \\approx 9.11 \\times 10^{-31}\\text{ kg}$, $h \\approx 6.626 \\times 10^{-34}\\text{ J s}$, $1\\text{ eV} \\approx 1.602 \\times 10^{-19}\\text{ J}$",
+          "Ground state energy ($n=1$): $E_1 = \\dfrac{(1)^2 \\cdot h^2}{8 m_e L^2} = \\dfrac{(6.626 \\times 10^{-34})^2}{8 \\times 9.11 \\times 10^{-31} \\times (10^{-10})^2}$",
+          "Calculation: $E_1 = \\dfrac{4.39 \\times 10^{-67}}{7.288 \\times 10^{-50}} \\approx 6.02 \\times 10^{-18}\\text{ J} \\approx \\dfrac{6.02 \\times 10^{-18}}{1.602 \\times 10^{-19}}\\text{ eV} \\approx 37.6\\text{ eV}$",
+          "Energy separation: $\\Delta E = E_2 - E_1 = (2^2 - 1^2) E_1 = 3 E_1$",
+          "Therefore: $\\Delta E = 3 \\times 37.6\\text{ eV} = 112.8\\text{ eV}$ (or $1.81 \\times 10^{-17}\\text{ J}$)"
+        ]
+      }
+    ]
   },
   {
     unitNumber: 1,
@@ -165,7 +245,43 @@ export const unit1Notes = [
       "Explain why benzene is exceptionally stable using its molecular orbital closed-shell concept."
     ],
     shortAnswer: "Butadiene has 4 linear π-orbitals (ψ1 to ψ4*) with 0, 1, 2, and 3 nodes. The 4 π-electrons occupy ψ1 and ψ2. Benzene has 6 cyclic π-orbitals with degenerate levels (bonding: α+2β, α+β; antibonding: α-β, α-2β). The 6 π-electrons fill the three bonding orbitals, creating a highly stable closed-shell ring.",
-    longAnswer: "Huckel Molecular Orbital (HMO) theory describes conjugated π systems by combining p-orbitals perpendicular to the σ-framework. For 1,3-butadiene, four p-orbitals generate four MOs: ψ1, ψ2, ψ3*, and ψ4*. The energy levels are E1 = α + 1.618β, E2 = α + 0.618β, E3 = α - 0.618β, and E4 = α - 1.618β. Both α and β are negative values, so E1 and E2 are bonding, while E3 and E4 are antibonding. In the ground state, the four π-electrons fill ψ1 and ψ2. The total π energy is 2(α + 1.618β) + 2(α + 0.618β) = 4α + 4.472β. An isolated system of two localized double bonds would have an energy of 4α + 4β, yielding a stabilization (delocalization) energy of 0.472β. The HOMO is ψ2 and the LUMO is ψ3*. For benzene, six cyclic p-orbitals generate six MOs. Due to cyclic boundary conditions, the energies are E1 = α + 2β, E2 = E3 = α + β, E4 = E5 = α - β, and E6 = α - 2β. The six π-electrons fill the three lowest bonding orbitals (one electron pair in E1, and two pairs in the degenerate E2/E3 level). The total π energy is 2(α + 2β) + 4(α + β) = 6α + 8β. Compared to three localized double bonds (6α + 6β), benzene has a resonance stabilization energy of 2β, which accounts for its exceptional chemical stability and resistance to addition reactions."
+    longAnswer: "Huckel Molecular Orbital (HMO) theory describes conjugated π systems by combining p-orbitals perpendicular to the σ-framework. For 1,3-butadiene, four p-orbitals generate four MOs: ψ1, ψ2, ψ3*, and ψ4*. The energy levels are E1 = α + 1.618β, E2 = α + 0.618β, E3 = α - 0.618β, and E4 = α - 1.618β. Both α and β are negative values, so E1 and E2 are bonding, while E3 and E4 are antibonding. In the ground state, the four π-electrons fill ψ1 and ψ2. The total π energy is 2(α + 1.618β) + 2(α + 0.618β) = 4α + 4.472β. An isolated system of two localized double bonds would have an energy of 4α + 4β, yielding a stabilization (delocalization) energy of 0.472β. The HOMO is ψ2 and the LUMO is ψ3*. For benzene, six cyclic p-orbitals generate six MOs. Due to cyclic boundary conditions, the energies are E1 = α + 2β, E2 = E3 = α + β, E4 = E5 = α - β, and E6 = α - 2β. The six π-electrons fill the three lowest bonding orbitals (one electron pair in E1, and two pairs in the degenerate E2/E3 level). The total π energy is 2(α + 2β) + 4(α + β) = 6α + 8β. Compared to three localized double bonds (6α + 6β), benzene has a resonance stabilization energy of 2β, which accounts for its exceptional chemical stability and resistance to addition reactions.",
+    derivation: [
+      {
+        title: "Step 1 — Hückel secular determinant for butadiene (N = 4)",
+        steps: [
+          "The Hückel secular determinant for a linear conjugated system of $N$ atoms sets up a matrix equation $(\\mathbf{H} - E\\mathbf{S}) = 0$. Let $x = \\dfrac{\\alpha - E}{\\beta}$.",
+          "For 1,3-butadiene ($N = 4$), the Hückel determinant is: $\\begin{vmatrix} x & 1 & 0 & 0 \\\\ 1 & x & 1 & 0 \\\\ 0 & 1 & x & 1 \\\\ 0 & 0 & 1 & x \\end{vmatrix} = 0$",
+          "Expanding: $x^4 - 3x^2 + 1 = 0 \\Rightarrow x^2 = \\dfrac{3 \\pm \\sqrt{5}}{2}$, giving $x = \\pm 1.618,\\, \\pm 0.618$"
+        ]
+      },
+      {
+        title: "Step 2 — Butadiene energy levels",
+        steps: [
+          "Substituting back $E = \\alpha - x\\beta$:",
+          "$E_1 = \\alpha + 1.618\\beta,\\; E_2 = \\alpha + 0.618\\beta,\\; E_3 = \\alpha - 0.618\\beta,\\; E_4 = \\alpha - 1.618\\beta$",
+          "Total $\\pi$-electron energy (4 electrons filling $E_1, E_2$): $E_\\pi = 2(\\alpha + 1.618\\beta) + 2(\\alpha + 0.618\\beta) = 4\\alpha + 4.472\\beta$",
+          "Two isolated ethylene double bonds would give $4\\alpha + 4\\beta$. Delocalization energy = $0.472\\beta\\approx 15\\text{ kJ/mol}$"
+        ]
+      },
+      {
+        title: "Step 3 — Hückel cyclic determinant for benzene (N = 6)",
+        steps: [
+          "For a cyclic system, the boundary condition is periodic ($\\psi_{N+1} = \\psi_1$). The secular determinant becomes: $\\begin{vmatrix} x & 1 & 0 & 0 & 0 & 1 \\\\ 1 & x & 1 & 0 & 0 & 0 \\\\ \\vdots & & \\ddots & & & \\vdots \\end{vmatrix} = 0$",
+          "Solutions: $x_k = 2\\cos\\!\\left(\\dfrac{2k\\pi}{6}\\right)$ for $k = 0, 1, 2, 3, 4, 5$",
+          "Energy levels: $E_k = \\alpha - 2\\cos\\!\\left(\\dfrac{2k\\pi}{6}\\right)\\beta$, giving $E_1 = \\alpha + 2\\beta$; $E_2 = E_3 = \\alpha + \\beta$; $E_4 = E_5 = \\alpha - \\beta$; $E_6 = \\alpha - 2\\beta$"
+        ]
+      },
+      {
+        title: "Step 4 — Benzene delocalization (resonance stabilization) energy",
+        steps: [
+          "Total $\\pi$ energy: $E_\\pi = 2(\\alpha + 2\\beta) + 4(\\alpha + \\beta) = 6\\alpha + 8\\beta$",
+          "Three localized ethylene-like double bonds: $E_{\\text{local}} = 3 \\times 2(\\alpha + \\beta) = 6\\alpha + 6\\beta$",
+          "$\\therefore$ Delocalization (resonance) energy $= E_\\pi - E_{\\text{local}} = \\boxed{2\\beta} \\approx -150\\text{ kJ/mol}$",
+          "This large stabilization energy explains benzene's preference for substitution (which retains aromaticity) over addition (which would destroy it)."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 1,
@@ -234,7 +350,41 @@ export const unit1Notes = [
       "Calculate the Crystal Field Stabilization Energy (CFSE) for a d⁶ metal ion in both weak and strong octahedral fields."
     ],
     shortAnswer: "CFT models metal-ligand bonding as ionic electrostatic interactions. In octahedral complexes, ligands approach along the axes, splitting d-orbitals into lower t2g and higher eg sets. In tetrahedral complexes, ligands approach between axes, splitting them into lower e and higher t2 sets, with Δt ≈ (4/9)Δo.",
-    longAnswer: "Crystal Field Theory (CFT) explains the electronic properties of transition metal complexes. It treats ligands as negative point charges. When ligands approach a central metal cation, the electrostatic field removes the degeneracy of the five d-orbitals. In an octahedral complex, six ligands approach along the x, y, and z axes. The dx²-y² and dz² orbitals (eg set) point directly at the incoming ligands, experiencing greater repulsion and rising in energy. The dxy, dyz, and dxz orbitals (t2g set) point between the axes, experiencing less repulsion and lowering in energy relative to the barycenter. The energy difference is denoted as Δo. Each electron in the t2g set stabilizes the complex by -0.4 Δo, while each electron in the eg set destabilizes it by +0.6 Δo. In a tetrahedral complex, four ligands approach between the axes. Consequently, the dxy, dyz, and dxz orbitals (t2 set) experience greater repulsion and rise in energy, while the dx²-y² and dz² orbitals (e set) lower in energy. The splitting energy Δt is smaller because there are only four ligands and they do not point directly at any orbital. Quantitatively, Δt = (4/9) Δo. This small splitting energy means that Δt is almost always less than the spin pairing energy (P). Consequently, electrons do not pair up in the lower e orbitals but instead jump to the t2 set, making tetrahedral complexes almost exclusively high-spin. The arrangement of electrons determines the Crystal Field Stabilization Energy (CFSE), magnetic behavior, and electronic transitions that give these complexes their vibrant colors."
+    longAnswer: "Crystal Field Theory (CFT) explains the electronic properties of transition metal complexes. It treats ligands as negative point charges. When ligands approach a central metal cation, the electrostatic field removes the degeneracy of the five d-orbitals. In an octahedral complex, six ligands approach along the x, y, and z axes. The dx²-y² and dz² orbitals (eg set) point directly at the incoming ligands, experiencing greater repulsion and rising in energy. The dxy, dyz, and dxz orbitals (t2g set) point between the axes, experiencing less repulsion and lowering in energy relative to the barycenter. The energy difference is denoted as Δo. Each electron in the t2g set stabilizes the complex by -0.4 Δo, while each electron in the eg set destabilizes it by +0.6 Δo. In a tetrahedral complex, four ligands approach between the axes. Consequently, the dxy, dyz, and dxz orbitals (t2 set) experience greater repulsion and rise in energy, while the dx²-y² and dz² orbitals (e set) lower in energy. The splitting energy Δt is smaller because there are only four ligands and they do not point directly at any orbital. Quantitatively, Δt = (4/9) Δo. This small splitting energy means that Δt is almost always less than the spin pairing energy (P). Consequently, electrons do not pair up in the lower e orbitals but instead jump to the t2 set, making tetrahedral complexes almost exclusively high-spin. The arrangement of electrons determines the Crystal Field Stabilization Energy (CFSE), magnetic behavior, and electronic transitions that give these complexes their vibrant colors.",
+    derivation: [
+      {
+        title: "Step 1 — Barycenter rule (energy conservation in the crystal field)",
+        steps: [
+          "In an octahedral field, the 5 degenerate d-orbitals split into $t_{2g}$ (×3) and $e_g$ (×2) sets.",
+          "The barycenter (weighted average energy) is unchanged: $3 \\times (-0.4\\Delta_o) + 2 \\times (+0.6\\Delta_o) = -1.2\\Delta_o + 1.2\\Delta_o = 0$",
+          "Therefore: $t_{2g}$ orbitals are stabilized by $-0.4\\Delta_o$ each, and $e_g$ orbitals are destabilized by $+0.6\\Delta_o$ each."
+        ]
+      },
+      {
+        title: "Step 2 — Crystal Field Stabilization Energy (CFSE) formula",
+        steps: [
+          "CFSE = (number of $t_{2g}$ electrons)$\\times(-0.4\\Delta_o)$ + (number of $e_g$ electrons)$\\times(+0.6\\Delta_o)$ + $P$ (if pairing occurs)",
+          "Example: $\\text{Co}^{3+}$ ($d^6$) in strong field $\\Rightarrow t_{2g}^6 e_g^0$: $\\text{CFSE} = 6\\times(-0.4) + 0\\times(+0.6) = -2.4\\Delta_o$ (very stable)",
+          "Same ion in weak field $\\Rightarrow t_{2g}^4 e_g^2$: $\\text{CFSE} = 4\\times(-0.4) + 2\\times(+0.6) = -0.4\\Delta_o$ (much less stable)"
+        ]
+      },
+      {
+        title: "Step 3 — Relationship between octahedral and tetrahedral splitting",
+        steps: [
+          "Tetrahedral geometry: 4 ligands approach along the diagonals of a cube — none aligns directly with any d-orbital.",
+          "Fraction of ligands ($\\tfrac{4}{6}$) × geometric factor ($\\tfrac{2}{3}$) gives: $\\Delta_t = \\dfrac{4}{9}\\Delta_o$",
+          "Because $\\Delta_t < \\Delta_o$ always, tetrahedral complexes are almost universally high-spin ($\\Delta_t < P$)."
+        ]
+      },
+      {
+        title: "Step 4 — Spin-only magnetic moment derivation",
+        steps: [
+          "Each unpaired electron has spin quantum number $s = \\tfrac{1}{2}$, contributing a magnetic moment.",
+          "The spin-only magnetic moment formula is derived from: $\\mu_s = g_s\\sqrt{S(S+1)}\\,\\mu_B$, where $g_s \\approx 2$ and $S = \\tfrac{n}{2}$ for $n$ unpaired electrons.",
+          "$\\mu_s = 2\\sqrt{\\tfrac{n}{2}\\left(\\tfrac{n}{2}+1\\right)} = \\sqrt{n(n+2)}\\,\\mu_B$, giving the familiar $\\boxed{\\mu_s = \\sqrt{n(n+2)}\\text{ BM}}$"
+        ]
+      }
+    ]
   },
   {
     unitNumber: 1,

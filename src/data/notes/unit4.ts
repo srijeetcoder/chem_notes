@@ -33,7 +33,65 @@ export const unit4Notes = [
       "Discuss the temperature dependence of spontaneity for a reaction with both positive ΔH and positive ΔS."
     ],
     shortAnswer: "Thermodynamic state functions include internal energy U (total energy), entropy S (molecular disorder), and Gibbs free energy G (energy available for useful work at constant T and P). Spontaneity is determined by ΔG = ΔH - TΔS: a reaction is spontaneous if ΔG < 0, non-spontaneous if ΔG > 0, and at equilibrium if ΔG = 0.",
-    longAnswer: "Thermodynamic functions describe the energetic state and feasibility of physical and chemical processes. Internal energy (U) is the sum of all molecular kinetic energies (translation, rotation, vibration) and potential energies (intermolecular forces, chemical bonds). Enthalpy (H = U + PV) represents the total heat content of a system at constant pressure. Entropy (S) is a measure of the statistical distribution of energy states or the disorder of a system. Boltzmann mathematically defined it as S = k_B ln W, where k_B is Boltzmann's constant and W is the thermodynamic probability (number of microstates). The second law of thermodynamics states that the entropy of the universe must increase in any spontaneous process: ΔS_univ = ΔS_sys + ΔS_surr > 0. To evaluate spontaneity using only system properties, Josiah Willard Gibbs defined Gibbs free energy (G) as G = H - TS. For a process at constant temperature and pressure, the change in free energy is ΔG = ΔH - TΔS. This equation shows the balance between the enthalpic drive (the system's tendency to minimize energy, ΔH < 0) and the entropic drive (the system's tendency to maximize disorder, ΔS > 0). A process is spontaneous only if ΔG is negative, which corresponds to an increase in the total entropy of the universe. If a reaction has both positive ΔH (endothermic) and positive ΔS, the TΔS term dominates at high temperatures, making the reaction spontaneous only at elevated temperatures (e.g., thermal decomposition of CaCO₃). If ΔG = 0, the forward and reverse reaction rates are equal, and the system is at equilibrium."
+    longAnswer: "Thermodynamic functions describe the energetic state and feasibility of physical and chemical processes. Internal energy (U) is the sum of all molecular kinetic energies (translation, rotation, vibration) and potential energies (intermolecular forces, chemical bonds). Enthalpy (H = U + PV) represents the total heat content of a system at constant pressure. Entropy (S) is a measure of the statistical distribution of energy states or the disorder of a system. Boltzmann mathematically defined it as S = k_B ln W, where k_B is Boltzmann's constant and W is the thermodynamic probability (number of microstates). The second law of thermodynamics states that the entropy of the universe must increase in any spontaneous process: ΔS_univ = ΔS_sys + ΔS_surr > 0. To evaluate spontaneity using only system properties, Josiah Willard Gibbs defined Gibbs free energy (G) as G = H - TS. For a process at constant temperature and pressure, the change in free energy is ΔG = ΔH - TΔS. This equation shows the balance between the enthalpic drive (the system's tendency to minimize energy, ΔH < 0) and the entropic drive (the system's tendency to maximize disorder, ΔS > 0). A process is spontaneous only if ΔG is negative, which corresponds to an increase in the total entropy of the universe. If a reaction has both positive ΔH (endothermic) and positive ΔS, the TΔS term dominates at high temperatures, making the reaction spontaneous only at elevated temperatures (e.g., thermal decomposition of CaCO₃). If ΔG = 0, the forward and reverse reaction rates are equal, and the system is at equilibrium.",
+    derivation: [
+      {
+        title: "Step 1 — From the Clausius inequality to entropy",
+        steps: [
+          "Clausius inequality for a real process: $dS \\geq \\dfrac{dq}{T}$, with equality for reversible processes.",
+          "For the surroundings at temperature $T$: $dS_{\\text{surr}} = -\\dfrac{dq_{\\text{sys}}}{T}$",
+          "At constant $T$ and $P$, the heat exchanged equals the enthalpy change: $q_P = \\Delta H$",
+          "Therefore: $\\Delta S_{\\text{surr}} = -\\dfrac{\\Delta H}{T}$"
+        ]
+      },
+      {
+        title: "Step 2 — Gibbs free energy from ΔS_universe > 0",
+        steps: [
+          "The Second Law requires: $\\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\geq 0$",
+          "Substituting $\\Delta S_{\\text{surr}} = -\\Delta H / T$: $\\Delta S_{\\text{sys}} - \\dfrac{\\Delta H}{T} \\geq 0$",
+          "Multiply both sides by $-T$ (reversing inequality): $\\Delta H - T\\Delta S_{\\text{sys}} \\leq 0$",
+          "Defining $\\Delta G = \\Delta H - T\\Delta S$: $\\boxed{\\Delta G \\leq 0}$ for a spontaneous process at constant $T$ and $P$"
+        ]
+      },
+      {
+        title: "Step 3 — Temperature dependence of spontaneity",
+        steps: [
+          "$\\Delta G = \\Delta H - T\\Delta S$. The sign of $\\Delta G$ depends on the signs of $\\Delta H$, $\\Delta S$, and the temperature $T$.",
+          "If $\\Delta H < 0$ and $\\Delta S > 0$: $\\Delta G < 0$ at all temperatures (always spontaneous).",
+          "If $\\Delta H > 0$ and $\\Delta S > 0$: spontaneous only when $T > \\dfrac{\\Delta H}{\\Delta S}$ (high $T$ favors).",
+          "Crossover temperature: $T^* = \\dfrac{\\Delta H}{\\Delta S}$ — below this, $\\Delta G > 0$; above it, $\\Delta G < 0$."
+        ]
+      },
+      {
+        title: "Step 4 — Derivation of the Gibbs-Helmholtz equation at constant pressure",
+        steps: [
+          "Starting from the definition of Gibbs free energy: $G = H - TS$",
+          "Substitute $H = U + PV$ to write $G = U + PV - TS$. Taking the total differential: $dG = dU + PdV + VdP - TdS - SdT$",
+          "From the Combined First and Second Laws for a reversible process, $dU = TdS - PdV$. Substituting this gives: $dG = (TdS - PdV) + PdV + VdP - TdS - SdT = VdP - SdT$",
+          "At constant pressure ($dP = 0$), this simplifies to: $dG = -SdT \\implies \\left(\\dfrac{\\partial G}{\\partial T}\\right)_P = -S$",
+          "Substitute $S = -\\left(\\dfrac{\\partial G}{\\partial T}\\right)_P$ back into the definition $G = H - TS$:",
+          "$G = H + T\\left(\\dfrac{\\partial G}{\\partial T}\\right)_P$. For a process, this relation is: $\\Delta G = \\Delta H + T\\left(\\dfrac{\\partial (\\Delta G)}{\\partial T}\\right)_P$  (Equation A)",
+          "Now consider the derivative of the ratio $\\dfrac{\\Delta G}{T}$ with respect to $T$ at constant pressure:",
+          "$\\left(\\dfrac{\\partial (\\Delta G/T)}{\\partial T}\right)_P = \\dfrac{1}{T}\\left(\\dfrac{\\partial (\\Delta G)}{\\partial T}\\right)_P - \\dfrac{\\Delta G}{T^2} = \\dfrac{T\\left(\\dfrac{\\partial (\\Delta G)}{\\partial T}\\right)_P - \\Delta G}{T^2}$",
+          "From Equation A, the numerator is $T\\left(\\dfrac{\\partial (\\Delta G)}{\\partial T}\\right)_P - \\Delta G = -\\Delta H$.",
+          "Substituting this gives the Gibbs-Helmholtz equation: $\\boxed{\\left(\\dfrac{\\partial (\\Delta G/T)}{\\partial T}\\right)_P = -\\dfrac{\\Delta H}{T^2}}$"
+        ]
+      },
+      {
+        title: "Step 5 — Derivation of Entropy of Mixing for ideal gases",
+        steps: [
+          "The entropy of one mole of an ideal gas at pressure $P$ is: $S = S^\\circ - R\\ln\\left(\\dfrac{P}{P^\\circ}\\right)$",
+          "Consider mixing $N$ ideal gases at constant $T$ and total pressure $P$. Before mixing, the total entropy is: $S_{\\text{initial}} = \\sum n_i \\left(S_i^\\circ - R\\ln P\\right)$ (with $P^\\circ = 1$ bar)",
+          "After mixing, each gas behaves independently, occupying the total volume $V$ and exerting its partial pressure $P_i = x_i P$, where $x_i = n_i / n_{\\text{total}}$ is its mole fraction.",
+          "The total entropy of the mixture is: $S_{\\text{final}} = \\sum n_i \\left(S_i^\\circ - R\\ln(x_i P)\\right)$",
+          "The entropy change of mixing is: $\\Delta S_{\\text{mix}} = S_{\\text{final}} - S_{\\text{initial}} = \\sum n_i \\left(S_i^\\circ - R\\ln(x_i P) - S_i^\\circ + R\\ln P\\right)$",
+          "Using log properties, $\\ln(x_i P) = \\ln x_i + \\ln P$, so: $\\Delta S_{\\text{mix}} = -R \\sum n_i \\ln x_i$",
+          "Since $n_i = n_{\\text{total}} x_i$, we get: $\\boxed{\\Delta S_{\\text{mix}} = -n_{\\text{total}} R \\sum x_i \\ln x_i}$",
+          "Proof that $\\Delta S_{\\text{mix}} > 0$: Since mole fractions satisfy $0 < x_i < 1$ for all components, the term $\\ln x_i < 0$ (negative). Thus, $-x_i \\ln x_i > 0$.",
+          "Therefore, the summation is always negative, making $\\Delta S_{\\text{mix}} > 0$ always positive. Mixing is spontaneous and driven by thermodynamic probability."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 4,
@@ -134,7 +192,33 @@ export const unit4Notes = [
       "The standard EMF of a cell for the reaction Zn(s) + Cu²⁺(aq) ⇌ Zn²⁺(aq) + Cu(s) is 1.10 V. Calculate the standard Gibbs free energy change (ΔG°) for the reaction."
     ],
     shortAnswer: "The change in Gibbs free energy (ΔG) in an electrochemical cell is related to its EMF (E) by the equation ΔG = -nFE (or ΔG° = -nFE° for standard states), where n is the number of moles of transferred electrons and F is Faraday's constant. A positive EMF (E > 0) corresponds to a spontaneous reaction (ΔG < 0).",
-    longAnswer: "The relationship between Gibbs free energy and electromotive force (EMF) connects chemical thermodynamics with electrochemistry. The change in Gibbs free energy (ΔG) at constant temperature and pressure represents the maximum non-expansion work (useful work) that a system can perform. In an electrochemical cell, this work is electrical work, performed by moving electrons through an external circuit. The work done in moving a charge q through a potential difference E is w = q·E. The charge of one mole of electrons is defined as Faraday's constant (F ≈ 96,485 C/mol). For a reaction involving the transfer of n moles of electrons, the total charge is q = nF. Thus, the electrical work done by the system is w = nFE. Because this work represents the decrease in the system's free energy, we write: ΔG = -nFE. Under standard conditions (all solutes at 1 M, gases at 1 atm, temperature at 298 K), the relationship is ΔG° = -nFE°. Since n and F are positive constants, a spontaneous chemical reaction (ΔG < 0) must generate a positive cell potential (E > 0), which is the operating principle of galvanic (voltaic) cells. Conversely, an electrolytic cell requires an external voltage source because the underlying chemical reaction is non-spontaneous (ΔG > 0, E < 0). While ΔG is an extensive property that doubles if we double the reaction coefficients (requiring twice the electrons, n), E is an intensive property. If we double the reaction stoichiometry, the total charge doubles, but the potential difference (work per unit charge) remains the same."
+    longAnswer: "The relationship between Gibbs free energy and electromotive force (EMF) connects chemical thermodynamics with electrochemistry. The change in Gibbs free energy (ΔG) at constant temperature and pressure represents the maximum non-expansion work (useful work) that a system can perform. In an electrochemical cell, this work is electrical work, performed by moving electrons through an external circuit. The work done in moving a charge q through a potential difference E is w = q·E. The charge of one mole of electrons is defined as Faraday's constant (F ≈ 96,485 C/mol). For a reaction involving the transfer of n moles of electrons, the total charge is q = nF. Thus, the electrical work done by the system is w = nFE. Because this work represents the decrease in the system's free energy, we write: ΔG = -nFE. Under standard conditions (all solutes at 1 M, gases at 1 atm, temperature at 298 K), the relationship is ΔG° = -nFE°. Since n and F are positive constants, a spontaneous chemical reaction (ΔG < 0) must generate a positive cell potential (E > 0), which is the operating principle of galvanic (voltaic) cells. Conversely, an electrolytic cell requires an external voltage source because the underlying chemical reaction is non-spontaneous (ΔG > 0, E < 0). While ΔG is an extensive property that doubles if we double the reaction coefficients (requiring twice the electrons, n), E is an intensive property. If we double the reaction stoichiometry, the total charge doubles, but the potential difference (work per unit charge) remains the same.",
+    derivation: [
+      {
+        title: "Step 1 — Electrical work from first principles",
+        steps: [
+          "Electrical work done in moving charge $q$ through potential difference $E$: $w_{\\text{elec}} = q \\times E$",
+          "For $n$ moles of electrons transferred: $q = n \\times F$, where $F = 96{,}485\\text{ C mol}^{-1}$ (Faraday's constant)",
+          "Maximum electrical work equals the decrease in Gibbs free energy: $-\\Delta G = w_{\\text{elec}} = nFE$"
+        ]
+      },
+      {
+        title: "Step 2 — Derivation of ΔG = −nFE",
+        steps: [
+          "$\\Delta G = -nFE$ (non-standard conditions)",
+          "$\\Delta G^\\circ = -nFE^\\circ$ (standard conditions: all species at unit activity)",
+          "Spontaneity check: if $E > 0 \\Rightarrow \\Delta G < 0$ (galvanic/voltaic cell, spontaneous); if $E < 0 \\Rightarrow \\Delta G > 0$ (electrolytic cell, requires external energy)"
+        ]
+      },
+      {
+        title: "Step 3 — Temperature coefficient of EMF yields ΔS",
+        steps: [
+          "From $\\Delta G = \\Delta H - T\\Delta S$ and $\\Delta G = -nFE$: $-nFE = \\Delta H - T\\Delta S$",
+          "Differentiating with respect to $T$ at constant $P$: $-nF\\left(\\dfrac{dE}{dT}\\right)_P = -\\Delta S$",
+          "$\\boxed{\\Delta S = nF\\left(\\dfrac{dE}{dT}\\right)_P}$ — the temperature coefficient of EMF directly gives the entropy change of the cell reaction."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 4,
@@ -167,7 +251,41 @@ export const unit4Notes = [
       "Explain how the Nernst equation is used to determine the pH of a solution using a hydrogen electrode."
     ],
     shortAnswer: "The Nernst equation, E = E° - (0.0591/n) log Q (at 298 K), calculates cell potential under non-standard concentrations. It shows that cell potential depends on the reaction quotient Q. When a battery reaches equilibrium, E = 0, allowing the calculation of the equilibrium constant: log K = nE°/0.0591.",
-    longAnswer: "The Nernst equation describes how cell potential varies with concentration and temperature. It is derived by combining the thermodynamic relation for free energy under non-standard conditions, ΔG = ΔG° + RT ln Q, with the electrochemical relation ΔG = -nFE. Substituting these terms yields -nFE = -nFE° + RT ln Q. Dividing both sides by -nF gives the Nernst equation: E = E° - (RT/nF) ln Q, where E is the cell potential, E° is the standard cell potential, R is the gas constant (8.314 J/mol·K), T is temperature in Kelvin, n is the moles of electrons transferred, F is Faraday's constant (96,485 C/mol), and Q is the reaction quotient. For a general redox reaction aA + bB ⇌ cC + dD, the reaction quotient is Q = ([C]^c [D]^d) / ([A]^a [B]^b). At 298 K, substituting the constants simplifies the equation to: E = E° - (0.0591/n) log Q. The Nernst equation has many applications. It allows the calculation of cell potentials during battery discharge, showing that E drops as reactants are consumed. When the cell is fully discharged, the reaction reaches equilibrium, where the cell potential is zero (E = 0) and Q equals the equilibrium constant K. Substituting these values into the Nernst equation yields E° = (0.0591/n) log K, allowing the calculation of K from standard electrode potentials. It is also used to measure ion concentrations; for example, a pH meter uses a glass electrode where the measured potential varies linearly with pH according to the Nernst equation: E = Constant - 0.0591 pH."
+    longAnswer: "The Nernst equation describes how cell potential varies with concentration and temperature. It is derived by combining the thermodynamic relation for free energy under non-standard conditions, ΔG = ΔG° + RT ln Q, with the electrochemical relation ΔG = -nFE. Substituting these terms yields -nFE = -nFE° + RT ln Q. Dividing both sides by -nF gives the Nernst equation: E = E° - (RT/nF) ln Q, where E is the cell potential, E° is the standard cell potential, R is the gas constant (8.314 J/mol·K), T is temperature in Kelvin, n is the moles of electrons transferred, F is Faraday's constant (96,485 C/mol), and Q is the reaction quotient. For a general redox reaction aA + bB ⇌ cC + dD, the reaction quotient is Q = ([C]^c [D]^d) / ([A]^a [B]^b). At 298 K, substituting the constants simplifies the equation to: E = E° - (0.0591/n) log Q. The Nernst equation has many applications. It allows the calculation of cell potentials during battery discharge, showing that E drops as reactants are consumed. When the cell is fully discharged, the reaction reaches equilibrium, where the cell potential is zero (E = 0) and Q equals the equilibrium constant K. Substituting these values into the Nernst equation yields E° = (0.0591/n) log K, allowing the calculation of K from standard electrode potentials. It is also used to measure ion concentrations; for example, a pH meter uses a glass electrode where the measured potential varies linearly with pH according to the Nernst equation: E = Constant - 0.0591 pH.",
+    derivation: [
+      {
+        title: "Step 1 — Starting from ΔG under non-standard conditions",
+        steps: [
+          "For any reaction at non-standard conditions: $\\Delta G = \\Delta G^\\circ + RT\\ln Q$",
+          "Substitute $\\Delta G = -nFE$ and $\\Delta G^\\circ = -nFE^\\circ$: $-nFE = -nFE^\\circ + RT\\ln Q$"
+        ]
+      },
+      {
+        title: "Step 2 — Derive the Nernst equation",
+        steps: [
+          "Dividing both sides by $-nF$: $E = E^\\circ - \\dfrac{RT}{nF}\\ln Q$",
+          "Converting to base-10 logarithm ($\\ln Q = 2.303\\log Q$): $E = E^\\circ - \\dfrac{2.303RT}{nF}\\log Q$",
+          "At $T = 298\\text{ K}$, substituting $R = 8.314\\text{ J mol}^{-1}\\text{K}^{-1}$, $F = 96{,}485\\text{ C mol}^{-1}$: $\\dfrac{2.303 \\times 8.314 \\times 298}{96{,}485} = 0.05916\\text{ V}$",
+          "$\\boxed{E = E^\\circ - \\dfrac{0.0591}{n}\\log Q}$ (Nernst equation at 298 K)"
+        ]
+      },
+      {
+        title: "Step 3 — At equilibrium (E = 0, Q = K)",
+        steps: [
+          "Setting $E = 0$ and $Q = K$: $0 = E^\\circ - \\dfrac{0.0591}{n}\\log K$",
+          "$\\boxed{\\log K = \\dfrac{nE^\\circ}{0.0591}}$ (relationship between K and E°)",
+          "Example: Daniel cell ($E^\\circ = 1.10\\text{ V}$, $n = 2$): $\\log K = \\dfrac{2 \\times 1.10}{0.0591} = 37.2$, so $K \\approx 10^{37.2}$ — essentially complete"
+        ]
+      },
+      {
+        title: "Step 4 — Application to pH measurement",
+        steps: [
+          "Hydrogen electrode half-reaction: $2\\text{H}^+(aq) + 2e^- \\to \\text{H}_2(g)$",
+          "Nernst for this electrode: $E = E^\\circ_{\\text{H}^+/\\text{H}_2} - \\dfrac{0.0591}{2}\\log\\dfrac{P_{\\text{H}_2}}{[\\text{H}^+]^2}$",
+          "With $E^\\circ = 0$ and $P_{\\text{H}_2} = 1\\text{ atm}$: $E = 0.0591\\log[\\text{H}^+] = -0.0591\\,\\text{pH}$"
+        ]
+      }
+    ]
   },
   {
     unitNumber: 4,

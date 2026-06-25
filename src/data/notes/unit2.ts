@@ -101,7 +101,36 @@ export const unit2Notes = [
       "Explain the effect of solvent polarity on the absorption wavelengths of n → π* and π → π* transitions."
     ],
     shortAnswer: "UV-Vis spectroscopy excites valence electrons. Transitions include σ→σ*, n→σ*, π→π*, and n→π*. Allowed transitions must obey the spin selection rule (ΔS = 0). Polar solvents cause a red shift for π→π* transitions and a blue shift for transitions involving lone pairs (n→σ* and n→π*).",
-    longAnswer: "Electronic spectroscopy involves the promotion of valence electrons from bonding (σ, π) or non-bonding (n) orbitals to antibonding (σ*, π*) orbitals. The energy required follows the order: σ → σ* > n → σ* > π → π* > n → π*. These transitions are governed by spin multiplicity (M = 2S + 1). Ground states of most organic molecules are singlet ground states (¹GS, S = 0, M = 1). Absorption of light can promote an electron to a singlet excited state (¹ES, S = 0, M = 1) or, with a spin flip, a triplet excited state (³ES, S = 1, M = 3). According to the spin selection rule, transitions are allowed only if there is no change in spin multiplicity (ΔS = 0). Thus, ¹GS → ¹ES is spin-allowed and highly intense, while ¹GS → ³ES is spin-forbidden and extremely weak. Solvent polarity has a major effect on transitions. Non-bonding (n) electrons are stabilized by hydrogen bonding in polar solvents, which lowers their energy level. This increases the energy gap (ΔE) for n → σ* and n → π* transitions, shifting their absorption to shorter wavelengths (hypsochromic/blue shift). Conversely, in π → π* transitions, the excited state is more polar and is stabilized more by polar solvents than the ground state. This decreases the energy gap (ΔE), shifting the absorption to longer wavelengths (bathochromic/red shift)."
+    longAnswer: "Electronic spectroscopy involves the promotion of valence electrons from bonding (σ, π) or non-bonding (n) orbitals to antibonding (σ*, π*) orbitals. The energy required follows the order: σ → σ* > n → σ* > π → π* > n → π*. These transitions are governed by spin multiplicity (M = 2S + 1). Ground states of most organic molecules are singlet ground states (¹GS, S = 0, M = 1). Absorption of light can promote an electron to a singlet excited state (¹ES, S = 0, M = 1) or, with a spin flip, a triplet excited state (³ES, S = 1, M = 3). According to the spin selection rule, transitions are allowed only if there is no change in spin multiplicity (ΔS = 0). Thus, ¹GS → ¹ES is spin-allowed and highly intense, while ¹GS → ³ES is spin-forbidden and extremely weak. Solvent polarity has a major effect on transitions. Non-bonding (n) electrons are stabilized by hydrogen bonding in polar solvents, which lowers their energy level. This increases the energy gap (ΔE) for n → σ* and n → π* transitions, shifting their absorption to shorter wavelengths (hypsochromic/blue shift). Conversely, in π → π* transitions, the excited state is more polar and is stabilized more by polar solvents than the ground state. This decreases the energy gap (ΔE), shifting the absorption to longer wavelengths (bathochromic/red shift).",
+    derivation: [
+      {
+        title: "Step 1 — Statement of the Lambert-Beer Law",
+        steps: [
+          "Lambert's Law: The rate of decrease of intensity of light with thickness of the medium is directly proportional to the intensity of the incident light.",
+          "Beer's Law: The rate of decrease of intensity of light with thickness of the medium is directly proportional to the concentration of the absorbing species in the solution.",
+          "Combined Statement: For a monochromatic light passing through an absorbing solution, the rate of decrease in light intensity with thickness (path length) is proportional to both the intensity of the light and the concentration of the solute: $-\\dfrac{dI}{dx} = k' I c$, where $I$ is the intensity at thickness $x$, $c$ is the concentration, and $k'$ is a proportionality constant."
+        ]
+      },
+      {
+        title: "Step 2 — Integrating the differential equation",
+        steps: [
+          "Rearranging the differential equation: $\\dfrac{dI}{I} = -k' c \\, dx$",
+          "Integrating both sides under the boundary conditions: at $x = 0$ (entrance of cell), intensity is $I_0$; at $x = l$ (thickness of cell), intensity is $I_t$.",
+          "$\\int_{I_0}^{I_t} \\dfrac{dI}{I} = -k' c \\int_0^l dx$",
+          "This gives: $\\ln\\left(\\dfrac{I_t}{I_0}\\right) = -k' c l \\implies \\ln\\left(\\dfrac{I_0}{I_t}\\right) = k' c l$"
+        ]
+      },
+      {
+        title: "Step 3 — Expressing in terms of Absorbance (A)",
+        steps: [
+          "Convert from natural logarithm (base $e$) to common logarithm (base 10) using $\\ln(x) \\approx 2.303 \\log_{10}(x)$:",
+          "$2.303 \\log_{10}\\left(\\dfrac{I_0}{I_t}\right) = k' c l \\implies \\log_{10}\\left(\\dfrac{I_0}{I_t}\right) = \\dfrac{k'}{2.303} c l$",
+          "Define the molar absorptivity (or extinction coefficient) $\\varepsilon = \\dfrac{k'}{2.303}$, and define Absorbance $A = \\log_{10}\\left(\\dfrac{I_0}{I_t}\right)$:",
+          "Substituting these gives the standard Beer-Lambert expression: $\\boxed{A = \\varepsilon c l}$",
+          "Since $\\varepsilon$ and $l$ are constants for a given system, this proves that the absorbance $A$ is linearly proportional to the concentration $c$ of the solution."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 2,
@@ -175,7 +204,35 @@ export const unit2Notes = [
       "Compare the C=O stretching frequencies of aldehydes, ketones, esters, and amides in terms of inductive and resonance effects."
     ],
     shortAnswer: "IR spectroscopy measures bond vibrations that produce a change in dipole moment. Vibrations are modeled using Hooke's Law and anharmonic oscillators. Frequencies are sensitive to bond strengths (force constant k) and reduced mass μ. Carbonyl (C=O) frequency shifts are explained by ring strain (Bent's rule) and substituent inductive/resonance effects.",
-    longAnswer: "Vibrational (IR) spectroscopy is based on the excitation of molecular vibrations. A molecule absorbs IR radiation when the frequency of the light matches the natural frequency of a bond vibration, and when the vibration changes the molecule's dipole moment. Homonuclear molecules like N₂ are IR-inactive, whereas heteronuclear molecules like CO are IR-active. For a diatomic molecule, the bond vibration can be modeled as a harmonic oscillator with energy E = (v+0.5)hf. However, real chemical bonds are anharmonic, and their energy levels are described by E = (v+0.5)hf - (v+0.5)²hfχ_e, where χ_e is the anharmonic constant. Differentiating this energy with respect to v and setting it to zero yields the maximum quantum state v_max = 1/(2χ_e) - 0.5. Substituting this back into the energy equation yields the Bond Dissociation Energy (D_e = hf/4χ_e), which is the energy required to break the bond in the gas phase. The actual energy required to break the bond from the ground state (v=0) is the Spectroscopic Dissociation Energy (D_0 = D_e - E_0), where the ground-state zero-point energy E_0 = 0.5*hf - 0.25*hf\n  χ_e.\n\nCarbonyl (C=O) stretching frequencies provide excellent examples of how electronic and structural factors alter bond strengths. In cyclic ketones, ring size decreases the C-CO-C bond angle (from 112° in cyclohexanone to 60° in cyclopropenone). According to Bent's Rule, orbitals directed towards more electropositive carbon atoms gain p-character, which concentrates s-character in the carbonyl carbon-oxygen bond. Since s-orbitals are closer to the nucleus, this increases the double bond strength (greater force constant k), shifting the frequency from 1715 cm⁻¹ (cyclohexanone) up to 1850 cm⁻¹ (cyclopropenone). Substituted carbonyl compounds also show shifts: aldehydes (1750 cm⁻¹) have no electronic substituents; ketones (1715 cm⁻¹) have +I alkyl donors that weaken the double bond; esters (1735 cm⁻¹) have an alkoxy oxygen whose electron-withdrawing -I effect dominates over +R resonance donation, strengthening the bond; and amides (1690 cm⁻¹) have a highly powerful resonance (+R) from nitrogen that donates electron density into the carbonyl, giving it more single-bond character and lowering the frequency."
+    longAnswer: "Vibrational (IR) spectroscopy is based on the excitation of molecular vibrations. A molecule absorbs IR radiation when the frequency of the light matches the natural frequency of a bond vibration, and when the vibration changes the molecule's dipole moment. Homonuclear molecules like N₂ are IR-inactive, whereas heteronuclear molecules like CO are IR-active. For a diatomic molecule, the bond vibration can be modeled as a harmonic oscillator with energy E = (v+0.5)hf. However, real chemical bonds are anharmonic, and their energy levels are described by E = (v+0.5)hf - (v+0.5)²hfχ_e, where χ_e is the anharmonic constant. Differentiating this energy with respect to v and setting it to zero yields the maximum quantum state v_max = 1/(2χ_e) - 0.5. Substituting this back into the energy equation yields the Bond Dissociation Energy (D_e = hf/4χ_e), which is the energy required to break the bond in the gas phase. The actual energy required to break the bond from the ground state (v=0) is the Spectroscopic Dissociation Energy (D_0 = D_e - E_0), where the ground-state zero-point energy E_0 = 0.5*hf - 0.25*hf\n  χ_e.\n\nCarbonyl (C=O) stretching frequencies provide excellent examples of how electronic and structural factors alter bond strengths. In cyclic ketones, ring size decreases the C-CO-C bond angle (from 112° in cyclohexanone to 60° in cyclopropenone). According to Bent's Rule, orbitals directed towards more electropositive carbon atoms gain p-character, which concentrates s-character in the carbonyl carbon-oxygen bond. Since s-orbitals are closer to the nucleus, this increases the double bond strength (greater force constant k), shifting the frequency from 1715 cm⁻¹ (cyclohexanone) up to 1850 cm⁻¹ (cyclopropenone). Substituted carbonyl compounds also show shifts: aldehydes (1750 cm⁻¹) have no electronic substituents; ketones (1715 cm⁻¹) have +I alkyl donors that weaken the double bond; esters (1735 cm⁻¹) have an alkoxy oxygen whose electron-withdrawing -I effect dominates over +R resonance donation, strengthening the bond; and amides (1690 cm⁻¹) have a highly powerful resonance (+R) from nitrogen that donates electron density into the carbonyl, giving it more single-bond character and lowering the frequency.",
+    derivation: [
+      {
+        title: "Step 1 — Derivation of Dissociation Energy (D_e) for an anharmonic oscillator",
+        steps: [
+          "For an anharmonic oscillator, the energy of level $v$ is: $E_v = \\left(v + \\dfrac{1}{2}\\right)hf - \\left(v + \\dfrac{1}{2}\\right)^2 hf\\chi_e$",
+          "The maximum possible vibrational energy occurs when the spacing between adjacent energy levels drops to zero: $\\Delta E = E_{v+1} - E_v = 0$.",
+          "Mathematically, we find this limit by treating $v$ as a continuous variable, differentiating $E_v$ with respect to $v$, and setting it to 0:",
+          "$\\dfrac{dE_v}{dv} = hf - 2\\left(v_{max} + \\dfrac{1}{2}\\right)hf\\chi_e = 0 \\implies 2\\left(v_{max} + \\dfrac{1}{2}\\right)\\chi_e = 1$",
+          "Solving for the term: $\\left(v_{max} + \\dfrac{1}{2}\\right) = \\dfrac{1}{2\\chi_e}$",
+          "Substitute this value back into the energy expression to find the maximum energy $E_{max}$ (which is the equilibrium dissociation energy $D_e$):",
+          "$D_e = E_{max} = \\left(\\dfrac{1}{2\\chi_e}\\right)hf - \\left(\\dfrac{1}{2\\chi_e}\\right)^2 hf\\chi_e = \\dfrac{hf}{2\\chi_e} - \\dfrac{hf}{4\\chi_e} = \\boxed{\\dfrac{hf}{4\\chi_e}}$",
+          "This represents the dissociation energy measured from the bottom of the potential well."
+        ]
+      },
+      {
+        title: "Step 2 — Worked Calculation: Force constant of carbon monoxide (CO) bond",
+        steps: [
+          "Problem: Calculate the force constant ($k$) of the $\\text{C}=\\text{O}$ bond in carbon monoxide if its IR absorption peak appears at $\\bar{\\nu} = 2100\\text{ cm}^{-1}$.",
+          "Constants: $c = 3.0 \\times 10^{10}\\text{ cm/s}$ (speed of light), $m_C = 12.0\\text{ g/mol}$, $m_O = 16.0\\text{ g/mol}$, $N_A = 6.022 \\times 10^{23}\\text{ molecules/mol}$",
+          "Calculate reduced mass ($\\mu$) in amu: $\\mu = \\dfrac{m_C \\cdot m_O}{m_C + m_O} = \\dfrac{12 \\times 16}{12 + 16} = 6.857\\text{ amu}$",
+          "Convert $\\mu$ to kg: $\\mu = \\dfrac{6.857 \\times 10^{-3}\\text{ kg/mol}}{6.022 \\times 10^{23}} \\approx 1.139 \\times 10^{-26}\\text{ kg}$",
+          "Wavenumber equation: $\\bar{\\nu} = \\dfrac{1}{2\\pi c} \\sqrt{\\dfrac{k}{\\mu}} \\implies k = 4\\pi^2 c^2 \\bar{\\nu}^2 \\mu$",
+          "Note: Using SI units, $\\bar{\\nu} = 2100\\text{ cm}^{-1} = 2.1 \\times 10^5\\text{ m}^{-1}$ and $c = 3.0 \\times 10^8\\text{ m/s}$. Thus: $c\\bar{\\nu} = (3.0 \\times 10^8) \\times (2.1 \\times 10^5) = 6.3 \\times 10^{13}\\text{ s}^{-1}$",
+          "Substitute values: $k = 4\\pi^2 \\cdot (6.3 \\times 10^{13})^2 \\cdot (1.139 \\times 10^{-26})$",
+          "Calculation: $k = 4 \\times 9.87 \\times (3.969 \\times 10^{27}) \\times (1.139 \\times 10^{-26}) \\approx 39.48 \\times 39.69 \\times 1.139 \\approx \\boxed{1784\\text{ N/m}}$ (or $\\approx 1.78 \\times 10^6\\text{ dyn/cm}$)"
+        ]
+      }
+    ]
   },
   {
     unitNumber: 2,
@@ -211,7 +268,42 @@ export const unit2Notes = [
       "Explain the effect of isotopic substitution on the rotational constant and spectral line spacing of a diatomic molecule."
     ],
     shortAnswer: "Rotational transitions occur in polar molecules in the microwave region (ΔJ = ±1). Energy levels are E_J = J(J+1)Bhc, yielding lines at 2B, 4B, 6B... with constant spacing 2B. The most populated level, due to degeneracy (2J+1) and Boltzmann factors, is J_max = √(kT/2Bhc) - 1/2.",
-    longAnswer: "Rotational spectroscopy studies the rotation of molecules in the gas phase. A molecule must have a permanent dipole moment to show a rotational spectrum because the rotation of the dipole creates an oscillating electric field that interacts with microwave radiation. The simplest system is a diatomic molecule modeled as a rigid rotor, where the bond length r remains constant. The moment of inertia is defined as I = μr², where μ is the reduced mass. Solving the Schrödinger equation yields quantized rotational energy levels: E_J = (h²/8π²I) * J(J+1), where J is the rotational quantum number (J = 0, 1, 2...). In spectroscopic units (wavenumbers, cm⁻¹), the energy is F(J) = B * J(J+1), where B = h/(8π²Ic) is the rotational constant. The selection rule is ΔJ = ±1. For an absorption transition from J to J+1, the energy change is ΔE = F(J+1) - F(J) = B(J+1)(J+2) - BJ(J+1) = 2B(J+1). Substituting J = 0, 1, 2... gives transition lines at 2B (for J=0 → 1), 4B (for J=1 → 2), 6B (for J=2 → 3), and so on. This results in a spectrum of equally spaced lines separated by 2B. By measuring this spacing, we can find B, calculate the moment of inertia I, and determine the bond length r with high precision. The intensity of these transitions is determined by the population of the initial states. While higher energy levels are exponentially suppressed by the Boltzmann factor e^(-E_J/kT), they are also degenerate by a factor of g_J = 2J+1. The combination of these two factors leads to a population maximum at a specific level, J_max = √(kT/2Bhc) - 1/2. Real molecules stretch under centrifugal force at high J states (non-rigid rotor), which increases the moment of inertia and decreases the effective B value, shifting the energy levels down slightly."
+    longAnswer: "Rotational spectroscopy studies the rotation of molecules in the gas phase. A molecule must have a permanent dipole moment to show a rotational spectrum because the rotation of the dipole creates an oscillating electric field that interacts with microwave radiation. The simplest system is a diatomic molecule modeled as a rigid rotor, where the bond length r remains constant. The moment of inertia is defined as I = μr², where μ is the reduced mass. Solving the Schrödinger equation yields quantized rotational energy levels: E_J = (h²/8π²I) * J(J+1), where J is the rotational quantum number (J = 0, 1, 2...). In spectroscopic units (wavenumbers, cm⁻¹), the energy is F(J) = B * J(J+1), where B = h/(8π²Ic) is the rotational constant. The selection rule is ΔJ = ±1. For an absorption transition from J to J+1, the energy change is ΔE = F(J+1) - F(J) = B(J+1)(J+2) - BJ(J+1) = 2B(J+1). Substituting J = 0, 1, 2... gives transition lines at 2B (for J=0 → 1), 4B (for J=1 → 2), 6B (for J=2 → 3), and so on. This results in a spectrum of equally spaced lines separated by 2B. By measuring this spacing, we can find B, calculate the moment of inertia I, and determine the bond length r with high precision. The intensity of these transitions is determined by the population of the initial states. While higher energy levels are exponentially suppressed by the Boltzmann factor e^(-E_J/kT), they are also degenerate by a factor of g_J = 2J+1. The combination of these two factors leads to a population maximum at a specific level, J_max = √(kT/2Bhc) - 1/2. Real molecules stretch under centrifugal force at high J states (non-rigid rotor), which increases the moment of inertia and decreases the effective B value, shifting the energy levels down slightly.",
+    derivation: [
+      {
+        title: "Step 1 — Moment of inertia and Rotational Constant (B) of a rigid rotor",
+        steps: [
+          "For a diatomic molecule with masses $m_1$ and $m_2$ at distance $r$ (rigid bond):",
+          "The center of mass condition is $m_1 r_1 = m_2 r_2$, where $r_1 + r_2 = r$. Solving gives $r_1 = \\dfrac{m_2}{m_1+m_2}r$ and $r_2 = \\dfrac{m_1}{m_1+m_2}r$.",
+          "The moment of inertia is: $I = m_1 r_1^2 + m_2 r_2^2 = m_1 \\left(\\dfrac{m_2}{m_1+m_2}r\\right)^2 + m_2 \\left(\\dfrac{m_1}{m_1+m_2}r\\right)^2 = \\dfrac{m_1 m_2}{m_1+m_2} r^2 = \\mu r^2$, where $\\mu$ is the reduced mass.",
+          "Quantized rotational energy levels in Joules: $E_J = \\dfrac{h^2}{8\\pi^2 I} J(J+1)$ for $J = 0, 1, 2, \\dots$",
+          "In wavenumbers (cm$^{-1}$): $F(J) = \\dfrac{E_J}{hc} = \\dfrac{h}{8\\pi^2 I c} J(J+1) = B J(J+1)$, where the rotational constant is $B = \\dfrac{h}{8\\pi^2 I c}$"
+        ]
+      },
+      {
+        title: "Step 2 — Spacing between adjacent spectral lines (2B spacing)",
+        steps: [
+          "The rotational selection rule is $\\Delta J = \\pm 1$. For absorption: $J \\to J+1$.",
+          "The wavenumber of the transition is: $\\bar{\\nu}_{J \\to J+1} = F(J+1) - F(J) = B(J+1)(J+2) - B J(J+1)$",
+          "Expanding: $\\bar{\\nu}_{J \\to J+1} = B(J^2 + 3J + 2) - B(J^2 + J) = 2B(J+1)$",
+          "For $J = 0 \\to 1$: $\\bar{\\nu} = 2B$. For $J = 1 \\to 2$: $\\bar{\\nu} = 4B$. For $J = 2 \\to 3$: $\\bar{\\nu} = 6B$, etc.",
+          "The spacing between adjacent absorption lines is: $\\Delta\\bar{\\nu} = \\bar{\\nu}_{J+1 \\to J+2} - \\bar{\\nu}_{J \\to J+1} = 2B(J+2) - 2B(J+1) = \\boxed{2B}$",
+          "This shows that the rotational spectrum consists of equally spaced lines separated by $2B$."
+        ]
+      },
+      {
+        title: "Step 3 — Deriving the most populated state (J_max) from Boltzmann distribution",
+        steps: [
+          "The population $N_J$ of rotational level $J$ is proportional to the Boltzmann factor $e^{-E_J / kT}$ and the level degeneracy $g_J = 2J+1$:",
+          "$\\dfrac{N_J}{N_0} = (2J+1) \\cdot e^{-BJ(J+1)hc / kT}$",
+          "To find $J$ at maximum population ($J_{max}$), treat $J$ as continuous and differentiate with respect to $J$, setting the derivative to zero:",
+          "$\\dfrac{d}{dJ} \\left[ (2J+1) e^{-BJ(J+1)hc/kT} \\right] = 0$",
+          "Using the product rule: $2 e^{-BJ(J+1)hc/kT} + (2J+1) \\cdot \\left[ -\\dfrac{B(2J+1)hc}{kT} \\right] e^{-BJ(J+1)hc/kT} = 0$",
+          "Dividing by the exponential term (which is never zero): $2 - \\dfrac{Bhc(2J+1)^2}{kT} = 0 \\implies (2J+1)^2 = \\dfrac{2kT}{Bhc}$",
+          "Solving for $J$: $2J + 1 = \\sqrt{\\dfrac{2kT}{Bhc}} \\implies \\boxed{J_{max} = \\sqrt{\\dfrac{kT}{2Bhc}} - \\dfrac{1}{2}}$"
+        ]
+      }
+    ]
   },
   {
     unitNumber: 2,

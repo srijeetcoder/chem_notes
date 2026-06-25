@@ -447,8 +447,37 @@ export const Notes: React.FC = () => {
                         <TextWithMath text={activeNote.explanation} />
                       </div>
                     </div>
+                    {/* Mathematical Derivation */}
+                    {activeNote.derivation && activeNote.derivation.length > 0 && (
+                      <div className="bg-white dark:bg-zinc-900 border border-indigo-200/60 dark:border-indigo-800/40 rounded-2xl p-6 shadow-sm">
+                        <h3 className="text-sm font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400 border-b border-indigo-100 dark:border-indigo-900/40 pb-2 mb-5 flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                          Step-by-Step Mathematical Derivation
+                        </h3>
+                        <div className="space-y-6">
+                          {activeNote.derivation.map((block, bIdx) => (
+                            <div key={bIdx} className="border border-indigo-100 dark:border-indigo-900/30 rounded-xl overflow-hidden">
+                              <div className="bg-indigo-50 dark:bg-indigo-950/20 px-4 py-2 flex items-center gap-2">
+                                <span className="w-6 h-6 rounded-full bg-indigo-500 text-white text-xs font-bold flex items-center justify-center shrink-0">{bIdx + 1}</span>
+                                <span className="text-xs font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider">{block.title}</span>
+                              </div>
+                              <div className="p-4 space-y-3 bg-zinc-50/30 dark:bg-zinc-950/10">
+                                {block.steps.map((step, sIdx) => (
+                                  <div key={sIdx} className="flex gap-3 items-start">
+                                    <span className="text-[10px] text-indigo-400 dark:text-indigo-500 font-mono shrink-0 mt-1 select-none w-5 text-right">{sIdx + 1}.</span>
+                                    <div className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed overflow-x-auto">
+                                      <TextWithMath text={step} />
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
-                    {/* Equations (Renders Reactions properly!) */}
+
                     {activeNote.equations && activeNote.equations.length > 0 && (
                       <div className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 rounded-2xl p-6 shadow-sm">
                         <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-800 dark:text-zinc-200 border-b border-zinc-100 dark:border-zinc-800 pb-2 mb-4">

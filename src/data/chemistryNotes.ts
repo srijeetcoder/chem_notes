@@ -6,6 +6,11 @@ import { unit5Notes } from "./notes/unit5";
 import { unit6Notes } from "./notes/unit6";
 import { unit7Notes } from "./notes/unit7";
 
+export interface DerivationStep {
+  title: string;
+  steps: string[]; // LaTeX strings, rendered by MathRenderer
+}
+
 export interface ChemistryNote {
   unitNumber: number;
   unitTitle: string;
@@ -16,10 +21,12 @@ export interface ChemistryNote {
   equations: string[];
   applications: string[];
   importantPoints: string[];
+  importantReactions?: string[];
   commonQuestions: string[];
   shortAnswer: string;
   longAnswer: string;
-  diagramType?: 'ethane_conformations' | 'cyclic_ketones' | 'benzene_aromaticity' | 'diels_alder' | 'aspirin_synthesis' | 'paracetamol_synthesis';
+  derivation?: DerivationStep[];
+  diagramType?: 'ethane_conformations' | 'cyclic_ketones' | 'benzene_aromaticity' | 'diels_alder' | 'aspirin_synthesis' | 'paracetamol_synthesis' | 'cyclohexane_chair' | 'sn1_vs_sn2' | 'addition_mechanism' | 'aldol_condensation' | 'redox_alcohols' | 'stereoisomers_tartaric';
 }
 
 export const chemistryNotes: ChemistryNote[] = [

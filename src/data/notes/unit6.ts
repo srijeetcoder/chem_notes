@@ -99,7 +99,34 @@ export const unit6Notes = [
       "Assign the R/S configuration to the chiral centers in (2R,3R)-tartaric acid shown in a Fischer projection."
     ],
     shortAnswer: "The D/L system designates relative configuration based on glyceraldehyde (OH on the right = D, OH on the left = L). The R/S system designates absolute configuration using CIP rules: rank groups by atomic number (1 > 2 > 3 > 4), trace 1 → 2 → 3. If group 4 is vertical, clockwise is R and anticlockwise is S. If group 4 is horizontal, clockwise is S and anticlockwise is R.",
-    longAnswer: "Configurational nomenclature systems describe the three-dimensional arrangement of substituents around a chiral carbon. The D/L system, introduced by Emil Fischer, is a relative configuration system. It compares the stereochemistry of a molecule to D-glyceraldehyde (which has the -OH group on the right in a Fischer projection). For carbohydrates, the configuration is determined by the lowest chiral carbon in the chain: if its -OH group is on the right, it is a D-sugar; if on the left, it is an L-sugar. Natural sugars are mostly D-sugars, whereas natural amino acids are L-amino acids (with the -NH2 group on the left). The modern R/S system designates absolute configuration based on the Cahn-Ingold-Prelog (CIP) priority rules. To assign a configuration: 1. Rank the four groups around the chiral carbon by atomic number. The atom with the highest atomic number gets priority 1; the lowest (often hydrogen) gets priority 4. If the atoms are isotopes (like D and H), the heavier isotope has priority. If the atoms directly attached to the chiral center are identical, we compare the next atoms along the chain until a difference is found. Double and triple bonds are treated as multiple single bonds (e.g., -CHO is treated as a carbon bonded to two oxygens and a hydrogen). 2. View the molecule in a Fischer projection and trace a circle from priority 1 to 2 to 3. 3. Look at the position of group 4: if it is on a vertical bond, clockwise is R (rectus, right) and anticlockwise is S (sinister, left). If it is on a horizontal bond, the rule is reversed, so clockwise is S and anticlockwise is R."
+    longAnswer: "Configurational nomenclature systems describe the three-dimensional arrangement of substituents around a chiral carbon. The D/L system, introduced by Emil Fischer, is a relative configuration system. It compares the stereochemistry of a molecule to D-glyceraldehyde (which has the -OH group on the right in a Fischer projection). For carbohydrates, the configuration is determined by the lowest chiral carbon in the chain: if its -OH group is on the right, it is a D-sugar; if on the left, it is an L-sugar. Natural sugars are mostly D-sugars, whereas natural amino acids are L-amino acids (with the -NH2 group on the left). The modern R/S system designates absolute configuration based on the Cahn-Ingold-Prelog (CIP) priority rules. To assign a configuration: 1. Rank the four groups around the chiral carbon by atomic number. The atom with the highest atomic number gets priority 1; the lowest (often hydrogen) gets priority 4. If the atoms are isotopes (like D and H), the heavier isotope has priority. If the atoms directly attached to the chiral center are identical, we compare the next atoms along the chain until a difference is found. Double and triple bonds are treated as multiple single bonds (e.g., -CHO is treated as a carbon bonded to two oxygens and a hydrogen). 2. View the molecule in a Fischer projection and trace a circle from priority 1 to 2 to 3. 3. Look at the position of group 4: if it is on a vertical bond, clockwise is R (rectus, right) and anticlockwise is S (sinister, left). If it is on a horizontal bond, the rule is reversed, so clockwise is S and anticlockwise is R.",
+    diagramType: 'stereoisomers_tartaric',
+    derivation: [
+      {
+        title: "Step 1 — CIP priority ranking algorithm",
+        steps: [
+          "Assign priorities 1, 2, 3, 4 to the four substituents around the chiral carbon based on atomic number (higher atomic number = higher priority).",
+          "Tie-breaking rule: If the atoms at the first position are identical, compare the second atoms along each branch. Example: $-CH_2OH$ vs $-CH_3$: both have C at the first position, but $-CH_2OH$ has O at the next level, making it higher priority.",
+          "Multiple bonds: A double bond $C{=}O$ is treated as $C(-O)(-O)$ and a triple bond $C{\\equiv}N$ as $C(-N)(-N)(-N)$ for CIP purposes."
+        ]
+      },
+      {
+        title: "Step 2 — R/S assignment in Fischer projection",
+        steps: [
+          "Trace the path $1 \\to 2 \\to 3$ around the chiral center.",
+          "If the lowest-priority group (4) is on a **vertical bond** (pointing away from viewer): clockwise path $= R$; anticlockwise path $= S$.",
+          "If the lowest-priority group (4) is on a **horizontal bond** (pointing toward viewer): **invert** the answer: clockwise path $= S$; anticlockwise path $= R$."
+        ]
+      },
+      {
+        title: "Step 3 — Worked example: (R)-glyceraldehyde",
+        steps: [
+          "Glyceraldehyde: $\\underset{1}{\\text{CHO}}$-$\\overset{\\text{*}}{\\text{C}}$($\\underset{2}{\\text{OH}}$)($\\underset{3}{\\text{H}}$)-$\\underset{4\\text{ (wrong)}}{\\text{CH}_2\\text{OH}}$. Re-ranking: $\\text{OH}(O) > \\text{CHO}(C+O+O) > \\text{CH}_2\\text{OH}(C+O+H) > \\text{H}$",
+          "Correct priority: 1 = $-\\text{OH}$, 2 = $-\\text{CHO}$, 3 = $-\\text{CH}_2\\text{OH}$, 4 = $-\\text{H}$",
+          "In a Fischer projection, $-\\text{H}$ is on a horizontal bond (toward viewer). Trace $1 \\to 2 \\to 3$: counterclockwise. Invert (because 4 is horizontal): $\\boxed{R}$ configuration."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 6,
@@ -163,7 +190,33 @@ export const unit6Notes = [
       "A solution of a pure chiral compound (0.5 g/mL) in a 10 cm tube rotates the plane of polarized light by +10°. Calculate its specific rotation."
     ],
     shortAnswer: "Chirality is the property of being non-superimposable on a mirror image, often caused by a carbon bonded to four different groups. Chiral substances are optically active, rotating plane-polarized light. Dextrorotatory (+) substances rotate light clockwise, while laevorotatory (-) substances rotate it counterclockwise. Racemic mixtures (50:50) are optically inactive.",
-    longAnswer: "Chirality is a geometric property. A molecule is chiral if its mirror image cannot be superimposed on the original structure, similar to how a left hand cannot be superimposed on a right hand. Chirality occurs when a molecule lacks an improper axis of symmetry (Sn), which includes planes (σ) and centers (i) of symmetry. The most common source of chirality in organic chemistry is a stereocenter: a tetrahedral carbon atom bonded to four different groups. Chiral molecules display optical activity, which is the ability to rotate the plane of polarization of plane-polarized light. This rotation is measured using a polarimeter. Monochromatic light (typically the sodium D-line, 589 nm) is passed through a polarizer, creating plane-polarized light. This polarized light then passes through a sample tube containing the dissolved chiral compound. The chiral molecules interact with the light, rotating its plane of polarization by an angle α. An analyzer is rotated to match this new angle, determining the direction and magnitude of rotation. If the rotation is clockwise, the compound is dextrorotatory, marked with a (+) prefix. If counterclockwise, it is laevorotatory, marked with a (-) prefix. The specific rotation [α] is a standardized property: [α] = α_obs / (c·l), where α_obs is the observed rotation, c is the concentration in g/mL, and l is the path length in decimeters. Enantiomers rotate polarized light by equal angles but in opposite directions. A 50:50 mixture of both enantiomers is a racemic mixture (represented by (±) or d,l). It is optically inactive due to external compensation, where the rotation of one enantiomer is cancelled by the equal and opposite rotation of the other. In contrast, a meso compound is optically inactive due to internal compensation: the molecule has chiral centers but contains an internal plane of symmetry. One half of the molecule cancels the optical rotation of the other half."
+    longAnswer: "Chirality is a geometric property. A molecule is chiral if its mirror image cannot be superimposed on the original structure, similar to how a left hand cannot be superimposed on a right hand. Chirality occurs when a molecule lacks an improper axis of symmetry (Sn), which includes planes (σ) and centers (i) of symmetry. The most common source of chirality in organic chemistry is a stereocenter: a tetrahedral carbon atom bonded to four different groups. Chiral molecules display optical activity, which is the ability to rotate the plane of polarization of plane-polarized light. This rotation is measured using a polarimeter. Monochromatic light (typically the sodium D-line, 589 nm) is passed through a polarizer, creating plane-polarized light. This polarized light then passes through a sample tube containing the dissolved chiral compound. The chiral molecules interact with the light, rotating its plane of polarization by an angle α. An analyzer is rotated to match this new angle, determining the direction and magnitude of rotation. If the rotation is clockwise, the compound is dextrorotatory, marked with a (+) prefix. If counterclockwise, it is laevorotatory, marked with a (-) prefix. The specific rotation [α] is a standardized property: [α] = α_obs / (c·l), where α_obs is the observed rotation, c is the concentration in g/mL, and l is the path length in decimeters. Enantiomers rotate polarized light by equal angles but in opposite directions. A 50:50 mixture of both enantiomers is a racemic mixture (represented by (±) or d,l). It is optically inactive due to external compensation, where the rotation of one enantiomer is cancelled by the equal and opposite rotation of the other. In contrast, a meso compound is optically inactive due to internal compensation: the molecule has chiral centers but contains an internal plane of symmetry. One half of the molecule cancels the optical rotation of the other half.",
+    derivation: [
+      {
+        title: "Step 1 — Specific rotation formula and Biot's law",
+        steps: [
+          "Observed optical rotation $\\alpha$ of a solution depends on concentration $c$ (g/mL), path length $l$ (dm), and the compound's intrinsic specific rotation $[\\alpha]_\\lambda^T$.",
+          "Biot's Law: $\\alpha_{\\text{obs}} = [\\alpha]_\\lambda^T \\times c \\times l$",
+          "Rearranging for specific rotation: $\\boxed{[\\alpha]_\\lambda^T = \\dfrac{\\alpha_{\\text{obs}}}{c \\times l}}$ (units: deg·mL·g⁻¹·dm⁻¹)"
+        ]
+      },
+      {
+        title: "Step 2 — Enantiomeric excess (optical purity)",
+        steps: [
+          "A non-racemic mixture of enantiomers has a net observed rotation that is proportional to the excess of the major enantiomer.",
+          "$ee = \\dfrac{\\%\\text{major} - \\%\\text{minor}}{100}\\times 100\\% = \\dfrac{|[\\alpha]_{\\text{obs}}|}{|[\\alpha]_{\\text{pure}}|}\\times 100\\%$",
+          "A racemic mixture: $ee = 0\\%$, $[\\alpha]_{\\text{obs}} = 0$. A pure enantiomer: $ee = 100\\%$, $[\\alpha]_{\\text{obs}} = [\\alpha]_{\\text{pure}}$."
+        ]
+      },
+      {
+        title: "Step 3 — Worked example: specific rotation calculation",
+        steps: [
+          "Given: $\\alpha_{\\text{obs}} = +10.0^\\circ$, $c = 0.5\\text{ g/mL}$, $l = 1\\text{ dm}$ (10 cm tube)",
+          "$[\\alpha] = \\dfrac{+10.0}{0.5 \\times 1} = \\boxed{+20.0^\\circ\\text{ deg mL g}^{-1}\\text{dm}^{-1}}$",
+          "The positive sign indicates dextrorotatory (+) rotation."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 6,
@@ -227,7 +280,42 @@ export const unit6Notes = [
       "Explain the terms: torsional strain, angle strain, and flagpole interactions in cyclohexane conformations."
     ],
     shortAnswer: "Cyclohexane puckers to avoid angle strain, forming the stable chair conformation (0 kcal/mol, zero angle/torsional strain, staggered bonds) and the unstable boat conformation (+7.0 kcal/mol, eclipsed bonds and flagpole repulsions). Substituted cyclohexanes prefer equatorial positions to avoid 1,3-diaxial steric interactions.",
-    longAnswer: "Conformational analysis of cyclohexane evaluates the energy changes as the molecule puckers to minimize strain. If cyclohexane were flat, it would have C-C-C angles of 120°, deviating from the tetrahedral 109.5° angle and causing angle strain. Additionally, all twelve C-H bonds would be eclipsed, causing maximum torsional strain. To eliminate this strain, the ring puckers into non-planar shapes. The most stable shape is the chair conformation. In the chair form, the C-C-C angles are 111.5° (nearly tetrahedral, eliminating angle strain), and all C-H bonds are staggered (eliminating torsional strain). The chair conformation has 12 hydrogen atoms divided into two sets: 6 axial bonds (pointing vertically up and down) and 6 equatorial bonds (projecting outward around the perimeter). The boat conformation is an unstable conformer, lying approximately 7.0 kcal/mol higher in energy than the chair. This high energy is caused by two factors: 1. Torsional strain: The C-H bonds along the sides of the boat are eclipsed. 2. Steric (flagpole) strain: The two hydrogen atoms at C1 and C4 point inward toward each other, causing van der Waals repulsion. Cyclohexane relaxes this strain by twisting slightly into the twist-boat conformation, which lies about 5.5 kcal/mol above the chair. During a chair-to-chair ring flip, the molecule passes through the high-energy half-chair conformation (10.8 kcal/mol). This ring flip converts all axial positions to equatorial, and all equatorial positions to axial. In substituted cyclohexanes, equatorial isomers are thermodynamically favored. For example, in methylcyclohexane, placing the methyl group in the axial position causes steric repulsion with the axial hydrogens at C3 and C5 (1,3-diaxial interactions). This steric strain raises the energy of the axial conformer by 1.8 kcal/mol, meaning that 95% of methylcyclohexane molecules exist with the methyl group in the equatorial position at room temperature."
+    longAnswer: "Conformational analysis of cyclohexane evaluates the energy changes as the molecule puckers to minimize strain. If cyclohexane were flat, it would have C-C-C angles of 120°, deviating from the tetrahedral 109.5° angle and causing angle strain. Additionally, all twelve C-H bonds would be eclipsed, causing maximum torsional strain. To eliminate this strain, the ring puckers into non-planar shapes. The most stable shape is the chair conformation. In the chair form, the C-C-C angles are 111.5° (nearly tetrahedral, eliminating angle strain), and all C-H bonds are staggered (eliminating torsional strain). The chair conformation has 12 hydrogen atoms divided into two sets: 6 axial bonds (pointing vertically up and down) and 6 equatorial bonds (projecting outward around the perimeter). The boat conformation is an unstable conformer, lying approximately 7.0 kcal/mol higher in energy than the chair. This high energy is caused by two factors: 1. Torsional strain: The C-H bonds along the sides of the boat are eclipsed. 2. Steric (flagpole) strain: The two hydrogen atoms at C1 and C4 point inward toward each other, causing van der Waals repulsion. Cyclohexane relaxes this strain by twisting slightly into the twist-boat conformation, which lies about 5.5 kcal/mol above the chair. During a chair-to-chair ring flip, the molecule passes through the high-energy half-chair conformation (10.8 kcal/mol). This ring flip converts all axial positions to equatorial, and all equatorial positions to axial. In substituted cyclohexanes, equatorial isomers are thermodynamically favored. For example, in methylcyclohexane, placing the methyl group in the axial position causes steric repulsion with the axial hydrogens at C3 and C5 (1,3-diaxial interactions). This steric strain raises the energy of the axial conformer by 1.8 kcal/mol, meaning that 95% of methylcyclohexane molecules exist with the methyl group in the equatorial position at room temperature.",
+    diagramType: 'cyclohexane_chair',
+    derivation: [
+      {
+        title: "Step 1 — Angle strain in planar cyclohexane (Baeyer's theory)",
+        steps: [
+          "Planar cyclohexane: interior C-C-C bond angle = $\\dfrac{(6-2) \\times 180^\\circ}{6} = 120^\\circ$",
+          "Deviation from tetrahedral angle: $\\Delta\\theta = 120^\\circ - 109.5^\\circ = +10.5^\\circ$",
+          "Estimated angle strain per C-H eclipsing: $\\sim 1.0\\text{ kcal/mol}$. For 12 eclipsed C-H bonds in planar ring, total $\\approx 12\\text{ kcal/mol}$ — enormous, so the ring puckers."
+        ]
+      },
+      {
+        title: "Step 2 — Chair conformation minimizes all strains",
+        steps: [
+          "In chair cyclohexane: actual C-C-C bond angles are $111.5^\\circ$ (close to tetrahedral $109.5^\\circ$). Angle strain $\\approx 0$.",
+          "Newman projection along any C-C bond in chair: fully staggered, dihedral angle $60^\\circ$. Torsional strain $= 0$.",
+          "Relative energy of chair = $0\\text{ kcal/mol}$ (reference state)."
+        ]
+      },
+      {
+        title: "Step 3 — Energy of boat (+7.0 kcal/mol)",
+        steps: [
+          "Boat conformation: C-H bonds along C2-C3 and C5-C6 are eclipsed (4 eclipsed C-H pairs $\\times$ $\\sim0.9\\text{ kcal/mol}$ each $\\approx 3.6\\text{ kcal/mol}$ torsional strain).",
+          "Flagpole H···H distance (C1-C4): $\\approx 1.83\\,\\text{Å}$ (less than sum of van der Waals radii $\\sim2.40\\,\\text{Å}$), so transannular repulsion $\\approx 3.4\\text{ kcal/mol}$.",
+          "Total: $\\approx 3.6 + 3.4 = \\boxed{7.0\\text{ kcal/mol}}$ above chair."
+        ]
+      },
+      {
+        title: "Step 4 — 1,3-Diaxial strain in methylcyclohexane",
+        steps: [
+          "Axial methyl group at C1 clashes with axial H at C3 and C5 ($\\text{C1-C2-C3}$ and $\\text{C1-C6-C5}$ pathways).",
+          "Each gauche interaction contributes $\\approx 0.9\\text{ kcal/mol}$; there are 2 interactions: $\\Delta G = 2 \\times 0.9 = \\boxed{1.74\\text{ kcal/mol}}$",
+          "Population ratio at $T = 298\\text{ K}$: $K_{\\text{eq}} = e^{\\Delta G/RT} = e^{1740/1987} \\approx 2.40$, meaning $\\sim 95\\%$ equatorial and $\\sim 5\\%$ axial."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 6,

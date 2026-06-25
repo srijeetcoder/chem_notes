@@ -29,7 +29,61 @@ export const unit5Notes = [
       "Why does the effective nuclear charge increase across a period but change very little down a group?"
     ],
     shortAnswer: "Effective nuclear charge (Zeff = Z - S) is the net attractive force felt by a valence electron after accounting for shielding (S) by core electrons. Slater's rules calculate S by assigning weight factors: same-shell electrons shield poorly (0.35), shell n-1 shields moderately (0.85), and deeper shells shield completely (1.00).",
-    longAnswer: "Effective nuclear charge (Zeff) represents the net positive charge experienced by an electron in a multi-electron atom. The core electrons shield the valence electrons from the full positive charge of the nucleus. The relationship is expressed as Zeff = Z - S, where Z is the atomic number and S is the shielding constant. John C. Slater developed empirical rules to calculate S by grouping atomic orbitals by principal quantum number: (1s) (2s, 2p) (3s, 3p) (3d) (4s, 4p) (4d) (4f)... For a valence electron in an (ns, np) orbital, the shielding constant S is calculated by adding: 1. 0.35 for each of the other electrons in the same (ns, np) group. 2. 0.85 for each of the electrons in the (n-1) shell. 3. 1.00 for each of the electrons in the (n-2) and deeper shells. For a valence electron in an (nd) or (nf) orbital, the shielding is: 1. 0.35 for each of the other electrons in the same (nd) or (nf) group. 2. 1.00 for all electrons in lower-energy groups. To illustrate, consider Zinc (Z = 30, 1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s²). For a 4s valence electron, the grouping is (1s)² (2s,2p)⁸ (3s,3p)⁸ (3d)¹⁰ (4s)². The shielding is S = (1 * 0.35) + (18 * 0.85) + (10 * 1.00) = 0.35 + 15.30 + 10.00 = 25.65. This gives Zeff = 30 - 25.65 = 4.35. For a 3d electron in the same atom, the grouping is (1s)² (2s,2p)⁸ (3s,3p)⁸ (3d)¹⁰. Electrons in the 4s group do not shield the 3d electrons. The shielding is S = (9 * 0.35) + (18 * 1.00) = 3.15 + 18.00 = 21.15. This gives Zeff = 30 - 21.15 = 8.85. The much higher Zeff felt by the 3d electrons explains why they are held more tightly and are closer to the nucleus than the 4s electrons, even though the 4s orbital is filled first."
+    longAnswer: "Effective nuclear charge (Zeff) represents the net positive charge experienced by an electron in a multi-electron atom. The core electrons shield the valence electrons from the full positive charge of the nucleus. The relationship is expressed as Zeff = Z - S, where Z is the atomic number and S is the shielding constant. John C. Slater developed empirical rules to calculate S by grouping atomic orbitals by principal quantum number: (1s) (2s, 2p) (3s, 3p) (3d) (4s, 4p) (4d) (4f)... For a valence electron in an (ns, np) orbital, the shielding constant S is calculated by adding: 1. 0.35 for each of the other electrons in the same (ns, np) group. 2. 0.85 for each of the electrons in the (n-1) shell. 3. 1.00 for each of the electrons in the (n-2) and deeper shells. For a valence electron in an (nd) or (nf) orbital, the shielding is: 1. 0.35 for each of the other electrons in the same (nd) or (nf) group. 2. 1.00 for all electrons in lower-energy groups. To illustrate, consider Zinc (Z = 30, 1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s²). For a 4s valence electron, the grouping is (1s)² (2s,2p)⁸ (3s,3p)⁸ (3d)¹⁰ (4s)². The shielding is S = (1 * 0.35) + (18 * 0.85) + (10 * 1.00) = 0.35 + 15.30 + 10.00 = 25.65. This gives Zeff = 30 - 25.65 = 4.35. For a 3d electron in the same atom, the grouping is (1s)² (2s,2p)⁸ (3s,3p)⁸ (3d)¹⁰. Electrons in the 4s group do not shield the 3d electrons. The shielding is S = (9 * 0.35) + (18 * 1.00) = 3.15 + 18.00 = 21.15. This gives Zeff = 30 - 21.15 = 8.85. The much higher Zeff felt by the 3d electrons explains why they are held more tightly and are closer to the nucleus than the 4s electrons, even though the 4s orbital is filled first.",
+    derivation: [
+      {
+        title: "Step 1 — Slater's Rules for shielding calculation",
+        steps: [
+          "Group orbitals by principal quantum number: $(1s)\\ (2s,2p)\\ (3s,3p)\\ (3d)\\ (4s,4p)\\ (4d)\\ (4f)\\ (5s,5p)\\ \\dots$",
+          "For an electron in a given $(ns, np)$ group:",
+          "1. Electrons in groups to the right (higher energy) contribute $0$ shielding.",
+          "2. Other electrons in the same $(ns, np)$ group shield by $0.35$ each (except the $1s$ group where other electron shields by $0.30$).",
+          "3. Electrons in the $(n-1)$ shell shield by $0.85$ each.",
+          "4. Electrons in $(n-2)$ and deeper shells shield by $1.00$ each.",
+          "For an electron in a given $(nd)$ or $(nf)$ group:",
+          "1. Other electrons in the same group shield by $0.35$ each.",
+          "2. All electrons in groups to the left (inner shells or same $n$ but $s/p$) shield by $1.00$ each."
+        ]
+      },
+      {
+        title: "Step 2 — Worked Calculation: Valence electron in Nitrogen (Z = 7)",
+        steps: [
+          "Electron configuration of Nitrogen: $1s^2\\ 2s^2\\ 2p^3$",
+          "Grouped configuration: $(1s)^2\\ (2s, 2p)^5$",
+          "We calculate the shielding constant ($\\sigma$ or $S$) for one of the valence electrons in the $(2s, 2p)$ group.",
+          "There are $5 - 1 = 4$ other electrons in the same $(2s, 2p)$ group, contributing: $4 \\times 0.35 = 1.40$",
+          "There are $2$ electrons in the $n-1$ shell ($(1s)$ group), contributing: $2 \\times 0.85 = 1.70$",
+          "Total shielding constant: $S = 1.40 + 1.70 = 3.10$",
+          "Effective nuclear charge: $Z_{eff} = Z - S = 7 - 3.10 = \\boxed{3.90}$"
+        ]
+      },
+      {
+        title: "Step 3 — Worked Calculation: Valence 4s electron in Zinc (Z = 30)",
+        steps: [
+          "Electron configuration of Zinc: $1s^2\\ 2s^2\\ 2p^6\\ 3s^2\\ 3p^6\\ 3d^{10}\\ 4s^2$",
+          "Grouped configuration: $(1s)^2\\ (2s, 2p)^8\\ (3s, 3p)^8\\ (3d)^{10}\\ (4s)^2$",
+          "We calculate shielding constant $S$ for one $4s$ valence electron ($n=4$):",
+          "1. Other electrons in same $(4s)$ group: $1$ electron $\\times 0.35 = 0.35$",
+          "2. Electrons in $n-1$ shell ($(3s, 3p)$ and $(3d)$ groups, total $8+10 = 18$ electrons): $18 \\times 0.85 = 15.30$",
+          "3. Electrons in $n-2$ and deeper shells ($(1s)$ and $(2s, 2p)$ groups, total $2+8 = 10$ electrons): $10 \\times 1.00 = 10.00$",
+          "Total shielding: $S = 0.35 + 15.30 + 10.00 = 25.65$",
+          "Effective nuclear charge: $Z_{eff} = Z - S = 30 - 25.65 = \\boxed{4.35}$"
+        ]
+      },
+      {
+        title: "Step 4 — Worked Calculation: Inner 3d electron in Zinc (Z = 30)",
+        steps: [
+          "Grouped configuration: $(1s)^2\\ (2s, 2p)^8\\ (3s, 3p)^8\\ (3d)^{10}\\ (4s)^2$",
+          "We calculate shielding constant $S$ for one $3d$ electron ($n=3$):",
+          "1. Electrons in groups to the right (the $(4s)$ group): contribute $0$ shielding.",
+          "2. Other electrons in same $(3d)$ group: $10 - 1 = 9$ electrons $\\times 0.35 = 3.15$",
+          "3. All electrons in groups to the left ($(1s)$, $(2s, 2p)$, and $(3s, 3p)$ groups, total $2+8+8 = 18$ electrons): $18 \\times 1.00 = 18.00$",
+          "Total shielding: $S = 3.15 + 18.00 = 21.15$",
+          "Effective nuclear charge: $Z_{eff} = Z - S = 30 - 21.15 = \\boxed{8.85}$",
+          "Conclusion: The $3d$ electrons feel a much higher effective nuclear charge ($8.85$) than the $4s$ electrons ($4.35$), explaining why they are held more tightly and why $4s$ electrons are ionized first."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 5,

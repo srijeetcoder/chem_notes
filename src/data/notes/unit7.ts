@@ -68,7 +68,34 @@ export const unit7Notes = [
       "Write equations for Friedel-Crafts alkylation, acylation, and sulfonation of benzene."
     ],
     shortAnswer: "Substitution reactions replace a group on a substrate. Electrophilic aromatic substitutions (EAS) on benzene include nitration, halogenation, sulfonation, and Friedel-Crafts reactions. Nucleophilic substitutions occur via S_N1 (2 steps, carbocation, racemization, 3° substrates) or S_N2 (1 step, backside attack, inversion, 1° substrates), or S_Ni (retention, thionyl chloride).",
-    longAnswer: "Substitution reactions replace a group on a carbon center while keeping the remainder of the molecular skeleton intact. Electrophilic Aromatic Substitution (EAS) involves the attack of a benzene ring on an electrophile. First, a strong electrophile is generated (such as NO₂⁺ via H₂SO₄/HNO₃, or R⁺/RCO⁺ via AlCl₃). The ring π-system attacks the electrophile, breaking aromaticity to form a resonance-stabilized arenium ion (sigma complex). Finally, a weak base abstracts a proton from the sp³ carbon, restoring the stable aromatic system. Iodination is unique because it is reversible; adding nitric acid (HNO₃) shifts the equilibrium by oxidizing the byproduct HI. Nucleophilic substitutions can proceed by three pathways: S_N1, S_N2, or S_Ni. S_N1 is a unimolecular two-step mechanism where the leaving group departs to form a planar carbocation intermediate. This planar geometry allows nucleophilic attack from either side, resulting in a racemic mixture. S_N1 is favored by tertiary substrates and polar protic solvents. S_N2 is a bimolecular concerted single-step mechanism. The nucleophile attacks from the backside, pushing substituents through a pentacoordinate transition state into a reversed spatial arrangement (Walden inversion). S_N2 is favored by primary substrates and polar aprotic solvents (like DMSO and DMF). S_Ni is a unimolecular internal nucleophilic substitution where the nucleophile is part of the leaving group complex. The attack occurs from the front side within a cyclic transition state, leading to retention of stereochemical configuration, as seen in the reaction of alcohols with thionyl chloride."
+    longAnswer: "Substitution reactions replace a group on a carbon center while keeping the remainder of the molecular skeleton intact. Electrophilic Aromatic Substitution (EAS) involves the attack of a benzene ring on an electrophile. First, a strong electrophile is generated (such as NO₂⁺ via H₂SO₄/HNO₃, or R⁺/RCO⁺ via AlCl₃). The ring π-system attacks the electrophile, breaking aromaticity to form a resonance-stabilized arenium ion (sigma complex). Finally, a weak base abstracts a proton from the sp³ carbon, restoring the stable aromatic system. Iodination is unique because it is reversible; adding nitric acid (HNO₃) shifts the equilibrium by oxidizing the byproduct HI. Nucleophilic substitutions can proceed by three pathways: S_N1, S_N2, or S_Ni. S_N1 is a unimolecular two-step mechanism where the leaving group departs to form a planar carbocation intermediate. This planar geometry allows nucleophilic attack from either side, resulting in a racemic mixture. S_N1 is favored by tertiary substrates and polar protic solvents. S_N2 is a bimolecular concerted single-step mechanism. The nucleophile attacks from the backside, pushing substituents through a pentacoordinate transition state into a reversed spatial arrangement (Walden inversion). S_N2 is favored by primary substrates and polar aprotic solvents (like DMSO and DMF). S_Ni is a unimolecular internal nucleophilic substitution where the nucleophile is part of the leaving group complex. The attack occurs from the front side within a cyclic transition state, leading to retention of stereochemical configuration, as seen in the reaction of alcohols with thionyl chloride.",
+    diagramType: 'sn1_vs_sn2',
+    derivation: [
+      {
+        title: "Step 1 — SN2 rate law from the collision theory",
+        steps: [
+          "SN2 is a concerted, bimolecular reaction: Nucleophile (Nu) + substrate (R-X) $\\xrightarrow{k}$ products in a single step.",
+          "Rate law: $\\text{rate} = k_2[\\text{R-X}][\\text{Nu}]$ (2nd order overall). Both concentrations appear because both species must collide simultaneously.",
+          "The transition state: $[\\text{Nu}\\cdots\\text{C}\\cdots\\text{X}]^\\ddagger$ is pentacoordinate. The LUMO of C-X is attacked by the HOMO of Nu from the backside ($180^\\circ$)."
+        ]
+      },
+      {
+        title: "Step 2 — SN1 rate law and carbocation stability",
+        steps: [
+          "SN1 is a two-step mechanism. The rate-determining step (RDS) is ionization: $\\text{R-X} \\xrightarrow{k_1} \\text{R}^+ + \\text{X}^-$ (slow).",
+          "Rate law: $\\text{rate} = k_1[\\text{R-X}]$ (1st order, unimolecular). [Nu] does not appear because it is not involved in the RDS.",
+          "Carbocation stability: $3^\\circ > 2^\\circ > 1^\\circ > \\text{Methyl}$, because each additional alkyl group donates electron density via hyperconjugation and induction, lowering the activation energy $\\Delta G^\\ddagger$."
+        ]
+      },
+      {
+        title: "Step 3 — Walden inversion geometry proof",
+        steps: [
+          "In SN2, the nucleophile must approach the rear lobe of the C-X $\\sigma^*$ antibonding orbital (backside attack).",
+          "As the nucleophile forms a new bond, the three remaining substituents invert (like an umbrella turning inside out): $\\text{(R)} \\to \\text{(S)}$ configuration.",
+          "Evidence: The SN2 reaction of (R)-2-bromooctane with $\\text{OH}^-$ gives exclusively (S)-2-octanol — 100\\% inversion of configuration."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 7,
@@ -102,7 +129,34 @@ export const unit7Notes = [
       "Explain the mechanism of nucleophilic addition of HCN to acetaldehyde."
     ],
     shortAnswer: "Addition reactions combine molecules across multiple bonds. Alkenes undergo electrophilic addition (e.g., adding HBr via a carbocation, following Markovnikov's rule). In the presence of peroxides, HBr adds via a free-radical mechanism, yielding anti-Markovnikov products. Carbonyls (C=O) undergo nucleophilic addition (e.g., adding HCN) due to the polar carbon center.",
-    longAnswer: "Addition reactions are characteristic of molecules containing multiple bonds. Alkenes undergo electrophilic addition because their π-electron cloud is accessible to electrophiles. When propene reacts with HBr, the reaction begins with the electrophilic attack of H⁺ on the π-bond. According to Markovnikov's rule, the electrophile adds to the sp² carbon that already has more hydrogens (C3). This selective addition generates a secondary carbocation (CH3-CH⁺-CH3), which is more stable than a primary carbocation due to inductive stabilization and hyperconjugation from the two flanking methyl groups. In the second step, the nucleophilic bromide ion (Br⁻) attacks the carbocation, yielding 2-bromopropane. If the same reaction is carried out in the presence of organic peroxides (ROOR), the mechanism changes to free-radical addition (the Kharasch or peroxide effect). The peroxide decomposes thermally to form alkoxyl radicals (RO•), which react with HBr to generate a bromine radical (Br•). The Br• radical attacks the alkene first. To form the more stable secondary carbon radical (CH3-CH•-CH2Br) instead of a primary one, the bromine radical attaches to the terminal carbon. The secondary radical then abstracts a hydrogen atom from HBr to form 1-bromopropane, yielding the anti-Markovnikov product. Polar double bonds, such as the carbonyl group (C=O) in aldehydes and ketones, undergo nucleophilic addition. Because oxygen is more electronegative than carbon, the carbonyl carbon carries a partial positive charge (δ+). A nucleophile (such as a cyanide ion, CN⁻) attacks this carbon, converting the hybridization from planar sp² to tetrahedral sp³ and forming an alkoxide intermediate. Protonation of this intermediate yields a cyanohydrin, a key intermediate in the synthesis of amino acids and hydroxy acids."
+    longAnswer: "Addition reactions are characteristic of molecules containing multiple bonds. Alkenes undergo electrophilic addition because their π-electron cloud is accessible to electrophiles. When propene reacts with HBr, the reaction begins with the electrophilic attack of H⁺ on the π-bond. According to Markovnikov's rule, the electrophile adds to the sp² carbon that already has more hydrogens (C3). This selective addition generates a secondary carbocation (CH3-CH⁺-CH3), which is more stable than a primary carbocation due to inductive stabilization and hyperconjugation from the two flanking methyl groups. In the second step, the nucleophilic bromide ion (Br⁻) attacks the carbocation, yielding 2-bromopropane. If the same reaction is carried out in the presence of organic peroxides (ROOR), the mechanism changes to free-radical addition (the Kharasch or peroxide effect). The peroxide decomposes thermally to form alkoxyl radicals (RO•), which react with HBr to generate a bromine radical (Br•). The Br• radical attacks the alkene first. To form the more stable secondary carbon radical (CH3-CH•-CH2Br) instead of a primary one, the bromine radical attaches to the terminal carbon. The secondary radical then abstracts a hydrogen atom from HBr to form 1-bromopropane, yielding the anti-Markovnikov product. Polar double bonds, such as the carbonyl group (C=O) in aldehydes and ketones, undergo nucleophilic addition. Because oxygen is more electronegative than carbon, the carbonyl carbon carries a partial positive charge (δ+). A nucleophile (such as a cyanide ion, CN⁻) attacks this carbon, converting the hybridization from planar sp² to tetrahedral sp³ and forming an alkoxide intermediate. Protonation of this intermediate yields a cyanohydrin, a key intermediate in the synthesis of amino acids and hydroxy acids.",
+    diagramType: 'addition_mechanism',
+    derivation: [
+      {
+        title: "Step 1 — Markovnikov's rule from carbocation stability",
+        steps: [
+          "When HBr adds to propene ($\\text{CH}_3\\text{-CH=CH}_2$), the proton (H⁺) adds to the $\\pi$-bond first (electrophilic attack on the more electron-rich carbon).",
+          "Two possible carbocations form: (a) H⁺ on C3 (terminal) $\\to$ secondary carbocation $\\text{CH}_3\\text{-}\\overset{+}{\\text{C}}\\text{H-CH}_3$; (b) H⁺ on C2 $\\to$ primary carbocation $\\text{CH}_3\\text{-CH}_2\\text{-}\\overset{+}{\\text{C}}\\text{H}_2$",
+          "Stability: $2^\\circ$ carbocation $(E_a \\text{ lower})$ is strongly preferred. Br⁻ attacks the $2^\\circ$ carbocation $\\to$ **2-bromopropane** (Markovnikov product)."
+        ]
+      },
+      {
+        title: "Step 2 — Hammond postulate justification",
+        steps: [
+          "The Hammond postulate: for an endothermic step, the transition state resembles the products. Since carbocation formation is endothermic, the TS resembles the carbocation.",
+          "Therefore: the TS energy order mirrors the carbocation stability order: $3^\\circ < 2^\\circ < 1^\\circ$ (lower activation energy for more stable carbocation).",
+          "$\\Delta G^\\ddagger(2^\\circ\\text{ cation}) < \\Delta G^\\ddagger(1^\\circ\\text{ cation})$, so the $2^\\circ$ carbocation forms faster and exclusively."
+        ]
+      },
+      {
+        title: "Step 3 — Anti-Markovnikov free-radical mechanism (Kharasch)",
+        steps: [
+          "Initiation: $\\text{ROOR} \\xrightarrow{h\\nu \\text{ or } \\Delta} 2\\,\\text{RO}^\\bullet \\xrightarrow{+\\text{HBr}} \\text{ROH} + \\text{Br}^\\bullet$",
+          "Propagation 1: $\\text{Br}^\\bullet + \\text{CH}_3\\text{-CH=CH}_2 \\to \\text{CH}_3\\text{-}\\overset{\\bullet}{\\text{C}}\\text{H-CH}_2\\text{Br}$ (2° radical, more stable)",
+          "Propagation 2: $\\text{CH}_3\\text{-}\\overset{\\bullet}{\\text{C}}\\text{H-CH}_2\\text{Br} + \\text{HBr} \\to \\text{CH}_3\\text{-CH}_2\\text{-CH}_2\\text{Br}$ (1-bromopropane) $+ \\text{Br}^\\bullet$. Anti-Markovnikov product."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 7,
@@ -138,7 +192,34 @@ export const unit7Notes = [
       "Describe the Claisen-Schmidt synthesis of cinnamaldehyde from benzaldehyde and acetaldehyde."
     ],
     shortAnswer: "Eliminations form multiple bonds. E1 is unimolecular (carbocation intermediate). E2 is bimolecular (concerted, requires anti-periplanar H/Lg alignment). Regioselectivity yields the highly substituted Zaitsev product (small bases) or the less substituted Hoffmann product (bulky bases like t-BuOK). E1cB occurs via a carbanion intermediate, driving dehydration in Aldol and Claisen-Schmidt reactions.",
-    longAnswer: "Elimination reactions involve the loss of two atoms or groups from adjacent carbons to form an alkene. E1 is a unimolecular two-step pathway competing with S_N1: the leaving group departs to form a carbocation, which is subsequently deprotonated by a weak base. E2 is a bimolecular concerted single-step pathway: a base abstracts a β-proton as the leaving group departs. E2 requires an anti-periplanar conformation (180° dihedral angle between H and Lg) for optimal parallel p-orbital overlap. The regioselectivity of E2 is controlled by base size: small bases (like ethoxide or methoxide) yield the thermodynamically stable, more highly substituted alkene (Saytzev product, e.g. 2-butene) following Zaitsev's rule. Bulky bases (like t-butoxide) suffer from steric hindrance, abstracting the most accessible proton from the least substituted carbon, yielding the less substituted alkene (Hoffmann product, e.g. 1-butene) as the major product. E1cB is a unimolecular conjugate base mechanism that occurs when the substrate has an acidic β-proton and a poor leaving group. A strong base removes the acidic proton first, forming a stable carbanion conjugate base. The carbanion then slow ejects the leaving group to form the π-bond. This mechanism drives the dehydration step in Aldol Condensations (where β-hydroxy aldehydes/ketones eliminate water to form α,β-unsaturated carbonyls) and the Claisen-Schmidt Reaction (a cross-aldol condensation between aromatic aldehydes like benzaldehyde and aliphatic carbonyls like acetaldehyde to synthesize cinnamaldehyde)."
+    longAnswer: "Elimination reactions involve the loss of two atoms or groups from adjacent carbons to form an alkene. E1 is a unimolecular two-step pathway competing with S_N1: the leaving group departs to form a carbocation, which is subsequently deprotonated by a weak base. E2 is a bimolecular concerted single-step pathway: a base abstracts a β-proton as the leaving group departs. E2 requires an anti-periplanar conformation (180° dihedral angle between H and Lg) for optimal parallel p-orbital overlap. The regioselectivity of E2 is controlled by base size: small bases (like ethoxide or methoxide) yield the thermodynamically stable, more highly substituted alkene (Saytzev product, e.g. 2-butene) following Zaitsev's rule. Bulky bases (like t-butoxide) suffer from steric hindrance, abstracting the most accessible proton from the least substituted carbon, yielding the less substituted alkene (Hoffmann product, e.g. 1-butene) as the major product. E1cB is a unimolecular conjugate base mechanism that occurs when the substrate has an acidic β-proton and a poor leaving group. A strong base removes the acidic proton first, forming a stable carbanion conjugate base. The carbanion then slow ejects the leaving group to form the π-bond. This mechanism drives the dehydration step in Aldol Condensations (where β-hydroxy aldehydes/ketones eliminate water to form α,β-unsaturated carbonyls) and the Claisen-Schmidt Reaction (a cross-aldol condensation between aromatic aldehydes like benzaldehyde and aliphatic carbonyls like acetaldehyde to synthesize cinnamaldehyde).",
+    diagramType: 'aldol_condensation',
+    derivation: [
+      {
+        title: "Step 1 — E2 kinetics and anti-periplanar requirement",
+        steps: [
+          "E2 is bimolecular: $\\text{rate} = k_2[\\text{Substrate}][\\text{Base}]$. Both species are involved in the rate-determining step (a single concerted step).",
+          "Stereoelectronic requirement: H and leaving group must be anti-periplanar (dihedral angle $= 180^\\circ$) for the base, C-H, C-C, and C-LG bonds to be in the same plane and allow formation of the $\\pi$-bond.",
+          "If dihedral angle $\\ne 180^\\circ$: poor orbital overlap, slow or no E2. Example: trans-isomers react faster than cis-isomers with E2."
+        ]
+      },
+      {
+        title: "Step 2 — Zaitsev vs. Hofmann regioselectivity",
+        steps: [
+          "Multiple β-H's can be eliminated. Zaitsev's rule: with small base, the thermodynamically more stable (more substituted) alkene is formed.",
+          "Stability order: $\\text{tetrasubstituted} > \\text{trisubstituted} > \\text{disubstituted} > \\text{monosubstituted}$ alkene (each alkyl group donates via hyperconjugation, stabilizing the π-system).",
+          "With bulky base (t-BuOK): steric repulsion near the more substituted carbon makes H abstraction difficult — base attacks the least hindered H, giving Hofmann (less substituted) product."
+        ]
+      },
+      {
+        title: "Step 3 — E1cB mechanism and aldol condensation",
+        steps: [
+          "E1cB (Elimination Unimolecular Conjugate Base): Step 1 (fast): Base removes acidic α-H $\\to$ stabilized carbanion (enolate). Step 2 (slow, RDS): leaving group departs from the carbanion.",
+          "In aldol condensation: β-hydroxy carbonyl $\\xrightarrow{\\text{heat, base}}$ enolate $\\to$ loss of OH⁾ as water $\\to$ $\\alpha,\\beta$-unsaturated carbonyl.",
+          "Claisen-Schmidt: PhCHO (no α-H, can't self-condense) + CH₃CHO (has α-H, forms enolate) $\\xrightarrow{\\text{NaOH, }Δ}$ trans-cinnamaldehyde (C₆H₅CH=CH-CHO) + H₂O."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 7,
@@ -174,7 +255,34 @@ export const unit7Notes = [
       "Compare LiAlH4 and NaBH4 in terms of reducing strength, selectivity, and safety."
     ],
     shortAnswer: "Oxidation increases oxygen content or decreases hydrogen (e.g. alcohol to carbonyl via PCC, epoxidation with mCPBA, ketone to ester via Baeyer-Villiger, ozonolysis). Reduction increases hydrogen or decreases oxygen (e.g. carbonyls to alcohols using LiAlH₄ or NaBH₄).",
-    longAnswer: "Redox reactions in organic chemistry are defined by changes in the bonds to oxygen and hydrogen. Oxidation involves increasing C-O bonds or decreasing C-H bonds, whereas reduction is the reverse. Primary alcohols can be oxidized to aldehydes using mild anhydrous Pyridinium Chlorochromate (PCC) in dichloromethane, which prevents the aldehyde from forming a hydrate that would oxidize further. Strong reagents like KMnO₄ or acidic K₂Cr₂O₶ oxidize primary alcohols directly to carboxylic acids, and secondary alcohols to ketones. Tertiary alcohols resist oxidation due to the lack of a hydrogen on the carbinol carbon. Alkenes can be oxidized to epoxides (three-membered cyclic ethers) using mCPBA, or cleaved to carbonyls via ozonolysis (treatment with O₃ followed by reductive workup with Zn/H₂O). Ketones undergo Baeyer-Villiger oxidation using peroxy acids to insert an oxygen atom adjacent to the carbonyl, yielding esters. Reduction reactions utilize hydride transfer. Lithium Aluminum Hydride (LiAlH₄) is a powerful, non-selective reducing agent that reduces aldehydes, ketones, esters, and carboxylic acids to alcohols; it requires anhydrous solvents like diethyl ether due to its violent reaction with water. Sodium Borohydride (NaBH₄) is a milder, selective agent that reduces only aldehydes and ketones, and is safe to use in water or alcohol."
+    longAnswer: "Redox reactions in organic chemistry are defined by changes in the bonds to oxygen and hydrogen. Oxidation involves increasing C-O bonds or decreasing C-H bonds, whereas reduction is the reverse. Primary alcohols can be oxidized to aldehydes using mild anhydrous Pyridinium Chlorochromate (PCC) in dichloromethane, which prevents the aldehyde from forming a hydrate that would oxidize further. Strong reagents like KMnO₄ or acidic K₂Cr₂O₇ oxidize primary alcohols directly to carboxylic acids, and secondary alcohols to ketones. Tertiary alcohols resist oxidation due to the lack of a hydrogen on the carbinol carbon. Alkenes can be oxidized to epoxides (three-membered cyclic ethers) using mCPBA, or cleaved to carbonyls via ozonolysis (treatment with O₃ followed by reductive workup with Zn/H₂O). Ketones undergo Baeyer-Villiger oxidation using peroxy acids to insert an oxygen atom adjacent to the carbonyl, yielding esters. Reduction reactions utilize hydride transfer. Lithium Aluminum Hydride (LiAlH₄) is a powerful, non-selective reducing agent that reduces aldehydes, ketones, esters, and carboxylic acids to alcohols; it requires anhydrous solvents like diethyl ether due to its violent reaction with water. Sodium Borohydride (NaBH₄) is a milder, selective agent that reduces only aldehydes and ketones, and is safe to use in water or alcohol.",
+    diagramType: 'redox_alcohols',
+    derivation: [
+      {
+        title: "Step 1 — Organic oxidation state of carbon",
+        steps: [
+          "Carbon oxidation state is calculated by assigning: $-1$ for each C-H bond, $+1$ for each C-O, C-N, or C-halogen bond, and $0$ for C-C bonds.",
+          "Primary alcohol R-CH₂-OH: oxidation state of the carbinol C = 2 H bonds ($-2$) + 1 O bond ($+1$) = $-1$.",
+          "Aldehyde R-CHO: 1 H ($-1$) + 1 O ($+1$) = $0$. Carboxylic acid R-COOH: 2 O bonds ($+2$). Oxidation increases the state: $\\text{alcohol}(-1) \\to \\text{aldehyde}(0) \\to \\text{acid}(+2)$."
+        ]
+      },
+      {
+        title: "Step 2 — Mechanism of PCC oxidation of primary alcohol",
+        steps: [
+          "PCC ($[\\text{C}_5\\text{H}_5\\text{NH}]^+[\\text{CrO}_3\\text{Cl}]^-$): The Cr(VI) complex coordinates to the alcohol oxygen, forming a chromate ester.",
+          "The chromate ester undergoes an E2-type intramolecular elimination: base abstracts the α-H, and the Cr–O bond breaks simultaneously, releasing Cr(IV).",
+          "PCC is anhydrous (in CH₂Cl₂, no water): aldehydes cannot hydrate to gem-diols, so oxidation stops at the aldehyde stage. $1^\\circ\\text{ alcohol} \\to \\text{aldehyde only}$."
+        ]
+      },
+      {
+        title: "Step 3 — Selectivity: LiAlH₄ vs. NaBH₄",
+        steps: [
+          "LiAlH₄: provides H⁾ (hydride) from Al-H (very reactive). Reduces all C=O groups: aldehydes, ketones, esters, carboxylic acids, amides. Reacts violently with water (generates H₂), must use dry ether.",
+          "NaBH₄: provides H⁾ from B-H (milder). Reduces only polarized C=O with low steric demand: aldehydes and ketones. Does NOT reduce esters or carboxylic acids. Safe in water or ethanol.",
+          "Rule of thumb: $\\text{NaBH}_4$ reduces aldehydes \\& ketones; $\\text{LiAlH}_4$ reduces everything including esters, acids, and amides."
+        ]
+      }
+    ]
   },
   {
     unitNumber: 7,
