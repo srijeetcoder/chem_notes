@@ -37,35 +37,38 @@ export const unit7Notes = [
     unitNumber: 7,
     unitTitle: "Organic Reactions and Synthesis of a Drug Molecule",
     topicTitle: "Substitution reactions (nucleophilic SN1 and SN2, electrophilic)",
-    definition: "A substitution reaction is a reaction where an atom or functional group is replaced by another. Nucleophilic substitution (SN1 and SN2) involves a nucleophile replacing a leaving group on a carbon atom. Electrophilic substitution involves an electrophile replacing a group (typically hydrogen) on an aromatic ring.",
-    explanation: "1. SN1 (Substitution Nucleophilic Unimolecular): A two-step mechanism. First, the leaving group departs, forming a stable carbocation intermediate (rate-determining step). Second, the nucleophile attacks the carbocation. The rate depends only on substrate concentration (first-order kinetics: Rate = k[Substrate]). This reaction is favored by tertiary substrates because the intermediate carbocation is stabilized by hyperconjugation and inductive effects. The carbocation is planar, allowing the nucleophile to attack from either side, resulting in a racemic mixture. 2. SN2 (Substitution Nucleophilic Bimolecular): A single-step, concerted mechanism. The nucleophile attacks the carbon from the backside, opposite the leaving group, forming a pentacoordinate transition state as the leaving group departs. The rate depends on both substrate and nucleophile concentrations (second-order kinetics: Rate = k[Substrate][Nucleophile]). This reaction is favored by primary substrates due to low steric hindrance, resulting in complete inversion of configuration (Walden inversion). 3. Electrophilic Aromatic Substitution (EAS): Occurs on aromatic rings, where a strong electrophile attacks the π-system, forming a resonance-stabilized arenium ion (sigma complex). The ring then loses a proton to restore aromaticity.",
+    definition: "A substitution reaction involves replacing an atom or group of atoms attached to a carbon atom of a substrate with another atom or group (the substituent), leaving the rest of the molecule unchanged.",
+    explanation: "1. Electrophilic Aromatic Substitution (S_E): Aromatic systems undergo S_E due to their electron-rich π-systems. The general mechanism follows three steps:\n  - Step 1: Formation of an electrophile: E-Nu → E⁺ + Nu⁻.\n  - Step 2: Electrophilic attack on the benzene ring to form a resonance-stabilized arenium ion (sigma complex).\n  - Step 3: Deprotonation by a base to restore aromaticity.\n  Key examples:\n  - Nitration: Benzene + conc. HNO₃/conc. H₂SO₂ → Nitrobenzene.\n  - Halogenation: Benzene + Cl₂/FeCl₃ → Chlorobenzene; Benzene + Br₂/FeBr₃ → Bromobenzene.\n  - Iodination: Benzene + I₂ + HNO₃ (with heat) → Iodobenzene (requires HNO₃ to oxidize I⁻ and drive reaction).\n  - Sulfonation: Benzene + conc. H₂SO₄ at 80°C (or fuming H₂SO₄ at room temp) → Benzenesulfonic acid + H₂O.\n  - Friedel-Crafts Alkylation: Benzene + RX + anhydrous AlCl₃ → Alkylbenzene + HX.\n  - Friedel-Crafts Acylation: Benzene + RCOCl + anhydrous AlCl₃ → Acylbenzene + HCl.\n\n2. Nucleophilic Substitution (S_N):\n  - S_N2: Bimolecular, single-step concerted process. Backside attack of nucleophile causes Walden Inversion (like an umbrella turning inside out). Favored by polar aprotic solvents (DMSO, DMF). Reactivity: Methyl > Primary > Secondary > Tertiary (steric hindrance control).\n  - S_N1: Unimolecular, two-step process. Rate-determining carbocation formation followed by fast nucleophilic attack, yielding a Racemic Mixture. Favored by polar protic solvents (H₂O, EtOH). Reactivity: Tertiary > Secondary > Primary > Methyl (carbocation stability control).\n  - S_Ni (Internal): Substitution Nucleophilic Internal. Uncommon pathway yielding Retention of Configuration because the nucleophile attacks from the frontside via a cyclic transition state (e.g., alcohol + SOCl₂).\n\nS_N1 vs S_N2 Comparison Table:\n- S_N1: First order rate law | Nucleophile attack from either side | Racemic mixture | Favored by polar protic solvents | Favored by low concentration of nucleophile.\n- S_N2: Second order rate law | Backside attack | Inversion of configuration | Favored by polar aprotic solvents | Favored by high concentration of nucleophile.",
     formulas: [
       "\\text{S}_\\text{N}1\\text{ Rate} = k[\\text{Substrate}]",
-      "\\text{S}_\\text{N}2\\text{ Rate} = k[\\text{Substrate}][\\text{Nucleophile}]"
+      "\\text{S}_\\text{N}2\\text{ Rate} = k[\\text{Substrate}][\\text{Nucleophile}]",
+      "\\text{S}_\\text{N}2\\text{ Reactivity: Methyl} > 1^\\circ > 2^\\circ > 3^\\circ",
+      "\\text{S}_\\text{N}1\\text{ Reactivity: } 3^\\circ > 2^\\circ > 1^\\circ > \\text{Methyl}"
     ],
     equations: [
-      "\\text{S}_\\text{N}1: \\ce{(CH3)3C-Cl + OH- -> (CH3)3C-OH + Cl-}",
-      "\\text{S}_\\text{N}2: \\ce{CH3-Cl + OH- -> HO-CH3 + Cl-}",
-      "\\text{EAS: } \\ce{C6H6 + NO2+ -> C6H5NO2 + H+}"
+      "\\text{Iodination: } \\ce{C6H6 + I2 ->[HNO3][\\Delta] C6H5I}",
+      "\\text{Friedel-Crafts Alkylation: } \\ce{C6H6 + RX ->[anh. AlCl3] C6H5R + HX}",
+      "\\text{S}_\\text{N}i\\text{ Example: } \\ce{R-OH + SOCl2 -> R-Cl + SO2 + HCl}"
     ],
     applications: [
-      "Synthesizing primary alcohols and alkyl halides using SN2 reactions in industrial organic chemistry.",
-      "Manufacturing nitrobenzene, chlorobenzene, and toluene derivatives via electrophilic aromatic substitution.",
-      "Producing chiral intermediates where the stereochemistry must be controlled (inversion in SN2)."
+      "Synthesizing primary alkyl halides via S_N2 and tertiary derivatives via S_N1.",
+      "Manufacturing nitrobenzene, benzenesulfonic acid, and Friedel-Crafts alkyl/acyl intermediates in industry.",
+      "Controlled stereoselective syntheses using Walden inversion (S_N2) or configuration retention (S_Ni)."
     ],
     importantPoints: [
-      "The order of substrate reactivity for SN1 is: tertiary > secondary > primary (matching carbocation stability).",
-      "The order of substrate reactivity for SN2 is: primary > secondary > tertiary (governed by steric hindrance).",
-      "Polar protic solvents (like H₂O, ethanol) stabilize carbocations and favor SN1; polar aprotic solvents (like acetone, DMSO) favor SN2 by leaving the nucleophile un-solvated and highly reactive.",
-      "In electrophilic aromatic substitution, substituent groups on the benzene ring can direct incoming electrophiles (ortho/para-directing vs. meta-directing) and activate or deactivate the ring."
+      "Unlike chlorination and bromination, iodination of benzene requires an oxidizing agent (HNO₃) and heat to destroy the HI byproduct.",
+      "S_N2 involves a pentacoordinate transition state with partial bonds to both the nucleophile and leaving group.",
+      "S_N1 leads to racemization due to the planar sp²-hybridized carbocation intermediate.",
+      "S_Ni reactions occur with thionyl chloride (SOCl₂) and proceed with retention of configuration in the absence of pyridine."
     ],
     commonQuestions: [
-      "Compare the SN1 and SN2 mechanisms of nucleophilic substitution in terms of kinetics, stereochemistry, solvent effects, and substrate reactivity.",
-      "Explain why SN2 reactions proceed with complete inversion of configuration, while SN1 reactions result in racemization.",
-      "Describe the mechanism of electrophilic nitration of benzene. What is the role of sulfuric acid in this reaction?"
+      "Explain the steps of the general mechanism of electrophilic aromatic substitution.",
+      "Compare the S_N1 and S_N2 mechanisms in terms of kinetics, stereochemistry, solvent effect, and substrate reactivity.",
+      "What is the S_Ni mechanism? Illustrate with a classic reaction.",
+      "Write equations for Friedel-Crafts alkylation, acylation, and sulfonation of benzene."
     ],
-    shortAnswer: "Nucleophilic substitutions proceed via SN1 or SN2. SN1 is a two-step process (unimolecular rate, tertiary substrates, carbocation intermediate, racemization). SN2 is a single-step concerted process (bimolecular rate, primary substrates, backside attack, inversion). Electrophilic aromatic substitution (EAS) replaces a hydrogen on benzene with an electrophile, passing through a sigma complex.",
-    longAnswer: "Substitution reactions are fundamental transformations in organic synthesis. Nucleophilic aliphatic substitution occurs when an electron-rich nucleophile attacks a carbon bonded to an electronegative leaving group. This reaction can proceed via two primary pathways. The SN1 (Substitution Nucleophilic Unimolecular) pathway is a two-step mechanism. The first, rate-determining step is the heterolytic cleavage of the carbon-leaving group bond, generating a planar carbocation intermediate: R-X → R⁺ + X⁻. The rate law is first-order: Rate = k[R-X]. Because tertiary carbocations are stabilized by hyperconjugation and alkyl inductive effects, tertiary substrates react fastest. In the second step, the nucleophile attacks the planar carbocation. Because the nucleophile can attack from either face with equal probability, the reaction results in racemization. The SN2 (Substitution Nucleophilic Bimolecular) pathway is a concerted, single-step mechanism. The nucleophile attacks the electrophilic carbon from the backside, opposite the leaving group. This attack leads to a transition state where carbon is partially bonded to both the nucleophile and the leaving group. As the new bond forms, the leaving group departs. The rate law is second-order: Rate = k[R-X][Nu]. Primary substrates react fastest because they minimize steric hindrance in the transition state. The backside attack forces the other three substituents to flip inside-out (like an umbrella in the wind), resulting in a complete inversion of stereochemical configuration, known as Walden inversion. Electrophilic Aromatic Substitution (EAS) occurs when an electrophile attacks an aromatic ring. For example, in the nitration of benzene, sulfuric acid protonates nitric acid, which cleaves to generate the nitronium ion (NO2⁺), a powerful electrophile. The benzene π-system attacks NO2⁺, breaking aromaticity and forming a resonance-stabilized carbocation called the arenium ion (sigma complex). Finally, a weak base (like HSO4⁻) removes the proton from the sp³ carbon, restoring the aromatic system and yielding nitrobenzene."
+    shortAnswer: "Substitution reactions replace a group on a substrate. Electrophilic aromatic substitutions (EAS) on benzene include nitration, halogenation, sulfonation, and Friedel-Crafts reactions. Nucleophilic substitutions occur via S_N1 (2 steps, carbocation, racemization, 3° substrates) or S_N2 (1 step, backside attack, inversion, 1° substrates), or S_Ni (retention, thionyl chloride).",
+    longAnswer: "Substitution reactions replace a group on a carbon center while keeping the remainder of the molecular skeleton intact. Electrophilic Aromatic Substitution (EAS) involves the attack of a benzene ring on an electrophile. First, a strong electrophile is generated (such as NO₂⁺ via H₂SO₄/HNO₃, or R⁺/RCO⁺ via AlCl₃). The ring π-system attacks the electrophile, breaking aromaticity to form a resonance-stabilized arenium ion (sigma complex). Finally, a weak base abstracts a proton from the sp³ carbon, restoring the stable aromatic system. Iodination is unique because it is reversible; adding nitric acid (HNO₃) shifts the equilibrium by oxidizing the byproduct HI. Nucleophilic substitutions can proceed by three pathways: S_N1, S_N2, or S_Ni. S_N1 is a unimolecular two-step mechanism where the leaving group departs to form a planar carbocation intermediate. This planar geometry allows nucleophilic attack from either side, resulting in a racemic mixture. S_N1 is favored by tertiary substrates and polar protic solvents. S_N2 is a bimolecular concerted single-step mechanism. The nucleophile attacks from the backside, pushing substituents through a pentacoordinate transition state into a reversed spatial arrangement (Walden inversion). S_N2 is favored by primary substrates and polar aprotic solvents (like DMSO and DMF). S_Ni is a unimolecular internal nucleophilic substitution where the nucleophile is part of the leaving group complex. The attack occurs from the front side within a cyclic transition state, leading to retention of stereochemical configuration, as seen in the reaction of alcohols with thionyl chloride."
   },
   {
     unitNumber: 7,
@@ -105,165 +108,172 @@ export const unit7Notes = [
     unitNumber: 7,
     unitTitle: "Organic Reactions and Synthesis of a Drug Molecule",
     topicTitle: "Elimination reactions (E1 and E2 mechanisms)",
-    definition: "An elimination reaction is a reaction where two substituents are removed from a substrate, typically from adjacent carbon atoms, forming a double or triple bond. The E1 mechanism is unimolecular and proceeds in two steps, while the E2 mechanism is bimolecular and proceeds in a single, concerted step.",
-    explanation: "Elimination reactions compete with nucleophilic substitutions. They typically involve the removal of a proton from the beta-carbon (β-C) and a leaving group from the alpha-carbon (α-C), known as β-elimination. 1. E1 (Elimination Unimolecular): A two-step mechanism. The leaving group departs first, forming a carbocation intermediate (rate-determining step: Rate = k[Substrate]). A weak base then removes a proton from the adjacent β-carbon, and the remaining electron pair forms a π-bond. This pathway is favored by tertiary substrates. 2. E2 (Elimination Bimolecular): A concerted, one-step mechanism. A strong base abstracts a proton from the β-carbon while the leaving group departs from the α-carbon simultaneously (second-order kinetics: Rate = k[Substrate][Base]). This mechanism requires an anti-periplanar transition state, where the C-H and C-X bonds are aligned at 180° to minimize steric and electronic repulsions.",
+    definition: "An elimination reaction involves the removal of two or four atoms or groups from adjacent carbon atoms to produce multiple bonds in the product, operating via E1, E2, or E1cB mechanisms.",
+    explanation: "1. E2 Mechanism: Bimolecular, single-step reaction with a transition state. A base uses its lone pair to remove a β-hydrogen, enabling the carbon to form a double bond as the leaving group departs. It requires an anti-periplanar conformation (dihedral angle 180° between H and Lg).\n  - Saytzev (Zaitsev) Rule: In substrates with multiple β-hydrogens on different carbons, the proton is eliminated preferably from the carbon with the least hydrogen atoms. This yields the more substituted, thermodynamically stable alkene (Saytzev product), favored by small bases like CH₃ONa/CH₃OH.\n  - Hoffmann Rule: When bulky bases (like potassium tert-butoxide, t-BuOK) are used, steric hindrance prevents attack on the more substituted carbon, yielding the less substituted, kinetically stable alkene as the major product (Hoffmann product).\n2. E1 Mechanism: Unimolecular, two-step reaction. First, the leaving group departs to form a carbocation intermediate (rate-determining step). Second, a weak base removes a β-proton to form the double bond. Competes with S_N1.\n3. E1cB Mechanism: Elimination Unimolecular conjugate Base. It occurs when the substrate has a poor leaving group and a highly acidic β-proton. First, a strong base removes the β-proton to form a carbanion intermediate. Second, the carbanion collapses, ejecting the leaving group to form the double bond.\n  Key examples of E1cB:\n  - Aldol Condensation: Aldehydes/ketones with an α-hydrogen react in base to form a β-hydroxy carbonyl, which dehydrates on heating via E1cB to an α,β-unsaturated carbonyl.\n  - Claisen-Schmidt Reaction: A cross-aldol condensation between an aromatic aldehyde (no α-hydrogen, e.g. benzaldehyde) and an aliphatic aldehyde/ketone (e.g. acetaldehyde) to yield cinnamaldehyde.",
     formulas: [
       "\\text{E1 Rate} = k[\\text{Substrate}]",
       "\\text{E2 Rate} = k[\\text{Substrate}][\\text{Base}]",
-      "\\text{Zaitsev's Rule: Major product is the more highly substituted, stable alkene}"
+      "\\text{E1cB Rate} = k[\\text{Carbanion Intermediate}]"
     ],
     equations: [
-      "\\text{E1: } \\ce{(CH3)3C-Br ->[EtOH][\\text{heat}] (CH3)2C=CH2 + HBr}",
-      "\\text{E2: } \\ce{CH3-CH2-CH(Br)-CH3 + KOH ->[EtOH] CH3-CH=CH-CH3 + KBr + H₂O}"
+      "\\text{Saytzev Product (with CH3ONa): } \\ce{CH3-CH2-CH(Br)-CH3 -> CH3-CH=CH-CH3 } \\text{ (2-butene)}",
+      "\\text{Hoffmann Product (with t-BuOK): } \\ce{CH3-CH2-CH(Br)-CH3 -> CH3-CH2-CH=CH2 } \\text{ (1-butene)}",
+      "\\text{Claisen-Schmidt: } \\ce{C6H5-CHO + CH3-CHO ->[dil. NaOH][\\Delta] C6H5-CH=CH-CHO + H2O } \\text{ (cinnamaldehyde)}"
     ],
     applications: [
-      "Dehydration of industrial alcohols using acid catalysts to manufacture alkenes (e.g., ethanol to ethylene).",
-      "Dehydrohalogenation of alkyl halides to synthesize substituted alkenes and alkynes.",
-      "Synthesizing monomers for polymer chemistry, such as vinyl chloride from ethylene dichloride."
+      "Dehydration of alcohols and dehydrohalogenation of alkyl halides to form alkenes.",
+      "Selective synthesis of thermodynamic (Saytzev) or kinetic (Hoffmann) alkenes.",
+      "Synthesizing α,β-unsaturated carbonyl compounds (like cinnamaldehyde) via aldol condensation."
     ],
     importantPoints: [
-      "Zaitsev's rule states that elimination reactions favor the formation of the more highly substituted alkene because alkyl groups stabilize the double bond through hyperconjugation.",
-      "An exception to Zaitsev's rule is Hoffmann elimination, which yields the less substituted alkene, favored when using bulky bases (like potassium t-butoxide) or substrates with poor leaving groups.",
-      "E2 elimination requires an anti-periplanar geometry (dihedral angle of 180° between H and X) for optimal orbital overlap during bond formation.",
-      "E1 reactions are prone to carbocation rearrangements (hydride or methyl shifts) to form more stable carbocations before elimination occurs."
+      "Zaitsev products are thermodynamically stable due to alkene stabilization by hyperconjugation and alkyl group donation.",
+      "Hoffmann products are kinetically favored when steric hindrance (from a bulky base like t-BuOK) blocks access to the more substituted proton.",
+      "E1cB mechanism is unique because deprotonation occurs *before* the leaving group departs, forming a stable carbanion conjugate base.",
+      "The Claisen-Schmidt reaction is a specialized cross-aldol reaction between aromatic and aliphatic carbonyls."
     ],
     commonQuestions: [
-      "Describe the E1 and E2 mechanisms of elimination reactions. Compare them in terms of kinetics, transition states, and stereochemistry.",
-      "State Zaitsev's rule. Predict the major and minor products of the dehydrohalogenation of 2-bromobutane with alcoholic KOH.",
-      "Why is anti-periplanar geometry necessary for E2 elimination reactions?"
+      "Compare E1, E2, and E1cB mechanisms in terms of intermediates, kinetics, and driving forces.",
+      "State the Saytzev rule and contrast it with Hoffmann elimination. Show products for 2-bromobutane reacting with CH3ONa and t-BuOK.",
+      "Explain the mechanism of base-catalyzed aldol condensation and the subsequent E1cB dehydration.",
+      "Describe the Claisen-Schmidt synthesis of cinnamaldehyde from benzaldehyde and acetaldehyde."
     ],
-    shortAnswer: "Elimination reactions form multiple bonds. E1 is a two-step process (unimolecular, tertiary substrates, carbocation intermediate). E2 is a single-step concerted process (bimolecular, requires a strong base and anti-periplanar alignment of H and leaving group). Regioselectivity follows Zaitsev's rule, favoring the more substituted, stable alkene.",
-    longAnswer: "Elimination reactions involve the loss of two atoms or groups from adjacent carbon atoms to form an alkene or alkyne. The most common type is β-elimination, which can proceed via E1 or E2 mechanisms. The E1 (Elimination Unimolecular) mechanism is a two-step pathway that competes with SN1. In the first, rate-determining step, the leaving group departs, forming a carbocation: R-X → R⁺ + X⁻. The rate law is first-order: Rate = k[R-X]. In the second step, a weak base (like H₂O or ethanol) abstracts a proton from an adjacent β-carbon. The electrons from the C-H bond shift to form the C=C π-bond, neutralizing the positive charge. E1 is favored by tertiary substrates due to carbocation stability, and is often accompanied by carbocation rearrangements. The E2 (Elimination Bimolecular) mechanism is a concerted, single-step pathway. A strong base (like OH⁻ or ethoxide) abstracts a β-proton while the leaving group on the α-carbon departs simultaneously. The rate law is second-order: Rate = k[R-X][Base]. This mechanism requires an anti-periplanar conformation, where the leaving group, the two carbons, and the hydrogen atom lie in the same plane at a 180° dihedral angle. This geometry allows the developing p-orbitals to align parallel for overlap, minimizing steric repulsions in the transition state. In cyclic systems like cyclohexane, E2 requires both the proton and the leaving group to be in trans-diaxial positions. The regioselectivity of both E1 and E2 reactions is governed by Zaitsev's rule, which states that the elimination yields the more highly substituted alkene as the major product (e.g., 2-butene over 1-butene) because alkyl groups stabilize the alkene through hyperconjugation and resonance."
+    shortAnswer: "Eliminations form multiple bonds. E1 is unimolecular (carbocation intermediate). E2 is bimolecular (concerted, requires anti-periplanar H/Lg alignment). Regioselectivity yields the highly substituted Zaitsev product (small bases) or the less substituted Hoffmann product (bulky bases like t-BuOK). E1cB occurs via a carbanion intermediate, driving dehydration in Aldol and Claisen-Schmidt reactions.",
+    longAnswer: "Elimination reactions involve the loss of two atoms or groups from adjacent carbons to form an alkene. E1 is a unimolecular two-step pathway competing with S_N1: the leaving group departs to form a carbocation, which is subsequently deprotonated by a weak base. E2 is a bimolecular concerted single-step pathway: a base abstracts a β-proton as the leaving group departs. E2 requires an anti-periplanar conformation (180° dihedral angle between H and Lg) for optimal parallel p-orbital overlap. The regioselectivity of E2 is controlled by base size: small bases (like ethoxide or methoxide) yield the thermodynamically stable, more highly substituted alkene (Saytzev product, e.g. 2-butene) following Zaitsev's rule. Bulky bases (like t-butoxide) suffer from steric hindrance, abstracting the most accessible proton from the least substituted carbon, yielding the less substituted alkene (Hoffmann product, e.g. 1-butene) as the major product. E1cB is a unimolecular conjugate base mechanism that occurs when the substrate has an acidic β-proton and a poor leaving group. A strong base removes the acidic proton first, forming a stable carbanion conjugate base. The carbanion then slow ejects the leaving group to form the π-bond. This mechanism drives the dehydration step in Aldol Condensations (where β-hydroxy aldehydes/ketones eliminate water to form α,β-unsaturated carbonyls) and the Claisen-Schmidt Reaction (a cross-aldol condensation between aromatic aldehydes like benzaldehyde and aliphatic carbonyls like acetaldehyde to synthesize cinnamaldehyde)."
   },
   {
     unitNumber: 7,
     unitTitle: "Organic Reactions and Synthesis of a Drug Molecule",
     topicTitle: "Oxidation and reduction reactions in organic chemistry",
-    definition: "Oxidation in organic chemistry is a reaction that increases the oxygen content or decreases the hydrogen content of a molecule (increasing the carbon oxidation state). Reduction is a reaction that decreases the oxygen content or increases the hydrogen content (decreasing the carbon oxidation state).",
-    explanation: "Unlike inorganic redox reactions which involve explicit electron transfer, organic redox reactions are identified by changes in the number of C-O and C-H bonds: 1. Oxidation: Involves adding oxygen or removing hydrogen. Primary alcohols are oxidized first to aldehydes and then to carboxylic acids using reagents like potassium dichromate (K2Cr2O7) or Jones reagent. To stop the oxidation at the aldehyde stage, a milder reagent like Pyridinium Chlorochromate (PCC) is used. Secondary alcohols are oxidized to ketones. Tertiary alcohols resist oxidation because they lack a hydrogen atom on the carbon bearing the hydroxyl group. 2. Reduction: Involves adding hydrogen or removing oxygen. Carbonyl compounds (aldehydes, ketones) are reduced to alcohols using hydride reducing agents like Lithium Aluminum Hydride (LiAlH4, a powerful reducing agent that also reduces carboxylic acids and esters) or Sodium Borohydride (NaBH4, a milder reagent that reduces only aldehydes and ketones).",
+    definition: "Oxidation is the gain of oxygen or loss of hydrogen (raising carbon oxidation state). Reduction is the loss of oxygen or gain of hydrogen (lowering carbon oxidation state).",
+    explanation: "Organic redox reactions are characterized by changes in the numbers of bonds to oxygen and hydrogen:\n1. Oxidation:\n  - Alcohols: Primary alcohols are oxidized to aldehydes (using mild Pyridinium Chlorochromate, PCC or CrO₃/Py) and further to carboxylic acids (using strong KMnO₄ or K₂Cr₂O₶). Secondary alcohols are oxidized to ketones (using PCC or K₂Cr₂O₶). Tertiary alcohols resist oxidation.\n  - Ring Substituents: Alkyl benzenes (like toluene) are oxidized to benzoic acid using KMnO₄.\n  - Epoxidation: Alkenes react with mCPBA (meta-Chloroperoxybenzoic Acid, m-ClC₆H₄CO₃H) to form epoxides.\n  - Baeyer-Villiger Oxidation: Ketones are oxidized to esters using peroxy acids (e.g., CH₃COOOH or perbenzoic acid) in NaOH. Aldehydes do not participate.\n  - Glycol Cleavage: 1,2-diols are cleaved into two carbonyl compounds using HIO₄ or NaIO₄.\n  - Ozonolysis: Alkenes react with ozone (O₃) to form ozonides, which are reduced with Zn/H₂O to yield carbonyl compounds.\n2. Reduction:\n  - LiAlH₄: A powerful, non-selective hydride reducing agent that reduces aldehydes, ketones, esters, and carboxylic acids to alcohols. Requires anhydrous conditions.\n  - NaBH₄: A milder, selective reducing agent that reduces only aldehydes and ketones to alcohols. Can be used in water or ethanol.",
     formulas: [
-      "\\ce{R-CH2OH ->[PCC] R-CHO ->[K2Cr2O7][H+] R-COOH}",
-      "\\ce{R-CH(OH)-R' ->[K2Cr2O7] R-CO-R'}",
-      "\\ce{R-CO-R' + [H] ->[LiAlH4 / NaBH4] R-CH(OH)-R'}"
+      "\\text{Primary Alcohol } \\ce{R-CH2OH ->[PCC] R-CHO ->[K2Cr2O7/H+] R-COOH}",
+      "\\text{Epoxidation: } \\ce{R-CH=CH-R' ->[mCPBA] R-CH(O)CH-R'} \\text{ (epoxide)}",
+      "\\text{Baeyer-Villiger: } \\ce{R-CO-R ->[CH3COOOH][NaOH] R-CO-O-R} \\text{ (ester)}"
     ],
     equations: [
-      "\\text{Oxidation of ethanol: } \\ce{CH3CH2OH ->[K2Cr2O7/H+] CH3CHO ->[K2Cr2O7/H+] CH3COOH}",
-      "\\text{Reduction of acetone: } \\ce{CH3-CO-CH3 + NaBH4 -> CH3-CH(OH)-CH3}"
+      "\\text{Toluene Oxidation: } \\ce{C6H5-CH3 ->[KMnO4] C6H5-COOH}",
+      "\\text{Glycol Cleavage: } \\ce{R-CH(OH)-CH(OH)-R' ->[HIO4] R-CHO + R'-CHO}",
+      "\\text{Ozonolysis: } \\ce{R2C=CR2 ->[1. O3][2. Zn/H2O] 2 R2C=O}"
     ],
     applications: [
-      "Industrial manufacturing of acetic acid by the oxidation of acetaldehyde or ethanol.",
-      "Synthesizing primary and secondary alcohols from carbonyl precursors in pharmaceutical chemistry.",
-      "Determining alcohol consumption using breathalyzer tests, which measure the green color change as orange Cr(VI) is reduced to green Cr(III) by ethanol."
+      "Synthesizing aldehydes, ketones, and carboxylic acids from alcohol precursors.",
+      "Cleaving alkenes via ozonolysis to identify double bond positions in structural elucidation.",
+      "Converting ketones to esters via Baeyer-Villiger oxidation in organic synthesis."
     ],
     importantPoints: [
-      "PCC (Pyridinium Chlorochromate) is anhydrous, which prevents the hydration of aldehydes to gem-diols, stopping the oxidation of primary alcohols at the aldehyde stage.",
-      "LiAlH4 is highly reactive and reacts violently with water or protic solvents, requiring dry ether; NaBH4 is safer and can be used in water or alcohol solvents.",
-      "Tertiary alcohols do not undergo oxidation under mild conditions because they lack a β-hydrogen on the carbinol carbon.",
-      "Catalytic hydrogenation (H₂ + Pt/Pd/Ni) reduces carbon-carbon double and triple bonds, converting alkenes to alkanes."
+      "PCC ([C₅H₅NH]⁺[CrO₃Cl]⁻) is anhydrous, preventing aldehyde hydration and thus stopping oxidation at the aldehyde stage.",
+      "Aldehydes do not undergo Baeyer-Villiger oxidation; the reaction is selective for ketones to yield esters.",
+      "LiAlH₄ reacts violently with water or alcohols, so reductions must be run in dry ether; NaBH₄ is stable in protic solvents.",
+      "Ozonolysis involves the formation of a cyclic ozonide intermediate, which is cleaved reductively with Zn/H₂O to prevent further oxidation."
     ],
     commonQuestions: [
-      "Distinguish between oxidation and reduction in organic chemistry. Give examples of common oxidizing and reducing agents.",
-      "How can you convert a primary alcohol to an aldehyde, and how does this differ from converting it to a carboxylic acid?",
-      "Compare the reducing properties and selectivities of LiAlH4 and NaBH4."
+      "Detail the oxidation pathways for primary, secondary, and tertiary alcohols. State the reagents used.",
+      "What is the Baeyer-Villiger oxidation? Provide the general equation and discuss reactant selectivity.",
+      "Explain the process of alkene ozonolysis, showing the intermediates and final carbonyl products.",
+      "Compare LiAlH4 and NaBH4 in terms of reducing strength, selectivity, and safety."
     ],
-    shortAnswer: "Oxidation increases C-O bonds or decreases C-H bonds (e.g., primary alcohols oxidize to aldehydes using PCC, or to carboxylic acids using KMnO4). Reduction increases C-H bonds or decreases C-O bonds (e.g., carbonyls reduce to alcohols using LiAlH4 or NaBH4). Tertiary alcohols resist oxidation.",
-    longAnswer: "Oxidation and reduction reactions in organic chemistry are defined by changes in the number of bonds to hydrogen and oxygen. Oxidation is the loss of hydrogen or the gain of oxygen, which increases the oxidation state of carbon. For example, a primary alcohol (carbon oxidation state -1) is oxidized first to an aldehyde (+1) and then to a carboxylic acid (+3). Strong oxidizing agents like potassium permanganate (KMnO4) or acidic potassium dichromate (K2Cr2O7) oxidize primary alcohols directly to carboxylic acids. To stop the oxidation at the aldehyde stage, anhydrous reagents like Pyridinium Chlorochromate (PCC) in dichloromethane are used. PCC prevents the aldehyde from forming a hydrate (gem-diol), which is required for further oxidation. Secondary alcohols are oxidized to ketones, and tertiary alcohols resist oxidation because they lack a hydrogen atom on the hydroxyl-bearing carbon. Reduction is the gain of hydrogen or the loss of oxygen, which decreases the oxidation state of carbon. Hydride reducing agents transfer a nucleophilic hydride ion (H⁻) to the electrophilic carbonyl carbon. Lithium Aluminum Hydride (LiAlH4) is a powerful, non-selective reducing agent that reduces aldehydes, ketones, carboxylic acids, and esters to their corresponding alcohols. Because it reacts violently with water and protic solvents, LiAlH4 must be used in anhydrous ether. Sodium Borohydride (NaBH4) is a milder, selective reducing agent that reduces only aldehydes and ketones, leaving esters and carboxylic acids unaffected. It is safe to use in water or alcohol solutions."
+    shortAnswer: "Oxidation increases oxygen content or decreases hydrogen (e.g. alcohol to carbonyl via PCC, epoxidation with mCPBA, ketone to ester via Baeyer-Villiger, ozonolysis). Reduction increases hydrogen or decreases oxygen (e.g. carbonyls to alcohols using LiAlH₄ or NaBH₄).",
+    longAnswer: "Redox reactions in organic chemistry are defined by changes in the bonds to oxygen and hydrogen. Oxidation involves increasing C-O bonds or decreasing C-H bonds, whereas reduction is the reverse. Primary alcohols can be oxidized to aldehydes using mild anhydrous Pyridinium Chlorochromate (PCC) in dichloromethane, which prevents the aldehyde from forming a hydrate that would oxidize further. Strong reagents like KMnO₄ or acidic K₂Cr₂O₶ oxidize primary alcohols directly to carboxylic acids, and secondary alcohols to ketones. Tertiary alcohols resist oxidation due to the lack of a hydrogen on the carbinol carbon. Alkenes can be oxidized to epoxides (three-membered cyclic ethers) using mCPBA, or cleaved to carbonyls via ozonolysis (treatment with O₃ followed by reductive workup with Zn/H₂O). Ketones undergo Baeyer-Villiger oxidation using peroxy acids to insert an oxygen atom adjacent to the carbonyl, yielding esters. Reduction reactions utilize hydride transfer. Lithium Aluminum Hydride (LiAlH₄) is a powerful, non-selective reducing agent that reduces aldehydes, ketones, esters, and carboxylic acids to alcohols; it requires anhydrous solvents like diethyl ether due to its violent reaction with water. Sodium Borohydride (NaBH₄) is a milder, selective agent that reduces only aldehydes and ketones, and is safe to use in water or alcohol."
   },
   {
     unitNumber: 7,
     unitTitle: "Organic Reactions and Synthesis of a Drug Molecule",
     topicTitle: "Cyclization and ring-opening reactions",
-    definition: "A cyclization reaction is an organic transformation that closes an open-chain molecule to form a cyclic ring. A ring-opening reaction is the reverse process, where a cyclic ring is cleaved to form an acyclic or chain molecule, often driven by the release of ring strain.",
-    explanation: "1. Cyclization: Occurs through intramolecular reactions where a nucleophilic center and an electrophilic center within the same molecule react to form a ring. The ease of ring closure depends on ring size. Five- and six-membered rings form most easily because they have minimal angle and torsional strain. Examples include intramolecular esterification (forming lactones) and intramolecular aldol condensations. 2. Ring-Opening: Common in small, strained rings like cyclopropane or epoxides (oxiranes). Epoxides contain a three-membered ring with bond angles of 60°, which deviates from the tetrahedral 109.5° angle. This deviation causes significant angle strain, making the ring highly reactive. Under acidic conditions, the epoxide oxygen is protonated, and a nucleophile attacks the more substituted carbon (SN1-like regioselectivity) to open the ring. Under basic conditions, the nucleophile attacks the less hindered carbon (SN2-like regioselectivity).",
+    definition: "Cyclization reactions close open-chain precursors to form cyclic structures (e.g. Diels-Alder cycloaddition). Ring-opening reactions cleave cyclic systems, often driven by the release of ring strain in 3- or 4-membered rings (like epoxides).",
+    explanation: "1. Cyclization & Diels-Alder: Rings can form via intramolecular nucleophilic attack or via cycloaddition. The Diels-Alder Reaction is a classic concerted [4+2] cycloaddition. A conjugated diene (4 π-electrons) reacts with a dienophile (alkene or alkyne, 2 π-electrons) under thermal conditions to form a stable six-membered cyclohexene ring in a single step. It is highly valued for building complex rings with predictable stereochemistry. 2. Ring-Opening: Common in small rings (3- or 4-membered) due to severe ring strain (angle strain from 60° bond angles and eclipsing torsional strain). \n  - Epoxide Ring-Opening Regioselectivity:\n    - Under Acidic Conditions: Epoxide oxygen is protonated, weakening the C-O bond. The nucleophile attacks the *more* substituted carbon because it can better stabilize the partial positive charge (S_N1-like regioselectivity).\n    - Under Basic Conditions: The nucleophile attacks the *less* sterically hindered carbon (S_N2 mechanism).",
     formulas: [
-      "\\text{Acid-catalyzed Epoxide Ring-Opening: nucleophile attacks the more substituted Carbon (S}_\\text{N}1\\text{-like)}",
-      "\\text{Base-catalyzed Epoxide Ring-Opening: nucleophile attacks the less substituted Carbon (S}_\\text{N}2\\text{-like)}"
+      "\\text{Diels-Alder: Diene } (4\\pi) + \\text{ Dienophile } (2\\pi) \\xrightarrow{\\Delta} \\text{ Cyclohexene derivative}",
+      "\\text{Epoxide Acid-catalyzed: nucleophile attacks more substituted Carbon}",
+      "\\text{Epoxide Base-catalyzed: nucleophile attacks less substituted Carbon}"
     ],
     equations: [
-      "\\text{Acid Epoxide Ring-Opening: } \\ce{(CH3)2C(O)CH2 + H+ + CH3OH -> (CH3)2C(OCH3)-CH2OH}",
-      "\\text{Base Epoxide Ring-Opening: } \\ce{(CH3)2C(O)CH2 + CH3O- + CH3OH -> (CH3)2C(OH)-CH2OCH3}"
+      "\\text{Diels-Alder: } \\ce{CH2=CH-CH=CH2 + CH2=CH2 ->[\\Delta] Cyclohexene}",
+      "\\text{Acidic opening: } \\ce{(CH3)2C(O)CH2 + H+ + CH3OH -> (CH3)2C(OCH3)-CH2OH}",
+      "\\text{Basic opening: } \\ce{(CH3)2C(O)CH2 + CH3O- + CH3OH -> (CH3)2C(OH)-CH2OCH3}"
     ],
     applications: [
+      "Using the Diels-Alder reaction to build six-membered rings stereospecifically in natural product synthesis.",
       "Industrial manufacturing of ethylene glycol by the ring-opening hydration of ethylene oxide.",
-      "Synthesizing cyclic drug intermediates (e.g., lactams in penicillin) through cyclization reactions.",
       "Ring-opening polymerization (ROP) to manufacture polymers like Nylon-6 from caprolactam."
     ],
     importantPoints: [
-      "Three- and four-membered rings have high ring strain (angle strain and eclipsing torsional strain), which makes them undergo ring-opening reactions easily.",
-      "Baldwin's rules are guidelines that predict the feasibility of intramolecular cyclization reactions based on ring size and the geometry of the transition state.",
-      "Epoxide ring-opening is stereospecific, typically yielding trans-1,2-diols due to backside attack by the nucleophile.",
-      "Intramolecular reactions (cyclizations) are favored at high dilutions to prevent competing intermolecular reactions (polymerization)."
+      "Three-membered rings (like cyclopropane and epoxides) have high ring strain (~27 kcal/mol) due to angle strain and eclipsing C-H bonds.",
+      "The Diels-Alder reaction is stereospecific: cis-dienophiles yield cis-cyclohexene products, and trans-dienophiles yield trans-cyclohexene products.",
+      "In acidic epoxide ring-opening, the transition state has carbocation-like character, directing the nucleophile to the more substituted carbon.",
+      "Intramolecular cyclizations are favored at high dilutions to prevent competing intermolecular polymerizations."
     ],
     commonQuestions: [
-      "Discuss the ring-opening reactions of epoxides under acidic and basic conditions. Explain the difference in regioselectivity.",
-      "Why are five- and six-membered rings thermodynamically and kinetically favored during cyclization reactions?",
-      "Describe the synthesis of ethylene glycol from ethylene via epoxide formation and ring-opening."
+      "What is the Diels-Alder reaction? Provide the reactants, products, and stereochemical considerations.",
+      "Discuss the ring-opening reactions of epoxides under acidic and basic conditions, and explain the difference in regioselectivity.",
+      "Why do five- and six-membered rings form much more easily during cyclization than three- or seven-membered rings?"
     ],
-    shortAnswer: "Cyclization reactions close open chains into rings, favored for stable 5- and 6-membered systems. Ring-opening reactions cleave cyclic rings, driven by the release of ring strain in 3- and 4-membered rings (like epoxides). Epoxide ring-opening is regioselective: nucleophiles attack the more substituted carbon in acid, and the less substituted carbon in base.",
-    longAnswer: "Cyclization and ring-opening reactions describe the transitions between cyclic and acyclic molecular structures. Cyclization occurs through intramolecular pathways where a nucleophilic group (like -OH or -NH2) attacks an electrophilic group (like a halide or carbonyl) within the same molecule. According to thermodynamics and kinetics, five- and six-membered rings form most easily (e.g., intramolecular nucleophilic attack of 4-hydroxybutanoic acid to form γ-butyrolactone). These rings are stable because their C-C-C angles are close to the tetrahedral angle (109.5°), minimizing angle strain, and they can adopt staggered conformations that minimize torsional strain. Ring-opening reactions are the reverse process, typically occurring in small, strained rings. Three-membered rings like cyclopropane and epoxides (oxiranes) experience significant ring strain (about 27 kcal/mol) due to angle strain (60° bond angles force orbital overlap to bend) and torsional strain (all C-H bonds are eclipsed). Epoxides undergo ring-opening reactions when exposed to nucleophiles. The regioselectivity of this opening depends on the pH. Under basic conditions, the reaction proceeds via an SN2 mechanism: the nucleophile attacks the less sterically hindered carbon atom of the epoxide, opening the ring to place the hydroxyl group on the more substituted carbon. Under acidic conditions, the epoxide oxygen is protonated, creating a positive charge. This charge weakens the C-O bonds. The bond to the more substituted carbon is weaker because it can stabilize a partial positive charge (carbocation-like character). Consequently, the nucleophile attacks the more substituted carbon, yielding a different regioisomer."
+    shortAnswer: "Cyclization forms rings from open chains (e.g. Diels-Alder [4+2] cycloaddition to form cyclohexenes). Ring-opening cleaves strained rings like epoxides. Epoxide ring-opening is pH-dependent: nucleophiles attack the more substituted carbon in acid (S_N1-like) and the less substituted carbon in base (S_N2).",
+    longAnswer: "Cyclization and ring-opening reactions govern the interconversion between cyclic and acyclic molecular systems. Cyclization can occur through intramolecular nucleophilic attack or pericyclic reactions. The Diels-Alder reaction is a pericyclic [4+2] cycloaddition where a conjugated diene (4 π-electrons in s-cis conformation) reacts with a dienophile (alkene or alkyne, 2 π-electrons) under thermal conditions to form a cyclohexene ring in a single concerted step. The reaction is stereospecific and builds two new C-C bonds and up to four stereocenters. Ring-opening reactions are thermodynamically driven by the release of ring strain in small rings. Epoxides (oxiranes) experience high ring strain due to 60° bond angles (angle strain) and eclipsed C-H bonds (torsional strain). Nucleophilic ring-opening of epoxides is regioselective: under basic conditions, a strong nucleophile attacks the less sterically hindered carbon in a classic S_N2 mechanism. Under acidic conditions, the oxygen is protonated, weakening the C-O bonds. The bond to the more substituted carbon is weaker because it can stabilize a partial positive charge (carbocation character). Thus, the nucleophile attacks the more substituted carbon, yielding a different regioisomer."
   },
   {
     unitNumber: 7,
     unitTitle: "Organic Reactions and Synthesis of a Drug Molecule",
     topicTitle: "Synthesis of a commonly used drug molecule: Aspirin (acetylsalicylic acid)",
-    definition: "Aspirin (acetylsalicylic acid) is a widely used non-steroidal anti-inflammatory drug (NSAID) synthesized through the acetylation of salicylic acid (2-hydroxybenzoic acid) using acetic anhydride in the presence of an acid catalyst.",
-    explanation: "Aspirin is prepared by reacting salicylic acid with acetic anhydride. Salicylic acid contains both a phenol group (-OH) and a carboxylic acid group (-COOH). The phenolic hydroxyl group acts as a nucleophile, attacking the carbonyl carbon of acetic anhydride. An acid catalyst (such as concentrated sulfuric acid or phosphoric acid) protonates the acetic anhydride, making its carbonyl carbon more electrophilic. The reaction proceeds via nucleophilic acyl substitution. The phenolic oxygen attacks the carbonyl carbon, forming a tetrahedral intermediate. The intermediate then collapses, losing a proton and ejecting an acetate ion as a leaving group to form acetylsalicylic acid (Aspirin) and acetic acid as a byproduct. The product is purified by recrystallization from ethanol or water.",
+    definition: "Aspirin (acetylsalicylic acid, IUPAC: 2-acetoxybenzoic acid) is a widely used analgesic, antipyretic, and anti-inflammatory drug synthesized by acetylating salicylic acid (2-hydroxybenzoic acid) with acetic anhydride in the presence of a strong acid catalyst like H₃PO₄.",
+    explanation: "Aspirin is synthesized by treating salicylic acid with acetic anhydride. The phenolic hydroxyl group (-OH) acts as a nucleophile, attacking the carbonyl carbon of acetic anhydride, which has been protonated by a strong acid catalyst (like phosphoric acid, H₃PO₄) to make it more electrophilic. The reaction proceeds via nucleophilic acyl substitution, yielding acetylsalicylic acid and acetic acid byproduct. The crude product is purified by recrystallization.\n- Side Effects: A major side effect of aspirin is gastric irritation, which can lead to stomach ulcers and internal bleeding.\n- Medicinal Utility: Used as an analgesic to relieve acute pain, headache, and muscle ache, an antipyretic to reduce fever, and to treat inflammatory diseases like rheumatoid arthritis.",
     formulas: [
-      "\\text{Salicylic Acid } (\\ce{C7H6O3}) + \\text{Acetic Anhydride } (\\ce{C4H6O3}) \\xrightarrow{\\text{H}^+} \\text{Aspirin } (\\ce{C9H8O4}) + \\text{Acetic Acid } (\\ce{C2H4O2})",
+      "\\text{Salicylic Acid } (\\ce{C7H6O3}) + \\text{Acetic Anhydride } (\\ce{C4H6O3}) \\xrightarrow{\\text{H}_3\\text{PO}_4} \\text{Aspirin } (\\ce{C9H8O4}) + \\text{Acetic Acid } (\\ce{C2H4O2})",
       "\\text{Percent Yield} = \\frac{\\text{Actual Yield}}{\\text{Theoretical Yield}} \\times 100\\%"
     ],
     equations: [
-      "\\ce{C6H4(OH)(COOH) + (CH3CO)2O ->[H+] C6H4(OCOCH3)(COOH) + CH3COOH}"
+      "\\ce{C6H4(OH)(COOH) + (CH3CO)2O ->[H3PO4] C6H4(OCOCH3)(COOH) + CH3COOH}"
     ],
     applications: [
-      "Pain relief (analgesic) for headaches, muscle aches, and joint pain.",
-      "Reducing fever (antipyretic) and inflammation in arthritis.",
-      "Cardiovascular protection: low-dose aspirin acts as an antiplatelet agent, reducing the risk of heart attacks and strokes."
+      "Relieving acute pain and headaches without causing significant nervous system disturbance.",
+      "Treating fever and inflammatory conditions such as rheumatoid arthritis.",
+      "Cardiovascular protection: low-dose therapy acts as an antiplatelet agent."
     ],
     importantPoints: [
-      "Salicylic acid is synthesized from phenol using the Kolbe-Schmitt reaction: Phenol + NaOH + CO₂ under pressure, followed by acidification.",
-      "Acetic anhydride is preferred over acetyl chloride for the acetylation because it reacts more moderately, does not release corrosive hydrochloric acid gas, and is cheaper.",
-      "The carboxylic acid group on salicylic acid does not react during the synthesis because the phenolic hydroxyl group is a stronger nucleophile under these conditions.",
-      "Aspirin can slowly hydrolyze back into salicylic acid and acetic acid in the presence of moisture, giving old bottles a vinegary smell."
+      "The synthesis of aspirin is an acetylation of the phenolic hydroxyl group of salicylic acid, which is prepared from phenol via the Kolbe-Schmitt reaction.",
+      "Phosphoric acid (H₃PO₄) is commonly used as a catalyst to generate a highly active electrophilic carbonyl in the acetic anhydride.",
+      "A major side effect is gastric irritation, stomach ulcers, and bleeding due to cyclooxygenase inhibition in the stomach lining.",
+      "The product can slowly hydrolyze back to salicylic acid in moist environments, giving off a vinegar smell."
     ],
     commonQuestions: [
-      "Describe the chemical reaction and mechanism for the synthesis of Aspirin from salicylic acid. Why is a catalyst required?",
-      "Why is acetic anhydride used instead of acetyl chloride in the preparation of aspirin?",
-      "How is the purity of synthesized aspirin determined in the laboratory (e.g., using FeCl3 test or melting point)?"
+      "Write the chemical equation, mechanism, and catalyst for the synthesis of Aspirin from salicylic acid.",
+      "What are the major side effects of aspirin, and what are its primary medicinal utilities?",
+      "Why is acetic anhydride used instead of acetyl chloride in the preparation of aspirin?"
     ],
-    shortAnswer: "Aspirin (acetylsalicylic acid) is synthesized by acetylating salicylic acid with acetic anhydride, catalyzed by a small amount of concentrated acid (H₂SO₄ or H3PO4). The phenolic -OH group attacks the carbonyl carbon of the anhydride in a nucleophilic acyl substitution, yielding aspirin and acetic acid byproduct.",
-    longAnswer: "Aspirin, chemically known as acetylsalicylic acid, is a common analgesic, antipyretic, and anti-inflammatory drug. It is synthesized by acetylating the phenolic hydroxyl group of salicylic acid (2-hydroxybenzoic acid). The starting material, salicylic acid, is prepared industrially from phenol via the Kolbe-Schmitt reaction, which reacts sodium phenoxide with carbon dioxide under high pressure, followed by acidification. The acetylation reaction uses salicylic acid and excess acetic anhydride, with a few drops of concentrated sulfuric acid (H₂SO₄) or phosphoric acid (H3PO4) acting as a catalyst. The mechanism is a nucleophilic acyl substitution: 1. Protonation: The acid catalyst protonates a carbonyl oxygen of the acetic anhydride, making the carbonyl carbon highly electrophilic. 2. Nucleophilic Attack: The weak nucleophile, the phenolic oxygen of salicylic acid, attacks the protonated carbonyl carbon. This attack forms a tetrahedral intermediate. 3. Proton Transfer and Collapse: A proton is transferred to the leaving group oxygen. The intermediate then collapses, reforming the carbon-oxygen double bond and ejecting a neutral acetic acid molecule. 4. Deprotonation: Loss of a proton from the acetyl group yields the product, acetylsalicylic acid (Aspirin). Acetic anhydride is chosen over acetyl chloride because it reacts more safely, is less expensive, and does not release toxic, corrosive hydrochloric acid (HCl) gas. The crude aspirin is isolated by adding cold water to decompose excess acetic anhydride and precipitate the product. It is then purified by recrystallization from a water-ethanol mixture. The purity of the product can be verified by its melting point (136°C) and by adding iron(III) chloride (FeCl3). FeCl3 forms a purple complex with phenols; a purple color indicates that unreacted salicylic acid remains in the product."
+    shortAnswer: "Aspirin (2-acetoxybenzoic acid) is synthesized by acetylating the phenolic -OH group of salicylic acid with acetic anhydride, catalyzed by a strong acid like H₃PO₄. It is used to treat fever, headaches, and inflammation, but can cause gastric irritation and ulcers.",
+    longAnswer: "Aspirin, chemically known as acetylsalicylic acid or 2-acetoxybenzoic acid, is an analgesic, antipyretic, and anti-inflammatory drug. It is synthesized by acetylating the phenolic hydroxyl group of salicylic acid. Salicylic acid is prepared industrially from phenol via the Kolbe-Schmitt reaction, which reacts sodium phenoxide with carbon dioxide under high pressure, followed by acidification. The acetylation reaction is carried out by treating salicylic acid with excess acetic anhydride in the presence of a strong acid catalyst, such as concentrated phosphoric acid (H₃PO₄) or sulfuric acid (H₂SO₄). The mechanism is a nucleophilic acyl substitution: 1. Protonation: The acid catalyst protonates a carbonyl oxygen of the acetic anhydride, making the carbonyl carbon highly electrophilic. 2. Nucleophilic Attack: The weak nucleophile, the phenolic oxygen of salicylic acid, attacks the protonated carbonyl carbon, forming a tetrahedral intermediate. 3. Collapse: The intermediate collapses, reforming the C=O double bond and ejecting a neutral acetic acid molecule. 4. Deprotonation yields acetylsalicylic acid (Aspirin). Crude aspirin is isolated by adding cold water to decompose excess anhydride and precipitate the product. It is purified by recrystallization from a water-ethanol mixture. Aspirin is widely used to treat fever, headaches, and rheumatoid arthritis, but its use carries a risk of gastric irritation, stomach ulcers, and internal bleeding."
   },
   {
     unitNumber: 7,
     unitTitle: "Organic Reactions and Synthesis of a Drug Molecule",
     topicTitle: "Synthesis of a commonly used drug molecule: Paracetamol (acetaminophen)",
-    definition: "Paracetamol (acetaminophen or para-acetylaminophenol) is a widely used analgesic and antipyretic drug synthesized by acetylating para-aminophenol (4-aminophenol) using acetic anhydride in an aqueous or acidic medium.",
-    explanation: "Paracetamol is prepared from p-aminophenol, which contains both a nucleophilic amino group (-NH2) and a nucleophilic phenol group (-OH). The amino group is a stronger nucleophile than the phenol group because nitrogen is less electronegative than oxygen, holding its lone pair less tightly. During the reaction, the amino group selectively attacks the carbonyl carbon of acetic anhydride in a nucleophilic acyl substitution. The nitrogen attacks the carbonyl carbon, forming a tetrahedral intermediate. The intermediate then collapses, ejecting an acetate ion. Deprotonation yields paracetamol (an amide) and acetic acid as a byproduct. p-aminophenol is prepared industrially by reducing p-nitrophenol, or by the electrolytic reduction of nitrobenzene in acid.",
+    definition: "Paracetamol (acetaminophen, IUPAC: N-(4-hydroxyphenyl)acetamide) is a widely used analgesic and antipyretic drug synthesized by acetylating p-aminophenol with acetic anhydride.",
+    explanation: "Paracetamol is synthesized through a multi-step pathway starting from phenol:\n  - Step 1 (Nitration): Phenol is nitrated using sodium nitrate (NaNO₃) and dilute sulfuric acid (H₂SO₄), yielding a mixture of ortho- and para-nitrophenol.\n  - Step 2 (Separation): Para-nitrophenol is separated from the ortho- isomer using steam distillation.\n  - Step 3 (Reduction): Para-nitrophenol is reduced into para-aminophenol using sodium borohydride (NaBH₄) as the reducing agent.\n  - Step 4 (Acetylation): Para-aminophenol (which contains both -NH₂ and -OH groups) is acetylated with acetic anhydride. Because nitrogen is less electronegative than oxygen, its lone pair is held less tightly and is more available, making the amino group a stronger nucleophile than the phenol. Amide formation occurs selectively, yielding paracetamol and acetic acid byproduct.\n- Toxicity: Overdose can cause serious liver damage (hepatotoxicity) due to depletion of glutathione and accumulation of the toxic metabolite NAPQI.\n- Medicinal Utility: Used to relieve mild to moderate pain (headache, toothache, muscle pain, sinus pain) and reduce fever caused by common cold, influenza, viral infections, and dengue.",
     formulas: [
-      "\\text{p-Aminophenol } (\\ce{C6H7NO}) + \\text{Acetic Anhydride } (\\ce{C4H6O3}) \\rightarrow \\text{Paracetamol } (\\ce{C8H9NO2}) + \\text{Acetic Acid } (\\ce{C2H4O2})",
-      "\\text{Percent Yield} = \\frac{\\text{Actual mass of Paracetamol}}{\\text{Theoretical mass}} \\times 100\\%"
+      "\\text{Phenol } \\ce{C6H5OH ->[NaNO3][dil. H2SO4] p-nitrophenol + o-nitrophenol}",
+      "\\text{p-Nitrophenol } \\ce{->[NaBH4] p-aminophenol}",
+      "\\text{p-Aminophenol } (\\ce{C6H7NO}) + \\text{Acetic Anhydride } (\\ce{C4H6O3}) \\rightarrow \\text{Paracetamol } (\\ce{C8H9NO2}) + \\text{Acetic Acid } (\\ce{C2H4O2})"
     ],
     equations: [
-      "\\ce{HOC6H4NH2 + (CH3CO)2O -> HOC6H4NHCOCH3 + CH3COOH}"
+      "\\text{Selective Acetylation: } \\ce{HOC6H4NH2 + (CH3CO)2O -> HOC6H4NHCOCH3 + CH3COOH}"
     ],
     applications: [
-      "Relieving mild to moderate pain (analgesic) such as headaches, toothaches, and backaches.",
-      "Reducing fever (antipyretic) by acting on the heat-regulating center of the brain.",
-      "Serving as a key ingredient in multi-symptom cold and flu medications."
+      "Relieving mild to moderate pain including muscle aches, toothaches, headaches, and sinus pain.",
+      "Reducing fever associated with viral infections, common cold, influenza, and dengue.",
+      "First-choice antipyretic for patients sensitive to gastric irritation from aspirin."
     ],
     importantPoints: [
-      "The nitrogen atom of the amino group is more nucleophilic than the oxygen atom of the phenol group, ensuring selective amide formation over ester formation.",
-      "Unlike aspirin, paracetamol does not have significant anti-inflammatory properties because it does not inhibit cyclooxygenase (COX) enzymes in peripheral tissues effectively.",
-      "Crude paracetamol is purified by recrystallization from hot water.",
-      "An overdose of paracetamol can cause severe liver damage (hepatotoxicity) due to the accumulation of a toxic metabolite, NAPQI, which depletes glutathione levels in the liver."
+      "The synthesis begins with phenol nitration using NaNO₃/dil. H₂SO₄, followed by steam distillation to isolate the para isomer.",
+      "The reduction of the nitro group to an amine group is carried out using NaBH₄.",
+      "Acetylation occurs selectively at the nitrogen atom (-NH₂) rather than the oxygen atom (-OH) because nitrogen is less electronegative and more nucleophilic.",
+      "Paracetamol overdose can lead to severe hepatotoxicity (liver damage) due to the accumulation of N-acetyl-p-benzoquinone imine (NAPQI)."
     ],
     commonQuestions: [
-      "Explain the chemical reaction and mechanism for the synthesis of Paracetamol from para-aminophenol.",
-      "Why does acetylation of p-aminophenol occur selectively at the nitrogen atom rather than the oxygen atom?",
-      "Describe the industrial preparation of para-aminophenol from nitrobenzene."
+      "Detail the four-step synthetic route of Paracetamol starting from phenol, showing all reagents.",
+      "Why does the acetylation of p-aminophenol occur selectively at the nitrogen atom rather than the oxygen atom?",
+      "Discuss the medicinal utilities of paracetamol and the danger of overdose."
     ],
-    shortAnswer: "Paracetamol is synthesized by acetylating the amino group of p-aminophenol with acetic anhydride. Because nitrogen is less electronegative than oxygen, the -NH2 group is more nucleophilic than the -OH group. It attacks the anhydride selectively to form an amide bond, yielding paracetamol and acetic acid.",
-    longAnswer: "Paracetamol, also known as acetaminophen or N-(4-hydroxyphenyl)acetamide, is a widely used analgesic and antipyretic drug. It is synthesized by acetylating the amino group of para-aminophenol. The starting material, p-aminophenol, can be prepared by reducing p-nitrophenol with sodium borohydride, or by the electrolytic reduction of nitrobenzene in sulfuric acid, which proceeds via phenylhydroxylamine and undergoes a Bamberger rearrangement. p-aminophenol contains two nucleophilic functional groups: a primary amine (-NH2) and a phenol (-OH). In the synthesis of paracetamol, the reaction is selective for the amine. Nitrogen is larger and less electronegative than oxygen, meaning its lone pair is less tightly bound and more available for nucleophilic attack. Consequently, the amino group is a stronger nucleophile than the phenolic hydroxyl group. The reaction is carried out by suspending p-aminophenol in water or dilute acid, adding acetic anhydride, and heating. The mechanism is a nucleophilic acyl substitution: 1. Nucleophilic Attack: The lone pair on the nitrogen of the amino group attacks the carbonyl carbon of the acetic anhydride. This attack forms a tetrahedral intermediate. 2. Collapse: The intermediate collapses, reforming the C=O double bond and ejecting an acetate ion. 3. Deprotonation: The nitrogen atom loses a proton to the acetate ion, forming the amide bond of paracetamol (para-acetylaminophenol) and releasing a molecule of acetic acid. The product is isolated by cooling the reaction mixture in an ice bath to precipitate the paracetamol, which is then purified by recrystallization from hot water. The purity is verified by measuring its melting point (169-170.5°C)."
+    shortAnswer: "Paracetamol (p-hydroxyacetanilide) is synthesized from phenol by nitration (NaNO₃/dil. H₂SO₄), steam distillation, reduction of p-nitrophenol (NaBH₄) to p-aminophenol, and selective acetylation of the amino group with acetic anhydride. Overdose can cause severe liver damage.",
+    longAnswer: "Paracetamol, also known as acetaminophen or N-(4-hydroxyphenyl)acetamide, is a widely used analgesic and antipyretic drug. It is synthesized starting from phenol. First, phenol undergoes nitration using sodium nitrate (NaNO₃) and dilute sulfuric acid (H₂SO₄) to yield a mixture of ortho- and para-nitrophenol. From this mixture, para-nitrophenol is separated using steam distillation (since ortho-nitrophenol is steam-volatile due to intramolecular hydrogen bonding, whereas para-nitrophenol is not). Next, para-nitrophenol is reduced to para-aminophenol using sodium borohydride (NaBH₄). Finally, para-aminophenol is acetylated. The molecule contains both a primary amine (-NH₂) and a phenolic hydroxyl (-OH) group. Nitrogen is larger and less electronegative than oxygen, so its lone pair is less tightly bound and more available for nucleophilic attack, making the amine group a stronger nucleophile. Heating p-aminophenol with acetic anhydride in water or dilute acid leads to selective acetylation of the amine group, forming an amide bond to yield paracetamol and acetic acid byproduct. Paracetamol is isolated by cooling the mixture to precipitate the product, which is purified by recrystallization from hot water. It is used to relieve fever and pain from the common cold, influenza, and dengue. However, an overdose can cause severe liver damage due to the accumulation of N-acetyl-p-benzoquinone imine (NAPQI), which depletes cellular glutathione."
   }
 ];
