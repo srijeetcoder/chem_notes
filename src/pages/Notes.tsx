@@ -8,6 +8,7 @@ import { BookmarkButton } from '../components/BookmarkButton';
 import { PersonalNoteBox } from '../components/PersonalNoteBox';
 import { ChemicalEquation } from '../components/ChemicalEquation';
 import { MathRenderer, TextWithMath } from '../components/MathRenderer';
+import { ChemicalDiagrams } from '../components/ChemicalDiagrams';
 import {
   Atom, BookOpen, LogOut, Sun, Moon, Search, Download, ChevronRight,
   ChevronDown, LayoutDashboard, FileText, Sparkles, HelpCircle,
@@ -431,6 +432,11 @@ export const Notes: React.FC = () => {
                         <TextWithMath text={activeNote.definition} />
                       </p>
                     </div>
+
+                    {/* Chemical Diagrams Visualization */}
+                    {activeNote.diagramType && (
+                      <ChemicalDiagrams type={activeNote.diagramType} />
+                    )}
 
                     {/* Explanation */}
                     <div className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 rounded-2xl p-6 space-y-4 shadow-sm">

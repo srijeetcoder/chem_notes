@@ -19,6 +19,7 @@ export interface ChemistryNote {
   commonQuestions: string[];
   shortAnswer: string;
   longAnswer: string;
+  diagramType?: 'ethane_conformations' | 'cyclic_ketones' | 'benzene_aromaticity' | 'diels_alder' | 'aspirin_synthesis' | 'paracetamol_synthesis';
 }
 
 export const chemistryNotes: ChemistryNote[] = [
