@@ -30,7 +30,45 @@ export const unit3Notes = [
       "Why does neon (atomic weight 20) boil at -246°C while water (molecular weight 18) boils at 100°C?"
     ],
     shortAnswer: "Intermolecular forces act between molecules. They range from strong ionic attractions to weaker van der Waals forces. van der Waals forces include dipole-dipole, dipole-induced dipole, and London dispersion forces (temporary dipole-induced dipole, ∝ 1/r⁶). The balance between attraction and repulsion is described by the Lennard-Jones potential.",
-    longAnswer: "Intermolecular forces are electrostatic interactions that govern the physical properties of matter. The strongest are ionic forces, which occur between fully charged ions and follow Coulomb's law. Dipole-dipole forces occur between polar molecules (like HCl) due to the attraction of permanent dipoles. Hydrogen bonding is a strong form of dipole-dipole interaction that occurs when hydrogen is bonded to N, O, or F. This bonding creates a highly polar bond, and hydrogen's small size allows neighboring dipoles to approach closely, yielding energies of 10-40 kJ/mol. This bonding explains why water is liquid at room temperature while H2S is a gas. van der Waals forces are weaker and are classified into three types. Keesom forces are interactions between permanent rotating dipoles. Debye forces occur when a polar molecule induces a temporary dipole in a neighboring non-polar molecule. London dispersion forces are present in all molecules and arise from temporary fluctuations in electron density that create an instantaneous dipole, which in turn induces a dipole in a neighboring molecule. The energy of these three van der Waals interactions is inversely proportional to the sixth power of distance (1/r⁶). At very close distances, the Pauli exclusion principle prevents electron clouds from overlapping, causing repulsion. The Lennard-Jones potential models this balance: V(r) = 4ε * [(σ/r)¹² - (σ/r)⁶], where ε is the well depth, σ is the distance where the potential is zero, and r is the distance between particles. The r⁻¹² term represents the steep, short-range repulsion, while the r⁻⁶ term represents the long-range attraction."
+    longAnswer: "Intermolecular forces are electrostatic interactions that govern the physical properties of matter. The strongest are ionic forces, which occur between fully charged ions and follow Coulomb's law. Dipole-dipole forces occur between polar molecules (like HCl) due to the attraction of permanent dipoles. Hydrogen bonding is a strong form of dipole-dipole interaction that occurs when hydrogen is bonded to N, O, or F. This bonding creates a highly polar bond, and hydrogen's small size allows neighboring dipoles to approach closely, yielding energies of 10-40 kJ/mol. This bonding explains why water is liquid at room temperature while H2S is a gas. van der Waals forces are weaker and are classified into three types. Keesom forces are interactions between permanent rotating dipoles. Debye forces occur when a polar molecule induces a temporary dipole in a neighboring non-polar molecule. London dispersion forces are present in all molecules and arise from temporary fluctuations in electron density that create an instantaneous dipole, which in turn induces a dipole in a neighboring molecule. The energy of these three van der Waals interactions is inversely proportional to the sixth power of distance (1/r⁶). At very close distances, the Pauli exclusion principle prevents electron clouds from overlapping, causing repulsion. The Lennard-Jones potential models this balance: V(r) = 4ε * [(σ/r)¹² - (σ/r)⁶], where ε is the well depth, σ is the distance where the potential is zero, and r is the distance between particles. The r⁻¹² term represents the steep, short-range repulsion, while the r⁻⁶ term represents the long-range attraction.",
+    questionsAndAnswers: [
+      {
+        question: "Van der Waals forces are directly proportional to which factor?",
+        answer: "Van der Waals dispersion forces (London forces) are directly proportional to the **polarizability** (and **molecular size/electron count**) of the interacting molecules. Larger molecules with more electrons have larger, more diffuse electron clouds that are more easily distorted to form temporary dipoles.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Give an example of compound having zero dipole moment.",
+        answer: "**Carbon dioxide ($CO_2$)**. It is a linear molecule ($O=C=O$). Although the individual $C-O$ bonds are highly polar, the two bond dipoles point in exactly opposite directions and cancel each other out, giving a net dipole moment ($\\\\mu$) of zero. Other examples include methane ($CH_4$) and boron trifluoride ($BF_3$).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Compare intermolecular forces in H\u2082 and halogens. Arrange them in increasing order of strength.",
+        answer: "Both hydrogen ($H_2$) and halogens ($F_2, Cl_2, Br_2, I_2$) are homonuclear, non-polar diatomic molecules. The only intermolecular forces acting between them are **London Dispersion Forces** (induced dipole-induced dipole forces).\\n\\nThe strength of dispersion forces depends on the polarizability, which increases with the size of the electron cloud and the total number of electrons. \\n\\n**Increasing Order of Strength:**\\n\\n$H_2 \\\\text{ (2 }e^-) < F_2 \\\\text{ (18 }e^-) < Cl_2 \\\\text{ (34 }e^-) < Br_2 \\\\text{ (70 }e^-) < I_2 \\\\text{ (106 }e^-)$\\n\\nAccordingly, $H_2, F_2, Cl_2$ are gases at room temperature, $Br_2$ is a liquid, and $I_2$ is a solid.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Explain the boiling point anomalies of n-pentane vs neopentane and H\u2082O vs H\u2082S.",
+        answer: "1. **n-pentane vs. Neopentane:**\\n- n-pentane has a long, linear chain, providing a larger surface area for contact between molecules, resulting in stronger London dispersion forces. \\n- Neopentane is highly branched and spherical, reducing its surface area and weakening dispersion forces. Thus, n-pentane has a higher boiling point ($36^\\\\circ\\\\text{ C}$) than neopentane ($9.5^\\\\circ\\\\text{ C}$).\\n\\n2. **H\u2082O vs. H\u2082S:**\\n- Oxygen is highly electronegative and small, allowing water ($H_2O$) molecules to form strong, extensive network of **intermolecular hydrogen bonds**.\\n- Sulfur is larger and less electronegative, so hydrogen sulfide ($H_2S$) cannot form hydrogen bonds. It relies only on weaker dipole-dipole forces. Thus, water is a liquid (BP $100^\\\\circ\\\\text{ C}$) whereas $H_2S$ is a gas (BP $-60^\\circ\\\\text{ C}$) at room temperature.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Discuss types and conditions of hydrogen bonding.",
+        answer: "**Hydrogen bonding** is a strong dipole-dipole attraction occurring when a hydrogen atom covalently bonded to a highly electronegative atom is attracted to a lone pair on a nearby electronegative atom.\\n\\n**Conditions for Formation:**\\n1. **Highly Electronegative Atom:** Hydrogen must be bonded to Fluorine ($F$), Oxygen ($O$), or Nitrogen ($N$). These atoms strongly pull electron density, leaving hydrogen with a large partial positive charge.\\n2. **Small Atomic Size:** The electronegative atom must be small (like $F, O, N$). This concentrates the charge density, enabling strong electrostatic attractions. Larger atoms (like $Cl$) have diffuse charge and rarely form strong hydrogen bonds.\\n\\n**Types of Hydrogen Bonding:**\\n1. **Intermolecular:** Formed between different molecules of the same or different substances, leading to molecular association and high boiling points. Examples: water ($H_2O$), ammonia ($NH_3$), hydrogen fluoride ($HF$).\\n2. **Intramolecular:** Formed within a single molecule when the donor and acceptor groups are in close proximity, forming a chelate ring. This reduces intermolecular interaction, lowering boiling points. Example: o-nitrophenol, salicylaldehyde.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Explain boiling point difference between p-nitrophenol and o-nitrophenol.",
+        answer: "The difference in boiling points is due to the type of hydrogen bonding present in each isomer:\\n\\n1. **o-nitrophenol (Lower Boiling Point, $216^\\\\circ\\\\text{ C}$):**\\n- It undergoes **intramolecular hydrogen bonding** because the hydroxyl ($-OH$) and nitro ($-NO_2$) groups are on adjacent carbon atoms, forming a stable 6-membered chelate ring within the same molecule.\\n- This prevents the molecule from forming hydrogen bonds with neighboring molecules. As a result, it exists as discrete monomers with weak intermolecular forces, making it volatile and lower boiling.\\n\\n2. **p-nitrophenol (Higher Boiling Point, $279^\\\\circ\\\\text{ C}$):**\\n- It undergoes **intermolecular hydrogen bonding** because the $-OH$ and $-NO_2$ groups are on opposite sides of the benzene ring, preventing them from bonding within the same molecule.\\n- It forms extensive hydrogen bond chains linking multiple molecules together. This molecular association requires significant thermal energy to break, resulting in a much higher boiling point.",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   },
   {
     unitNumber: 3,
@@ -101,6 +139,68 @@ export const unit3Notes = [
           "Simplifying the ratio gives: $\\boxed{\\dfrac{RT_c}{P_c V_c} = \\dfrac{8}{3} \\approx 2.67}$",
           "This ratio is a constant for all van der Waals gases, though real gases typically have experimental values around 3.0 to 3.8."
         ]
+      }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Write down the formula of critical volume for Van der Waals\u2019 gas.",
+        answer: "The critical volume ($V_c$) is:\\n\\n$V_c = 3b$\\n\\nwhere $b$ is the van der Waals volume correction constant (co-volume).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Write down the relation of critical temperature for Van der Waals\u2019 gas.",
+        answer: "The critical temperature ($T_c$) is:\\n\\n$T_c = \\\\frac{8a}{27Rb}$\\n\\nwhere $a$ and $b$ are van der Waals constants and $R$ is the universal gas constant.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "The unit of van der Waals constant \u2018a\u2019 is ____________.",
+        answer: "**$\\\\text{L}^2\\\\text{ atm mol}^{-2}$** (or $\\\\text{dm}^6\\\\text{ atm mol}^{-2}$). The constant $a$ represents the correction for attractive forces, and its unit is derived from the pressure correction term $P_{corr} = \\\\frac{an^2}{V^2} \\\\Rightarrow a = \\\\frac{P V^2}{n^2}$.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Write the expression of critical pressure.",
+        answer: "The critical pressure ($P_c$) is:\\n\\n$P_c = \\\\frac{a}{27b^2}$\\n\\nwhere $a$ and $b$ are van der Waals constants.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "When do real gases behave as ideal gases?",
+        answer: "Real gases behave most like ideal gases at **high temperatures** and **low pressures**.\\n- At **low pressure**, the gas volume is huge, making the actual volume of the gas molecules negligible.\\n- At **high temperature**, the kinetic energy of the molecules is very high, making the intermolecular attractive forces negligible.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "What is defined by compressibility factor of gases?",
+        answer: "The **compressibility factor ($Z$)** is a dimensionless quantity that measures the deviation of a real gas from ideal behavior. It is defined as the ratio of the molar volume of a gas to the molar volume of an ideal gas at the same temperature and pressure:\\n\\n$Z = \\\\frac{PV}{nRT}$\\n\\n- For an **ideal gas**, $Z = 1$ under all conditions.\\n- For a **real gas**, $Z \\\\neq 1$. If $Z < 1$, attractive forces dominate (gas is easier to compress). If $Z > 1$, repulsive forces and molecular volume dominate (gas is harder to compress).",
+        type: "short",
+        marks: "2 Marks"
+      },
+      {
+        question: "Prove that RTc / PcVc = 8/3.",
+        answer: "The critical constants in terms of van der Waals constants $a$ and $b$ are:\\n\\n$T_c = \\\\frac{8a}{27Rb}$, $P_c = \\\\frac{a}{27b^2}$, and $V_c = 3b$\\n\\nSubstitute these critical constants into the ratio:\\n\\n$\\\\frac{R T_c}{P_c V_c} = \\\\frac{R \\\\left( \\\\frac{8a}{27Rb} \\\\right)}{\\\\left( \\\\frac{a}{27b^2} \\\\right) (3b)}$\\n\\nSimplifying the numerator:\\n\\n$R \\\\times \\\\frac{8a}{27Rb} = \\\\frac{8a}{27b}$\\n\\nSimplifying the denominator:\\n\\n$\\\\frac{a}{27b^2} \\\\times 3b = \\\\frac{3a}{27b}$\\n\\nNow divide the two terms:\\n\\n$\\\\frac{R T_c}{P_c V_c} = \\\\frac{\\\\frac{8a}{27b}}{\\\\frac{3a}{27b}} = \\\\frac{8a}{27b} \\\\times \\\\frac{27b}{3a} = \\\\boxed{\\\\frac{8}{3}}$\\n\\nHence proved.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Calculate the Boyle temperature for a gas whose van der Waals constant a = 7.18 L2 atm mol-2, b = 0.854 L mol-1.",
+        answer: "**Given Data:**\\n- $a = 7.18\\\\text{ L}^2\\\\text{ atm mol}^{-2}$\\n- $b = 0.854\\\\text{ L mol}^{-1}$\\n- Gas constant $R = 0.0821\\\\text{ L atm K}^{-1}\\\\text{ mol}^{-1}$\\n\\n**Formula:**\\nThe Boyle temperature ($T_B$) is given by:\\n\\n$T_B = \\\\frac{a}{Rb}$\\n\\n**Calculation:**\\n\\n$T_B = \\\\frac{7.18}{0.0821 \\\\times 0.854}$\\n\\n$T_B = \\\\frac{7.18}{0.0701134} \\\\approx 102.41\\\\text{ K}$ (or $\\\\approx 102.53\\\\text{ K}$ using $R \\\\approx 0.08206$)\\n\\n**Answer:** The Boyle temperature of the gas is approximately **102.4 K** (or **102.5 K**).",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Write van der Waals equation of real gases and explain significance of constants a and b.",
+        answer: "**Van der Waals Equation:**\\nFor $n$ moles of a real gas, the equation is:\\n\\n$\\\\left(P + \\\\frac{an^2}{V^2}\\\\right)(V - nb) = nRT$\\n\\n**Significance of Constant 'a':**\\n- It acts as a **pressure correction** term, accounting for the attractive intermolecular forces between gas molecules.\\n- Real gas molecules attract each other, pulling back molecules about to strike the container wall, which reduces the measured pressure. The term $\\\\frac{an^2}{V^2}$ corrects for this reduction.\\n- A higher $a$ value indicates stronger intermolecular forces, making the gas easier to liquefy. Unit: $\\\\text{L}^2\\\\text{ atm mol}^{-2}$.\\n\\n**Significance of Constant 'b':**\\n- It acts as a **volume correction** term (excluded volume or co-volume), representing the finite size of the gas molecules.\\n- It represents the volume that is unavailable for the free movement of molecules because they cannot overlap. It is roughly 4 times the actual molecular volume.\\n- A higher $b$ value indicates a larger molecular size. Unit: $\\\\text{L mol}^{-1}$.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Discuss critical phenomenon of real gases.",
+        answer: "**Critical Phenomena of Real Gases:**\\nCritical phenomena refer to the physical behavior of real gases as they approach and undergo the transition between the gaseous and liquid phases at a unique set of conditions called the critical point $(P_c, V_c, T_c)$:\\n\\n1. **Critical Temperature ($T_c$):** The maximum temperature at which a gas can be liquefied by the application of pressure alone. Above $T_c$, the kinetic energy of molecules is too high for intermolecular attractions to bind them into a liquid, regardless of pressure. $T_c = \\\\frac{8a}{27Rb}$.\\n2. **Critical Pressure ($P_c$):** The minimum pressure required to liquefy the gas at its critical temperature. $P_c = \\\\frac{a}{27b^2}$.\\n3. **Critical Volume ($V_c$):** The volume occupied by one mole of the gas at $T_c$ and $P_c$. $V_c = 3b$.\\n4. **Behavior at the Critical Point:** At the critical point, the density of the liquid phase equals the density of the vapor phase. The surface tension between the phases drops to zero, and the boundary separating liquid and gas completely disappears, merging the substance into a single homogeneous phase known as a **supercritical fluid**.",
+        type: "long",
+        marks: "5 Marks"
       }
     ]
   },

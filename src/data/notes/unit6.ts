@@ -66,7 +66,21 @@ export const unit6Notes = [
       "Identify the isomerism relation between cyclopropane and propene."
     ],
     shortAnswer: "Isomers have the same molecular formula. Structural isomers differ in atom connectivity (chain, position, functional, metamerism, ring, and tautomerism). Stereoisomers have the same connectivity but different 3D shapes. They include conformers (interconvert by bond rotation) and configurational isomers (enantiomers and diastereomers).",
-    longAnswer: "Isomerism is a central concept in organic chemistry. Isomers are molecules that have the same molecular formula but different chemical structures. They are divided into structural (constitutional) isomers and stereoisomers. Structural isomers differ in the connectivity of their atoms. This category includes chain isomers (differences in the carbon skeleton, like n-pentane, iso-pentane, and neo-pentane), position isomers (differing locations of a functional group or multiple bond, like But-1-ene and But-2-ene), functional isomers (different functional groups, like ethyl alcohol and dimethyl ether), metamers (different alkyl chains attached to a heteroatom, like methyl propyl ether and diethyl ether), ring isomers (where one is an open chain and the other is a ring, like propene and cyclopropane), and tautomers (which exist in a dynamic equilibrium of interconvertible forms due to rapid proton migration, such as the keto and enol forms of acetaldehyde). Stereoisomers have the same molecular formula and atom connectivity, but their atoms are arranged differently in space. They are divided into conformational and configurational isomers. Conformational isomers can interconvert by rotation around single carbon-carbon σ-bonds. configurational isomers can only be interconverted by breaking and reforming covalent bonds. This group is further divided into enantiomers (non-superimposable mirror images) and diastereomers (non-superimposable non-mirror images, including geometric cis/trans isomers)."
+    longAnswer: "Isomerism is a central concept in organic chemistry. Isomers are molecules that have the same molecular formula but different chemical structures. They are divided into structural (constitutional) isomers and stereoisomers. Structural isomers differ in the connectivity of their atoms. This category includes chain isomers (differences in the carbon skeleton, like n-pentane, iso-pentane, and neo-pentane), position isomers (differing locations of a functional group or multiple bond, like But-1-ene and But-2-ene), functional isomers (different functional groups, like ethyl alcohol and dimethyl ether), metamers (different alkyl chains attached to a heteroatom, like methyl propyl ether and diethyl ether), ring isomers (where one is an open chain and the other is a ring, like propene and cyclopropane), and tautomers (which exist in a dynamic equilibrium of interconvertible forms due to rapid proton migration, such as the keto and enol forms of acetaldehyde). Stereoisomers have the same molecular formula and atom connectivity, but their atoms are arranged differently in space. They are divided into conformational and configurational isomers. Conformational isomers can interconvert by rotation around single carbon-carbon σ-bonds. configurational isomers can only be interconverted by breaking and reforming covalent bonds. This group is further divided into enantiomers (non-superimposable mirror images) and diastereomers (non-superimposable non-mirror images, including geometric cis/trans isomers).",
+    questionsAndAnswers: [
+      {
+        question: "Which type of isomerism is observed in CH\u2083CH\u2082OH and CH\u2083OCH\u2083?",
+        answer: "**Functional isomerism**. Both ethanol ($CH_3CH_2OH$) and dimethyl ether ($CH_3OCH_3$) share the same molecular formula ($C_2H_6O$) but possess different functional groups: ethanol contains an alcohol group ($-OH$) and dimethyl ether contains an ether group ($-O-$).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Which isomerism is shown by alkenes but not by alkanes?",
+        answer: "**Geometrical (cis-trans) isomerism**. Alkenes have a rigid double bond ($C=C$) that restricts rotation, allowing substituents to be placed differently in space relative to the bond. Alkanes have single bonds ($C-C$) with free rotation, preventing geometrical isomers.",
+        type: "very_short",
+        marks: "1 Mark"
+      }
+    ]
   },
   {
     unitNumber: 6,
@@ -216,6 +230,32 @@ export const unit6Notes = [
           "The positive sign indicates dextrorotatory (+) rotation."
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Which of the following molecules exhibit optical activity? 2-methyl propane, 2-methyl butane, 3-methyl pentane, 3-methyl hexane.",
+        answer: "**3-methyl hexane**. \\n\\n*Reasoning:* For a molecule to show optical activity, it must contain a chiral center (carbon bonded to four different groups). Analyzing the structures:\\n- 2-methyl propane: no chiral carbon.\\n- 2-methyl butane: no chiral carbon.\\n- 3-methyl pentane: no chiral carbon.\\n- 3-methyl hexane: Carbon-3 is bonded to a Hydrogen, a Methyl group ($-CH_3$), an Ethyl group ($-CH_2CH_3$), and a Propyl group ($-CH_2CH_2CH_3$). Having four different groups, it is chiral and optically active.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Define specific rotation of an optically active molecule.",
+        answer: "The **specific rotation ($[\\\\alpha]^T_D$)** is the observed angle of optical rotation when plane-polarized light of wavelength $\\\\lambda$ (usually the D-line of sodium, $589.6\\\\text{ nm}$) is passed through a solution of $1\\\\text{ g/mL}$ concentration in a path length of $1\\\\text{ dm}$ ($10\\\\text{ cm}$) at a specified temperature $T$:\\n\\n$[\\\\alpha]^T_D = \\\\frac{\\\\alpha_{obs}}{l \\\\times c}$\\n\\nwhere:\\n- $\\\\alpha_{obs}$ is the observed rotation in degrees.\\n- $l$ is the path length in decimeters ($dm$).\\n- $c$ is the concentration of the solution in $g/mL$.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "What is the necessary and sufficient condition for a molecule to be optically active?",
+        answer: "The necessary and sufficient condition for optical activity is **chirality** (or **dissymmetry**): the molecule and its mirror image must be non-superimposable. \\n\\nMathematically, this requires the **absence of an alternating axis of symmetry ($S_n$)**, which includes the plane of symmetry ($\\\\sigma$, $S_1$) and the center of inversion ($i$, $S_2$). A molecule lacking these elements is chiral and optically active.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "A compound does not have a chiral centre yet shows optical activity \u2014 Comment.",
+        answer: "A compound can show optical activity without having a chiral carbon center if it possesses **axial chirality** or **planar chirality**, where the groups are arranged in a non-superimposable geometry about an axis or plane.\\n\\n**Example: Allenes (e.g., 2,3-pentadiene)**\\nIn allenes with different terminal substituents ($R_1 R_2 C=C=C R_3 R_4$), the central carbon is $sp$ hybridized and the two double bonds are perpendicular to each other. The substituents on one end lie in a perpendicular plane relative to the other end. This lacks a plane of symmetry, making the molecule chiral as a whole (chiral axis) and optically active, despite having no individual chiral carbon center.",
+        type: "short",
+        marks: "3 Marks"
+      }
     ]
   },
   {
@@ -248,7 +288,15 @@ export const unit6Notes = [
       "Write all the stereoisomers of 2,3-dichlorobutane. Explain the relationships between them."
     ],
     shortAnswer: "Enantiomers are non-superimposable mirror images (like R vs S configurations). They have identical physical properties except for the direction they rotate polarized light. Diastereomers are stereoisomers that are not mirror images (like R,R vs R,S). They have different physical and chemical properties and are easily separated.",
-    longAnswer: "Enantiomers and diastereomers are the two primary classes of configurational stereoisomers. Enantiomers are stereoisomers that are non-superimposable mirror images. This relationship is binary: a chiral molecule has exactly one enantiomer. For a molecule with multiple chiral centers, its enantiomer is formed by reversing the configuration of every center (e.g., the enantiomer of (2R, 3R)-dichloropentane is (2S, 3S)-dichloropentane). Enantiomers have identical physical properties, such as melting point, boiling point, density, and solubility in achiral solvents. They also show identical chemical reactivity when reacting with achiral reagents. They differ in two ways: they rotate plane-polarized light in equal but opposite directions, and they interact differently with other chiral species. This difference is critical in pharmacology, as receptors and enzymes are chiral proteins. One enantiomer may fit the receptor active site (e.g., L-DOPA for Parkinson's), while the other enantiomer is inactive or toxic (e.g., D-DOPA). Diastereomers are stereoisomers that are not mirror images. This relationship occurs in molecules with multiple chiral centers when some, but not all, of the configurations are reversed (e.g., (2R, 3R)-dichloropentane and (2R, 3S)-dichloropentane). Diastereomers have different physical properties (such as different boiling points, solubilities, and dipole moments) and different chemical reactivities with both chiral and achiral reagents. Because of these differences, diastereomers can be separated using standard laboratory techniques like fractional distillation, recrystallization, or chromatography. This difference is exploited in the resolution of racemic mixtures, where a racemic mixture of enantiomers (e.g., an acid, ±A) is reacted with a pure enantiomer of a resolving agent (e.g., a base, +B). This reaction produces a mixture of salts ((+A)(+B) and (-A)(+B)) that are diastereomers. These salts are separated based on their different solubilities, and are then treated with acid to regenerate the pure, separated enantiomers."
+    longAnswer: "Enantiomers and diastereomers are the two primary classes of configurational stereoisomers. Enantiomers are stereoisomers that are non-superimposable mirror images. This relationship is binary: a chiral molecule has exactly one enantiomer. For a molecule with multiple chiral centers, its enantiomer is formed by reversing the configuration of every center (e.g., the enantiomer of (2R, 3R)-dichloropentane is (2S, 3S)-dichloropentane). Enantiomers have identical physical properties, such as melting point, boiling point, density, and solubility in achiral solvents. They also show identical chemical reactivity when reacting with achiral reagents. They differ in two ways: they rotate plane-polarized light in equal but opposite directions, and they interact differently with other chiral species. This difference is critical in pharmacology, as receptors and enzymes are chiral proteins. One enantiomer may fit the receptor active site (e.g., L-DOPA for Parkinson's), while the other enantiomer is inactive or toxic (e.g., D-DOPA). Diastereomers are stereoisomers that are not mirror images. This relationship occurs in molecules with multiple chiral centers when some, but not all, of the configurations are reversed (e.g., (2R, 3R)-dichloropentane and (2R, 3S)-dichloropentane). Diastereomers have different physical properties (such as different boiling points, solubilities, and dipole moments) and different chemical reactivities with both chiral and achiral reagents. Because of these differences, diastereomers can be separated using standard laboratory techniques like fractional distillation, recrystallization, or chromatography. This difference is exploited in the resolution of racemic mixtures, where a racemic mixture of enantiomers (e.g., an acid, ±A) is reacted with a pure enantiomer of a resolving agent (e.g., a base, +B). This reaction produces a mixture of salts ((+A)(+B) and (-A)(+B)) that are diastereomers. These salts are separated based on their different solubilities, and are then treated with acid to regenerate the pure, separated enantiomers.",
+    questionsAndAnswers: [
+      {
+        question: "How many stereoisomers are possible for 2,3-pentanediol?",
+        answer: "**Four stereoisomers** are possible. \\n\\n*Explanation:* The formula for 2,3-pentanediol is $CH_3-CH(OH)-CH(OH)-CH_2-CH_3$. It contains two non-identical chiral carbons (carbons 2 and 3). According to the stereoisomer rule, the maximum number of stereoisomers is:\\n\\n$2^n = 2^2 = 4$\\n\\nThese comprise two pairs of enantiomers (four active stereoisomers).",
+        type: "very_short",
+        marks: "1 Mark"
+      }
+    ]
   },
   {
     unitNumber: 6,
@@ -349,6 +397,14 @@ export const unit6Notes = [
       "Distinguish between facial (fac) and meridional (mer) isomers in octahedral complexes of type [Ma3b3]."
     ],
     shortAnswer: "Coordination compounds show structural isomerism (ionization, linkage, coordination, hydrate) and stereoisomerism (geometrical and optical). Geometrical isomers include cis/trans (in square planar Ma2b2 and octahedral Ma4b2) and fac/mer (in octahedral Ma3b3). Optical isomers are non-superimposable mirror images, common in octahedral complexes with chelating ligands.",
-    longAnswer: "Isomerism in transition metal complexes is classified into structural isomerism and stereoisomerism. Structural isomerism involves different connectivity. Linkage isomerism occurs with ambidentate ligands. For example, [Co(NH₃)5(NO2)]²⁺ contains a Co-NO2 bond, while [Co(NH₃)5(ONO)]²⁺ contains a Co-ONO bond. Ionization isomerism occurs when ligands inside the coordination sphere exchange with counter-ions outside. [Co(NH₃)₅Br]SO₄ and [Co(NH₃)₅SO₄]Br are ionization isomers; the first yields a precipitate with BaCl₂, and the second reacts with AgNO₃. Stereoisomerism involves identical chemical connectivity but different spatial arrangements. Geometrical isomerism occurs in square planar and octahedral complexes. In square planar Ma2b2 complexes, such as Pt(NH₃)₂Cl₂, the cis isomer has identical ligands adjacent to each other (90° bond angle), while the trans isomer has them opposite (180° bond angle). In octahedral Ma4b2 complexes, like [Co(NH₃)4Cl2]⁺, cis/trans isomers form. In octahedral Ma3b3 complexes, like [Ru(NH₃)₃Cl₃], facial (fac) and meridional (mer) isomers form. In the fac isomer, the three identical ligands occupy one triangular face of the octahedron. In the mer isomer, they lie in a plane that bisects the metal center. Optical isomerism occurs when a complex is chiral. For example, the cis-[Co(en)2Cl2]⁺ isomer lacks a plane of symmetry, making it chiral and optically active, existing as non-superimposable mirror images. The trans-[Co(en)2Cl2]⁺ isomer, however, has a plane of symmetry that makes it achiral and optically inactive."
+    longAnswer: "Isomerism in transition metal complexes is classified into structural isomerism and stereoisomerism. Structural isomerism involves different connectivity. Linkage isomerism occurs with ambidentate ligands. For example, [Co(NH₃)5(NO2)]²⁺ contains a Co-NO2 bond, while [Co(NH₃)5(ONO)]²⁺ contains a Co-ONO bond. Ionization isomerism occurs when ligands inside the coordination sphere exchange with counter-ions outside. [Co(NH₃)₅Br]SO₄ and [Co(NH₃)₅SO₄]Br are ionization isomers; the first yields a precipitate with BaCl₂, and the second reacts with AgNO₃. Stereoisomerism involves identical chemical connectivity but different spatial arrangements. Geometrical isomerism occurs in square planar and octahedral complexes. In square planar Ma2b2 complexes, such as Pt(NH₃)₂Cl₂, the cis isomer has identical ligands adjacent to each other (90° bond angle), while the trans isomer has them opposite (180° bond angle). In octahedral Ma4b2 complexes, like [Co(NH₃)4Cl2]⁺, cis/trans isomers form. In octahedral Ma3b3 complexes, like [Ru(NH₃)₃Cl₃], facial (fac) and meridional (mer) isomers form. In the fac isomer, the three identical ligands occupy one triangular face of the octahedron. In the mer isomer, they lie in a plane that bisects the metal center. Optical isomerism occurs when a complex is chiral. For example, the cis-[Co(en)2Cl2]⁺ isomer lacks a plane of symmetry, making it chiral and optically active, existing as non-superimposable mirror images. The trans-[Co(en)2Cl2]⁺ isomer, however, has a plane of symmetry that makes it achiral and optically inactive.",
+    questionsAndAnswers: [
+      {
+        question: "Give one example of ionization isomerism.",
+        answer: "**$[Co(NH_3)_5Br]SO_4$** and **$[Co(NH_3)_5SO_4]Br$**.\\n- When $[Co(NH_3)_5Br]SO_4$ is dissolved in water, it yields $SO_4^{2-}$ ions, which give a precipitate with $BaCl_2$.\\n- When $[Co(NH_3)_5SO_4]Br$ is dissolved, it yields $Br^-$ ions, which give a precipitate with $AgNO_3$.",
+        type: "very_short",
+        marks: "1 Mark"
+      }
+    ]
   }
 ];

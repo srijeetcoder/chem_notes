@@ -38,37 +38,44 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950 p-4 transition-colors relative overflow-hidden">
-      {/* Decorative background grid and blur circles */}
-      <div className="absolute inset-0 bg-grid-zinc-200/50 dark:bg-grid-zinc-900/30 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] z-0" />
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl z-0 animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl z-0 animate-pulse" style={{ animationDelay: '2s' }} />
+    <div className="min-h-screen flex items-center justify-center molecular-bg p-4 transition-colors relative overflow-hidden">
+      {/* Animated Scientific Grid */}
+      <div className="scientific-grid animate-grid-move" />
+      
+      {/* Premium Ambient Lights & Floating Atoms */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl z-0 animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-400/5 rounded-full blur-3xl z-0 animate-pulse" style={{ animationDelay: '3s' }} />
+      <div className="absolute top-10 right-10 w-40 h-40 rounded-full border border-emerald-500/10 animate-molecular-float z-0" style={{ animationDelay: '0s' }} />
+      <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full border border-cyan-400/5 animate-molecular-float z-0" style={{ animationDelay: '4s' }} />
 
-      <div className="w-full max-w-md bg-white/80 dark:bg-zinc-900/70 backdrop-blur-md rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 p-8 shadow-xl relative z-10">
+      {/* Main Glass Card container */}
+      <div className="w-full max-w-md glass-panel rounded-3xl p-8 shadow-2xl relative z-10 border-white/10 hover:border-cyan-400/20 transition-all duration-500">
         <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-500 mb-3 border border-emerald-500/20">
-            <Atom className="w-6 h-6 animate-spin" style={{ animationDuration: '8s' }} />
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500/10 to-cyan-500/10 flex items-center justify-center text-emerald-400 mb-4 border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+            <Atom className="w-7 h-7 animate-spin text-emerald-400" style={{ animationDuration: '8s' }} />
           </div>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 font-sans tracking-tight">Second Sem Chemistry</h1>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1.5 text-center">
-            Sign in to access study notes, progress tracking, and personal notebooks.
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent font-sans tracking-tight">
+            Second Sem Chemistry
+          </h1>
+          <p className="text-xs text-zinc-400 mt-2 text-center max-w-[280px] leading-relaxed">
+            Access your premium scientific learning dashboard, notes repository, and notebook.
           </p>
         </div>
 
         {error && (
-          <div className="mb-5 p-3.5 rounded-xl bg-rose-50 border border-rose-250 dark:bg-rose-950/20 dark:border-rose-900/40 text-rose-600 dark:text-rose-400 text-xs flex items-start gap-2.5">
+          <div className="mb-5 p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs flex items-start gap-2.5 shadow-[inset_0_0_12px_rgba(244,63,94,0.05)]">
             <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
             <span>{error}</span>
           </div>
         )}
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-5">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-1.5 ml-1">
+            <label className="block text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-2 ml-1">
               Email Address
             </label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-zinc-400 dark:text-zinc-500">
+            <div className="relative group">
+              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-zinc-500 group-focus-within:text-cyan-400 transition-colors">
                 <Mail className="w-4 h-4" />
               </span>
               <input
@@ -77,17 +84,17 @@ export const Login: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@university.edu"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/40 text-zinc-900 dark:text-zinc-50 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm"
+                className="w-full pl-10 pr-4 py-3 rounded-2xl border border-white/5 bg-zinc-950/60 text-zinc-100 placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-cyan-400/10 focus:border-cyan-400 transition-all duration-300 text-sm shadow-[inset_0_2px_4px_rgba(0,0,0,0.4)]"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-1.5 ml-1">
+            <label className="block text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-2 ml-1">
               Password
             </label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-zinc-400 dark:text-zinc-500">
+            <div className="relative group">
+              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-zinc-500 group-focus-within:text-cyan-400 transition-colors">
                 <Lock className="w-4 h-4" />
               </span>
               <input
@@ -96,7 +103,7 @@ export const Login: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/40 text-zinc-900 dark:text-zinc-50 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm"
+                className="w-full pl-10 pr-4 py-3 rounded-2xl border border-white/5 bg-zinc-950/60 text-zinc-100 placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-cyan-400/10 focus:border-cyan-400 transition-all duration-300 text-sm shadow-[inset_0_2px_4px_rgba(0,0,0,0.4)]"
               />
             </div>
           </div>
@@ -104,19 +111,19 @@ export const Login: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-all focus:ring-2 focus:ring-emerald-500/20 flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed mt-6 font-sans"
+            className="w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-zinc-950 font-extrabold text-xs uppercase tracking-widest transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/10 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed mt-8"
           >
-            {loading ? 'Signing In...' : 'Sign In'}
+            {loading ? 'Authenticating...' : 'Establish Session'}
             <LogIn className="w-4 h-4" />
           </button>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-zinc-200/80 dark:border-zinc-800/80 text-center">
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            Don't have an account?{' '}
+        <div className="mt-8 pt-6 border-t border-white/5 text-center">
+          <p className="text-xs text-zinc-450">
+            Don't have an authorized account?{' '}
             <Link
               to="/register"
-              className="text-emerald-600 hover:text-emerald-500 dark:text-emerald-400 dark:hover:text-emerald-300 font-semibold inline-flex items-center gap-0.5 hover:underline"
+              className="text-cyan-400 hover:text-cyan-300 font-bold inline-flex items-center gap-0.5 hover:underline"
             >
               Sign up <ArrowRight className="w-3.5 h-3.5" />
             </Link>

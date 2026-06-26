@@ -95,6 +95,44 @@ export const unit7Notes = [
           "Evidence: The SN2 reaction of (R)-2-bromooctane with $\\text{OH}^-$ gives exclusively (S)-2-octanol — 100\\% inversion of configuration."
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "What is the reactivity order of alkyl halide in SN\u2082 mechanism?",
+        answer: "**Methyl > $1^\\\\circ > 2^\\\\circ > 3^\\\\circ$**.\\n\\n*Reasoning:* The $SN_2$ mechanism involves a one-step concerted backside attack by the nucleophile, forming a pentacoordinate transition state. As steric hindrance around the carbon increases, the approaching nucleophile faces repulsion, making the reaction slower.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Which type of mechanism is followed for hydrolysis of isopropyl chloride?",
+        answer: "**$SN_1$ mechanism** (predominantly). Isopropyl chloride is a secondary alkyl halide. When hydrolyzed in a polar protic solvent (like water), the solvent stabilizes the carbocation intermediate. The secondary carbocation ($CH_3-\\\\mathord{CH^+}-CH_3$) is stable enough to favor dissociation ($SN_1$), though it can also react via $SN_2$ depending on the strength of the nucleophile.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "What is the important characteristic of a nucleophile?",
+        answer: "A nucleophile must possess **an unshared pair of electrons (lone pair)** or **a negative charge** that it can donate to an electron-deficient carbon atom to form a covalent bond.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "A nucleophile must possess ____________.",
+        answer: "**A lone pair of electrons or a negative charge** (e.g., $OH^-$, $H_2O$, $NH_3$, $CN^-$). This enables it to attack electrophilic centers.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Reaction of alkyl halides with aqueous and alcoholic KOH \u2014 Explain.",
+        answer: "The reaction yields different products depending on the solvent due to competing substitution and elimination pathways:\\n\\n1. **With Aqueous KOH (Nucleophilic Substitution):**\\n- Water is a highly polar protic solvent that solvates the hydroxide ion ($OH^-$), reducing its base strength.\\n- In this state, $OH^-$ acts as a nucleophile. It attacks the electrophilic carbon of the alkyl halide, displacing the halogen to form an **alcohol**:\\n  $\\\\text{R-X} + \\\\text{KOH(aq)} \\\\rightarrow \\\\text{R-OH} + \\\\text{KX}$\\n\\n2. **With Alcoholic KOH (Elimination):**\\n- Alcohol (ethanol) reacts with $KOH$ to form the ethoxide ion ($C_2H_5O^-$), which is a much stronger base than $OH^-$.\\n- The strong base abstracts a $\\\\beta$-proton from the alkyl halide, leading to the elimination of a hydrogen halide molecule ($H-X$) and forming an **alkene** ($E_2$ elimination):\\n  $\\\\text{R-CH}_2\\\\text{-CH}_2\\\\text{-X} + \\\\text{KOH(alc)} \\\\rightarrow \\\\text{R-CH=CH}_2 + \\\\text{KX} + \\\\text{H}_2\\\\text{O}$",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Explain orientation in nitration of aniline.",
+        answer: "Aniline contains an amino group ($-NH_2$), which is strongly activating and **ortho/para-directing** because the lone pair on nitrogen can delocalize into the benzene ring, increasing electron density at the ortho and para positions.\\n\\nHowever, nitration is carried out using a strongly acidic mixed acid ($HNO_3 + H_2SO_4$). In this highly acidic medium:\\n1. The basic aniline is protonated to form the **anilinium ion ($-NH_3^+$)**:\\n   $\\\\text{C}_6\\\\text{H}_5\\\\text{NH}_2 + \\\\text{H}^+ \\\\rightleftharpoons \\\\text{C}_6\\\\text{H}_5\\\\text{NH}_3^+$\\n2. The $-NH_3^+$ group carries a positive charge, making it strongly electron-withdrawing and **meta-directing**.\\n\\nConsequently, the nitration of aniline yields a significant amount of **meta-nitroaniline** (about $47\\\\%$) alongside para-nitroaniline ($51\\\\%$) and ortho-nitroaniline ($2\\\\%$).",
+        type: "long",
+        marks: "5 Marks"
+      }
     ]
   },
   {
@@ -282,6 +320,26 @@ export const unit7Notes = [
           "Rule of thumb: $\\text{NaBH}_4$ reduces aldehydes \\& ketones; $\\text{LiAlH}_4$ reduces everything including esters, acids, and amides."
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Write the name of one reagent which is used to oxidize alcohols to acids.",
+        answer: "**Acidified Potassium Permanganate ($KMnO_4$)** or **acidified Potassium Dichromate ($K_2Cr_2O_7$)**.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Explain with examples: (a) Wolff\u2013Kishner reaction (b) Cannizzaro reaction",
+        answer: "1. **Wolff-Kishner Reduction:**\\nConverts aldehydes or ketones to alkanes by heating with hydrazine hydrate ($H_2NNH_2 \\\\cdot H_2O$) and a strong base ($KOH$) in a high-boiling solvent like diethylene glycol. The carbonyl group ($C=O$) is converted to a methylene group ($CH_2$):\\n\\n$\\\\text{R}_1\\\\text{-CO-R}_2 + \\\\text{H}_2\\\\text{NNH}_2 \\\\xrightarrow[\\\\Delta]{\\\\text{KOH, glycol}} \\text{R}_1\\\\text{-CH}_2\\\\text{-R}_2 + \\\\text{N}_2 \\\\uparrow$\\n\\n2. **Cannizzaro Reaction:**\\nAldehydes that do not contain an $\\\\alpha$-hydrogen (e.g., $HCHO$, $C_6H_5CHO$) undergo self-oxidation and reduction (disproportionation) when treated with concentrated alkali ($50\\\\%\\\\text{ NaOH}$), yielding one molecule of alcohol and one molecule of carboxylic acid salt:\\n\\n$2\\\\text{ HCHO} \\\\xrightarrow{\\\\text{conc. NaOH}} \\\\text{CH}_3\\\\text{OH} + \\\\text{HCOONa}$",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Oxidation of toluene by alkaline KMnO\u2084 and reduction of benzoic acid by LiAlH\u2084.",
+        answer: "1. **Oxidation of Toluene:**\\nToluene is oxidized by heating with alkaline potassium permanganate ($KMnO_4$), converting the methyl group ($-CH_3$) to a carboxylic acid group, forming benzoic acid (after acidic workup):\\n\\n$\\\\text{C}_6\\\\text{H}_5\\\\text{-CH}_3 \\\\xrightarrow[2)\\\\text{ H}_3\\\\text{O}^+]{1)\\\\text{ alkaline KMnO}_4, \\\\Delta} \\\\text{C}_6\\\\text{H}_5\\\\text{-COOH}$\\n\\n2. **Reduction of Benzoic Acid:**\\nBenzoic acid is reduced by lithium aluminum hydride ($LiAlH_4$), a strong reducing agent, to form a primary alcohol: benzyl alcohol:\\n\\n$\\\\text{C}_6\\\\text{H}_5\\\\text{-COOH} \\\\xrightarrow[2)\\\\text{ H}_3\\\\text{O}^+]{1)\\\\text{ LiAlH}_4} \\\\text{C}_6\\\\text{H}_5\\\\text{-CH}_2\\\\text{OH}$",
+        type: "long",
+        marks: "5 Marks"
+      }
     ]
   },
   {
@@ -351,7 +409,15 @@ export const unit7Notes = [
       "Why is acetic anhydride used instead of acetyl chloride in the preparation of aspirin?"
     ],
     shortAnswer: "Aspirin (2-acetoxybenzoic acid) is synthesized by acetylating the phenolic $-OH$ group of salicylic acid with acetic anhydride, catalyzed by a strong acid like $\\ce{H3PO4}$. It is used to treat fever, headaches, and inflammation, but can cause gastric irritation and ulcers.",
-    longAnswer: "Aspirin, chemically known as acetylsalicylic acid or 2-acetoxybenzoic acid, is an analgesic, antipyretic, and anti-inflammatory drug. It is synthesized by acetylating the phenolic hydroxyl group of salicylic acid. Salicylic acid is prepared industrially from phenol via the Kolbe-Schmitt reaction, which reacts sodium phenoxide with carbon dioxide under high pressure, followed by acidification. The acetylation reaction is carried out by treating salicylic acid with excess acetic anhydride in the presence of a strong acid catalyst, such as concentrated phosphoric acid ($\\ce{H3PO4}$) or sulfuric acid ($\\ce{H2SO4}$). The mechanism is a nucleophilic acyl substitution: 1. Protonation: The acid catalyst protonates a carbonyl oxygen of the acetic anhydride, making the carbonyl carbon highly electrophilic. 2. Nucleophilic Attack: The weak nucleophile, the phenolic oxygen of salicylic acid, attacks the protonated carbonyl carbon, forming a tetrahedral intermediate. 3. Collapse: The intermediate collapses, reforming the C=O double bond and ejecting a neutral acetic acid molecule. 4. Deprotonation yields acetylsalicylic acid (Aspirin). Crude aspirin is isolated by adding cold water to decompose excess anhydride and precipitate the product. It is purified by recrystallization from a water-ethanol mixture. Aspirin is widely used to treat fever, headaches, and rheumatoid arthritis, but its use carries a risk of gastric irritation, stomach ulcers, and internal bleeding."
+    longAnswer: "Aspirin, chemically known as acetylsalicylic acid or 2-acetoxybenzoic acid, is an analgesic, antipyretic, and anti-inflammatory drug. It is synthesized by acetylating the phenolic hydroxyl group of salicylic acid. Salicylic acid is prepared industrially from phenol via the Kolbe-Schmitt reaction, which reacts sodium phenoxide with carbon dioxide under high pressure, followed by acidification. The acetylation reaction is carried out by treating salicylic acid with excess acetic anhydride in the presence of a strong acid catalyst, such as concentrated phosphoric acid ($\\ce{H3PO4}$) or sulfuric acid ($\\ce{H2SO4}$). The mechanism is a nucleophilic acyl substitution: 1. Protonation: The acid catalyst protonates a carbonyl oxygen of the acetic anhydride, making the carbonyl carbon highly electrophilic. 2. Nucleophilic Attack: The weak nucleophile, the phenolic oxygen of salicylic acid, attacks the protonated carbonyl carbon, forming a tetrahedral intermediate. 3. Collapse: The intermediate collapses, reforming the C=O double bond and ejecting a neutral acetic acid molecule. 4. Deprotonation yields acetylsalicylic acid (Aspirin). Crude aspirin is isolated by adding cold water to decompose excess anhydride and precipitate the product. It is purified by recrystallization from a water-ethanol mixture. Aspirin is widely used to treat fever, headaches, and rheumatoid arthritis, but its use carries a risk of gastric irritation, stomach ulcers, and internal bleeding.",
+    questionsAndAnswers: [
+      {
+        question: "Describe synthesis of aspirin and state its medical utility.",
+        answer: "**Synthesis:**\\nAspirin is synthesized by the acetylation of salicylic acid (2-hydroxybenzoic acid) with acetic anhydride in the presence of a strong acid catalyst like phosphoric acid ($H_3PO_4$):\\n\\n$\\\\text{C}_6\\\\text{H}_4\\\\text{(OH)(COOH)} + \\\\text{(CH}_3\\\\text{CO)}_2\\\\text{O} \\\\xrightarrow{\\\\text{H}_3\\\\text{PO}_4} \\\\text{C}_6\\\\text{H}_4\\\\text{(OCOCH}_3\\\\text{)(COOH)} + \\\\text{CH}_3\\\\text{COOH}$\\n\\nThe hydroxyl group of salicylic acid is converted to an ester group (acetylsalicylic acid).\\n\\n**Medical Utility:**\\n- **Analgesic:** Relieves pain (headaches, muscle aches).\\n- **Antipyretic:** Reduces fever.\\n- **Anti-inflammatory:** Treats swelling/arthritis.\\n- **Anti-platelet (blood thinner):** Prevents blood clots, reducing heart attack risk.",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   },
   {
     unitNumber: 7,
@@ -385,6 +451,14 @@ export const unit7Notes = [
       "Discuss the medicinal utilities of paracetamol and the danger of overdose."
     ],
     shortAnswer: "Paracetamol (p-hydroxyacetanilide) is synthesized from phenol by nitration ($\\ce{NaNO3}$/dil. $\\ce{H2SO4}$), steam distillation, reduction of p-nitrophenol ($\\ce{NaBH4}$) to p-aminophenol, and selective acetylation of the amino group with acetic anhydride. Overdose can cause severe liver damage.",
-    longAnswer: "Paracetamol, also known as acetaminophen or N-(4-hydroxyphenyl)acetamide, is a widely used analgesic and antipyretic drug. It is synthesized starting from phenol. First, phenol undergoes nitration using sodium nitrate ($\\ce{NaNO3}$) and dilute sulfuric acid ($\\ce{H2SO4}$) to yield a mixture of ortho- and para-nitrophenol. From this mixture, para-nitrophenol is separated using steam distillation (since ortho-nitrophenol is steam-volatile due to intramolecular hydrogen bonding, whereas para-nitrophenol is not). Next, para-nitrophenol is reduced to para-aminophenol using sodium borohydride ($\\ce{NaBH4}$). Finally, para-aminophenol is acetylated. The molecule contains both a primary amine ($-NH_2$) and a phenolic hydroxyl ($-OH$) group. Nitrogen is larger and less electronegative than oxygen, so its lone pair is less tightly bound and more available for nucleophilic attack, making the amine group a stronger nucleophile. Heating p-aminophenol with acetic anhydride in water or dilute acid leads to selective acetylation of the amine group, forming an amide bond to yield paracetamol and acetic acid byproduct. Paracetamol is isolated by cooling the mixture to precipitate the product, which is purified by recrystallization from hot water. It is used to relieve fever and pain from the common cold, influenza, and dengue. However, an overdose can cause severe liver damage due to the accumulation of N-acetyl-p-benzoquinone imine (NAPQI), which depletes cellular glutathione."
+    longAnswer: "Paracetamol, also known as acetaminophen or N-(4-hydroxyphenyl)acetamide, is a widely used analgesic and antipyretic drug. It is synthesized starting from phenol. First, phenol undergoes nitration using sodium nitrate ($\\ce{NaNO3}$) and dilute sulfuric acid ($\\ce{H2SO4}$) to yield a mixture of ortho- and para-nitrophenol. From this mixture, para-nitrophenol is separated using steam distillation (since ortho-nitrophenol is steam-volatile due to intramolecular hydrogen bonding, whereas para-nitrophenol is not). Next, para-nitrophenol is reduced to para-aminophenol using sodium borohydride ($\\ce{NaBH4}$). Finally, para-aminophenol is acetylated. The molecule contains both a primary amine ($-NH_2$) and a phenolic hydroxyl ($-OH$) group. Nitrogen is larger and less electronegative than oxygen, so its lone pair is less tightly bound and more available for nucleophilic attack, making the amine group a stronger nucleophile. Heating p-aminophenol with acetic anhydride in water or dilute acid leads to selective acetylation of the amine group, forming an amide bond to yield paracetamol and acetic acid byproduct. Paracetamol is isolated by cooling the mixture to precipitate the product, which is purified by recrystallization from hot water. It is used to relieve fever and pain from the common cold, influenza, and dengue. However, an overdose can cause severe liver damage due to the accumulation of N-acetyl-p-benzoquinone imine (NAPQI), which depletes cellular glutathione.",
+    questionsAndAnswers: [
+      {
+        question: "The reagents for Paracetamol synthesis are ____________.",
+        answer: "**p-Aminophenol and acetic anhydride**. Paracetamol is synthesized by the acetylation of the amino group of p-aminophenol with acetic anhydride under mild conditions.",
+        type: "very_short",
+        marks: "1 Mark"
+      }
+    ]
   }
 ];

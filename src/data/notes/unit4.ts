@@ -91,6 +91,32 @@ export const unit4Notes = [
           "Therefore, the summation is always negative, making $\\Delta S_{\\text{mix}} > 0$ always positive. Mixing is spontaneous and driven by thermodynamic probability."
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Give one example of state function.",
+        answer: "**Internal energy ($U$ or $E$)**. Other examples include enthalpy ($H$), entropy ($S$), Gibbs free energy ($G$), pressure ($P$), volume ($V$), and temperature ($T$). Their values depend only on the current state of the system, not on how that state was reached.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Give one example of intensive property.",
+        answer: "**Temperature**. Other examples include pressure, density, molar volume, concentration, and boiling point. Intensive properties do not depend on the quantity of matter present in the system.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Show that entropy of mixing of ideal gases, \u0394Smix > 0",
+        answer: "When $n_A$ moles of gas A and $n_B$ moles of gas B are mixed at constant temperature and pressure, the entropy of mixing ($\\\\Delta S_{mix}$) is given by:\\n\\n$\\\\Delta S_{mix} = -R(n_A \\\\ln x_A + n_B \\\\ln x_B)$\\n\\nwhere $x_A = \\\\frac{n_A}{n_A + n_B}$ and $x_B = \\\\frac{n_B}{n_A + n_B}$ are the mole fractions of the gases.\\n\\nSince mole fractions represent parts of a whole, they are always fractions less than 1 ($x_A < 1$ and $x_B < 1$). \\n\\nConsequently, their natural logarithms are always negative:\\n\\n$\\\\ln x_A < 0$ and $\\\\ln x_B < 0$\\n\\nThis makes the term $(n_A \\\\ln x_A + n_B \\\\ln x_B)$ negative. Multiplying this negative sum by the negative constant $-R$ results in a positive value:\\n\\n$\\\\Delta S_{mix} > 0$\\n\\nThis proves that the mixing of ideal gases is a spontaneous process that increases the total entropy of the system.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Derive Gibbs\u2013Helmholtz equation at constant pressure.",
+        answer: "The Gibbs free energy is defined as:\\n\\n$G = H - TS$\\n\\nDivide by $T$:\\n\\n$\\\\frac{G}{T} = \\\\frac{H}{T} - S$\\n\\nDifferentiate with respect to temperature ($T$) at constant pressure ($P$):\\n\\n$\\\\left[ \\\\frac{\\\\partial(G/T)}{\\\\partial T} \\\\right]_P = -\\\\frac{H}{T^2} + \\\\frac{1}{T} \\\\left(\\\\frac{\\\\partial H}{\\\\partial T}\\\\right)_P - \\\\left(\\\\frac{\\\\partial S}{\\\\partial T}\\\\right)_P$\\n\\nSince $dH = TdS + VdP$, at constant pressure ($dP=0$), we have $dH = TdS$, which implies $\\\\left(\\\\frac{\\\\partial H}{\\\\partial T}\\\\right)_P = T \\\\left(\\\\frac{\\\\partial S}{\\\\partial T}\\\\right)_P$. Substituting this in:\\n\\n$\\\\left[ \\\\frac{\\\\partial(G/T)}{\\\\partial T} \\\\right]_P = -\\\\frac{H}{T^2} + \\\\frac{1}{T} \\\\left( T \\\\left(\\\\frac{\\\\partial S}{\\\\partial T}\\\\right)_P \\\\right) - \\\\left(\\\\frac{\\\\partial S}{\\\\partial T}\\\\right)_P = -\\\\frac{H}{T^2}$\\n\\nFor a chemical change from state 1 to state 2, $\\\\Delta G = G_2 - G_1$ and $\\\\Delta H = H_2 - H_1$, yielding the standard form:\\n\\n$\\\\boxed{ \\\\left[ \\\\frac{\\\\partial(\\\\Delta G/T)}{\\\\partial T} \\\\right]_P = -\\\\frac{\\\\Delta H}{T^2} }$\\nThis is the Gibbs-Helmholtz equation at constant pressure.",
+        type: "short",
+        marks: "3 Marks"
+      }
     ]
   },
   {
@@ -125,7 +151,21 @@ export const unit4Notes = [
       "Why is a 100% efficient heat engine thermodynamically impossible according to the Second Law?"
     ],
     shortAnswer: "The First Law (ΔU = q + w) states that energy is conserved. The Second Law states that spontaneous processes run in a direction that increases the total entropy of the universe (ΔS_univ > 0), meaning heat cannot convert completely into work without losses.",
-    longAnswer: "The First and Second Laws of Thermodynamics form the foundation of chemical energetics. The First Law is the principle of conservation of energy. For a closed system, it states that the change in internal energy (ΔU) is the sum of the net heat exchanged (q) and the work done (w). Mathematically: ΔU = q + w, where both q and w are path functions, but their sum ΔU is a state function. This law states that we cannot get work out of a system without putting in an equivalent amount of energy. The Second Law explains why processes occur in a specific direction. While the First Law allows a process where heat flows from a cold object to a hot object (as long as energy is conserved), the Second Law forbids this from happening spontaneously. It states that isolated systems spontaneously evolve toward states of greater thermodynamic probability and disorder. Rudolf Clausius defined the change in entropy (S) for a reversible process as dS = dq_rev/T. For an irreversible, spontaneous process, the entropy change is greater than the heat transfer divided by temperature: dS > dq/T. In terms of the universe (an isolated system), the Second Law requires that ΔS_universe = ΔS_system + ΔS_surroundings > 0 for any spontaneous process. When a system reaches equilibrium, the entropy of the universe reaches a maximum, and ΔS_universe = 0. This requirement explains why chemical reactions proceed until they reach a point of dynamic equilibrium."
+    longAnswer: "The First and Second Laws of Thermodynamics form the foundation of chemical energetics. The First Law is the principle of conservation of energy. For a closed system, it states that the change in internal energy (ΔU) is the sum of the net heat exchanged (q) and the work done (w). Mathematically: ΔU = q + w, where both q and w are path functions, but their sum ΔU is a state function. This law states that we cannot get work out of a system without putting in an equivalent amount of energy. The Second Law explains why processes occur in a specific direction. While the First Law allows a process where heat flows from a cold object to a hot object (as long as energy is conserved), the Second Law forbids this from happening spontaneously. It states that isolated systems spontaneously evolve toward states of greater thermodynamic probability and disorder. Rudolf Clausius defined the change in entropy (S) for a reversible process as dS = dq_rev/T. For an irreversible, spontaneous process, the entropy change is greater than the heat transfer divided by temperature: dS > dq/T. In terms of the universe (an isolated system), the Second Law requires that ΔS_universe = ΔS_system + ΔS_surroundings > 0 for any spontaneous process. When a system reaches equilibrium, the entropy of the universe reaches a maximum, and ΔS_universe = 0. This requirement explains why chemical reactions proceed until they reach a point of dynamic equilibrium.",
+    questionsAndAnswers: [
+      {
+        question: "State one application of first law of thermodynamics.",
+        answer: "**Calculation of heat and work changes in chemical reactions** (thermochemistry). It allows scientists to determine reaction enthalpies ($\\\\Delta H$) and internal energy changes ($\\\\Delta U$) of systems using the relation $\\\\Delta U = q + w$.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Entropy is defined in which law of thermodynamics?",
+        answer: "The **Second law of thermodynamics**. It states that for any spontaneous process, the total entropy of the universe must increase ($\\\\Delta S_{total} > 0$), establishing the direction of spontaneous changes.",
+        type: "very_short",
+        marks: "1 Mark"
+      }
+    ]
   },
   {
     unitNumber: 4,
@@ -218,6 +258,20 @@ export const unit4Notes = [
           "$\\boxed{\\Delta S = nF\\left(\\dfrac{dE}{dT}\\right)_P}$ — the temperature coefficient of EMF directly gives the entropy change of the cell reaction."
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "What is EMF?",
+        answer: "**EMF (Electromotive Force)** is the maximum potential difference between two electrodes of an electrochemical cell when no current is flowing through the external circuit.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Define EMF. Relate it to free energy and entropy.",
+        answer: "**Electromotive Force (EMF, $E$):**\\nThe maximum electrical potential difference between two electrodes of a cell when no current flows.\\n\\n**Relation to Gibbs Free Energy ($\\\\Delta G$):**\\nThe electrical work done by a cell is $W_{elec} = nFE$, where $n$ is the moles of electrons transferred and $F$ is the Faraday constant. Under constant $T$ and $P$, this work equals the decrease in Gibbs free energy:\\n\\n$\\\\boxed{\\\\Delta G = -nFE}$\\n\\nA positive cell potential ($E > 0$) yields a negative free energy change ($\\\\Delta G < 0$), indicating a spontaneous reaction.\\n\\n**Relation to Entropy ($\\\\Delta S$):**\\nFrom thermodynamics, $\\\\Delta S = -\\\\left(\\\\frac{\\\\partial \\\\Delta G}{\\\\partial T}\\\\right)_P$. Substituting $\\\\Delta G = -nFE$:\\n\\n$\\\\Delta S = -\\\\left( \\\\frac{\\\\partial(-nFE)}{\\partial T} \\\\right)_P \\\\Rightarrow \\\\boxed{\\\\Delta S = nF \\\\left( \\\\frac{\\\\partial E}{\\\\partial T} \\\\right)_P}$\\n\\nwhere $\\\\left( \\\\frac{\\\\partial E}{\\\\partial T} \\\\right)_P$ is the temperature coefficient of the cell potential.",
+        type: "long",
+        marks: "5 Marks"
+      }
     ]
   },
   {
@@ -284,6 +338,26 @@ export const unit4Notes = [
           "Nernst for this electrode: $E = E^\\circ_{\\text{H}^+/\\text{H}_2} - \\dfrac{0.0591}{2}\\log\\dfrac{P_{\\text{H}_2}}{[\\text{H}^+]^2}$",
           "With $E^\\circ = 0$ and $P_{\\text{H}_2} = 1\\text{ atm}$: $E = 0.0591\\log[\\text{H}^+] = -0.0591\\,\\text{pH}$"
         ]
+      }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Give an example of a reference electrode.",
+        answer: "**Standard Hydrogen Electrode (SHE)** (assigned a potential of $0.00\\\\text{ V}$). Another common example is the **Saturated Calomel Electrode (SCE)**.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Derive Nernst equation and mention its applications.",
+        answer: "**Derivation:**\\nFor a general cell reaction $aA + bB \\\\rightleftharpoons cC + dD$, the change in free energy is related to the reaction quotient $Q$ by:\\n\\n$\\\\Delta G = \\\\Delta G^\\\\circ + RT \\\\ln Q$\\n\\nSubstitute the relationships $\\\\Delta G = -nFE$ and $\\\\Delta G^\\\\circ = -nFE^\\\\circ$:\\n\\n$-nFE = -nFE^\\\\circ + RT \\\\ln Q$\\n\\nDivide the entire equation by $-nF$:\\n\\n$E = E^\\\\circ - \\\\frac{RT}{nF} \\\\ln Q$\\n\\nSubstituting $Q = \\\\frac{[C]^c [D]^d}{[A]^a [B]^b}$ and converting to base-10 log:\\n\\n$\\\\boxed{E = E^\\\\circ - \\\\frac{2.303 RT}{nF} \\\\log_{10} \\\\left( \\\\frac{[C]^c [D]^d}{[A]^a [B]^b} \\\\right)}$\\nAt $298\\\\text{ K}$, this simplifies to $E = E^\\\\circ - \\\\frac{0.0592}{n} \\\\log_{10} Q$.\\n\\n**Applications:**\\n- Calculating the non-standard cell potential ($E$) at any given concentration and temperature.\\n- Determining the equilibrium constant ($K_{eq}$) of a reaction when $E = 0$.\\n- Constructing concentration cells.\\n- Measuring pH using a hydrogen or glass electrode.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Write the Nernst equation for the cell reaction in the Daniel cell.",
+        answer: "The cell reaction in a Daniel cell is:\\n\\n$\\\\text{Zn(s)} + \\\\text{Cu}^{2+}\\\\text{(aq)} \\\\rightleftharpoons \\\\text{Zn}^{2+}\\\\text{(aq)} + \\\\text{Cu(s)}$\\n\\nFor this reaction, $n = 2$ electrons are transferred. The reaction quotient is $Q = \\\\frac{[\\\\text{Zn}^{2+}]}{[\\\\text{Cu}^{2+}]}$ (solid zinc and copper have activities equal to 1).\\n\\nSubstituting into the Nernst equation at $298\\\\text{ K}$:\\n\\n$\\\\boxed{E_{cell} = E^\\\\circ_{cell} - \\\\frac{RT}{2F} \\\\ln \\\\left( \\\\frac{[\\\\text{Zn}^{2+}]}{[\\\\text{Cu}^{2+}]} \\\\right)}$\\n\\nOr in base-10 log at $25^\\\\circ\\\\text{ C}$:\\n\\n$E_{cell} = E^\\\\circ_{cell} - \\\\frac{0.0592}{2} \\\\log_{10} \\\\left( \\\\frac{[\\\\text{Zn}^{2+}]}{[\\\\text{Cu}^{2+}]} \\\\right)$",
+        type: "long",
+        marks: "5 Marks"
       }
     ]
   },
@@ -354,7 +428,21 @@ export const unit4Notes = [
       "Calculate the hardness of a water sample containing 16.2 mg/L of Ca(HCO₃)₂, 7.3 mg/L of Mg(HCO₃)₂, and 13.6 mg/L of CaSO₄ in terms of CaCO₃ equivalents."
     ],
     shortAnswer: "Water hardness is caused by dissolved Ca²⁺ and Mg²⁺ ions. Temporary hardness (bicarbonates) is removed by boiling. Permanent hardness (sulfates/chlorides) requires chemical treatment, zeolite ion-exchange (exchanging hardness ions for Na⁺), or demineralization resins (exchanging ions for H⁺/OH⁻) to produce soft water.",
-    longAnswer: "Water hardness is a measure of the capacity of water to precipitate soap, caused by dissolved multivalent metallic cations, primarily calcium (Ca²⁺) and magnesium (Mg²⁺). Hardness is classified into temporary and permanent. Temporary hardness is caused by calcium and magnesium bicarbonates, Ca(HCO₃)₂ and Mg(HCO₃)₂. When heated, these soluble bicarbonates undergo thermal decomposition to form insoluble carbonates: Ca(HCO₃)₂ → CaCO₃(s)↓ + H₂O + CO₂(g). Boiling removes temporary hardness but forms scale inside kettles and boilers. Permanent hardness is caused by chlorides and sulfates of calcium and magnesium (CaCl₂, CaSO₄, MgCl₂, MgSO₄), which do not precipitate upon heating. To soften hard water, three main methods are used. The Lime-Soda process adds lime, Ca(OH)₂, and soda ash, Na₂CO₃, to precipitate Ca²⁺ as CaCO₃ and Mg²⁺ as Mg(OH)₂. The Zeolite process uses natural or synthetic sodium aluminosilicates (Na2O·Al2O3·xSiO2·yH2O), represented as Na₂Ze. Hard water is passed through a zeolite bed, where Ca²⁺ and Mg²⁺ replace the sodium ions: Ca²⁺ + Na₂Ze → CaZe + 2Na⁺. Once the bed is exhausted, it is regenerated by flushing it with a 10% NaCl brine solution. The Ion-Exchange process uses organic polymer resins to produce completely deionized water. The water first passes through a cation-exchange resin containing acidic groups (R-SO₃H), which exchanges metal cations for hydrogen ions: M²⁺ + 2R-H → R2M + 2H⁺. It then passes through an anion-exchange resin containing basic groups (R-NH₃OH), which exchanges anions for hydroxyl ions: X⁻ + R-OH → R-X + OH⁻. The released H⁺ and OH⁻ ions combine to form pure water. The exhausted resins are regenerated using dilute hydrochloric acid (for the cation resin) and sodium hydroxide (for the anion resin)."
+    longAnswer: "Water hardness is a measure of the capacity of water to precipitate soap, caused by dissolved multivalent metallic cations, primarily calcium (Ca²⁺) and magnesium (Mg²⁺). Hardness is classified into temporary and permanent. Temporary hardness is caused by calcium and magnesium bicarbonates, Ca(HCO₃)₂ and Mg(HCO₃)₂. When heated, these soluble bicarbonates undergo thermal decomposition to form insoluble carbonates: Ca(HCO₃)₂ → CaCO₃(s)↓ + H₂O + CO₂(g). Boiling removes temporary hardness but forms scale inside kettles and boilers. Permanent hardness is caused by chlorides and sulfates of calcium and magnesium (CaCl₂, CaSO₄, MgCl₂, MgSO₄), which do not precipitate upon heating. To soften hard water, three main methods are used. The Lime-Soda process adds lime, Ca(OH)₂, and soda ash, Na₂CO₃, to precipitate Ca²⁺ as CaCO₃ and Mg²⁺ as Mg(OH)₂. The Zeolite process uses natural or synthetic sodium aluminosilicates (Na2O·Al2O3·xSiO2·yH2O), represented as Na₂Ze. Hard water is passed through a zeolite bed, where Ca²⁺ and Mg²⁺ replace the sodium ions: Ca²⁺ + Na₂Ze → CaZe + 2Na⁺. Once the bed is exhausted, it is regenerated by flushing it with a 10% NaCl brine solution. The Ion-Exchange process uses organic polymer resins to produce completely deionized water. The water first passes through a cation-exchange resin containing acidic groups (R-SO₃H), which exchanges metal cations for hydrogen ions: M²⁺ + 2R-H → R2M + 2H⁺. It then passes through an anion-exchange resin containing basic groups (R-NH₃OH), which exchanges anions for hydroxyl ions: X⁻ + R-OH → R-X + OH⁻. The released H⁺ and OH⁻ ions combine to form pure water. The exhausted resins are regenerated using dilute hydrochloric acid (for the cation resin) and sodium hydroxide (for the anion resin).",
+    questionsAndAnswers: [
+      {
+        question: "Write three ions which cause alkalinity of water.",
+        answer: "The three primary ions causing alkalinity in water are:\\n1. **Hydroxide ions ($\\\\text{OH}^-$)**\\n2. **Carbonate ions ($\\\\text{CO}_3^{2-}$)**\\n3. **Bicarbonate ions ($\\\\text{HCO}_3^-$)**",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "What do you mean by hardness of water? Explain how hard water fails to form lather with soap? What is alkalinity of water?",
+        answer: "1. **Hardness of Water:**\\nHardness is a chemical property of water that prevents it from easily forming lather with soap, primarily caused by dissolved salts of **Calcium ($Ca^{2+}$)** and **Magnesium ($Mg^{2+}$)** (like bicarbonates, chlorides, and sulfates).\\n\\n2. **Failure to Form Lather:**\\nSoap consists of sodium salts of long-chain fatty acids (e.g., sodium stearate, $C_{17}H_{35}COONa$). When soap is added to hard water, the sodium ions are replaced by $Ca^{2+}$ and $Mg^{2+}$ ions to form insoluble sticky precipitates called **scum**, consuming the soap before lather can form:\\n\\n$2\\\\text{C}_{17}\\\\text{H}_{35}\\\\text{COONa} + \\\\text{Ca}^{2+} \\\\rightarrow \\\\text{(C}_{17}\\\\text{H}_{35}\\\\text{COO)}_2\\\\text{Ca}\\\\downarrow + 2\\\\text{Na}^+$\\n\\n3. **Alkalinity of Water:**\\nAlkalinity is a measure of the water's capacity to neutralize acids. It is primarily caused by the presence of basic hydroxide ($\\\\text{OH}^-$), carbonate ($\\\\text{CO}_3^{2-}$), and bicarbonate ($\\\\text{HCO}_3^-$) ions, which act as buffers.",
+        type: "short",
+        marks: "3 Marks"
+      }
+    ]
   },
   {
     unitNumber: 4,
@@ -388,7 +476,15 @@ export const unit4Notes = [
       "Discuss the difference between galvanizing and tinning. Which coating provides better protection if scratched, and why?"
     ],
     shortAnswer: "Corrosion is an electrochemical process where a metal surface forms galvanic cells. At anodic areas, the metal oxidizes and dissolves (Fe → Fe²⁺ + 2e⁻). At cathodic areas, oxygen reduction or hydrogen evolution occurs. Corrosion is prevented using protective coatings (paint, electroplating) or cathodic protection (sacrificial anodes or impressed currents).",
-    longAnswer: "Corrosion is the degradation of metals through electrochemical reactions with their environment. The electrochemical theory of wet corrosion applies when a metal is in contact with moisture or an electrolyte. Under these conditions, distinct anodic and cathodic areas form on the metal surface due to impurities, physical stress, or variations in oxygen concentration. At the anodic area, the metal undergoes oxidation and dissolves: Fe(s) → Fe²⁺(aq) + 2e⁻. The released electrons flow through the metal to the cathodic area. At the cathodic area, the electrons are consumed in a reduction reaction. In acidic solutions, hydrogen ions are reduced: 2H⁺(aq) + 2e⁻ → H₂(g). In neutral or basic solutions, dissolved oxygen is reduced: O₂(g) + 2H2O(l) + 4e⁻ → 4OH⁻(aq). The Fe²⁺ ions from the anode and the OH⁻ ions from the cathode diffuse through the electrolyte. They combine to form ferrous hydroxide: Fe²⁺ + 2OH⁻ → Fe(OH)₂. This precipitate is oxidized by dissolved oxygen to form hydrated ferric oxide, commonly known as rust: 4Fe(OH)₂ + O₂ + (2x-4)H₂O → 2(Fe₂O₃·xH₂O). Corrosion rates increase in regions with low oxygen concentration, a phenomenon called differential aeration corrosion. For example, in pitting corrosion, the bottom of a narrow pit has less oxygen than the metal surface. The oxygen-poor bottom acts as the anode and corrodes, while the oxygen-rich surface acts as the cathode. To prevent corrosion, metals can be isolated from the environment using barrier coatings (paints, grease, or polymer films). Alternatively, metallic coatings can be applied. Galvanizing coats steel with a layer of zinc. Since zinc is more active than iron (anode), it corrodes sacrificially to protect the iron, even if the coating is scratched. In contrast, tinning coats steel with tin. Since tin is less active than iron, it only protects the iron as a barrier. If a tin coating is scratched, the exposed iron acts as the anode and corrodes rapidly. Cathodic protection can also be achieved by attaching sacrificial anodes (like magnesium or zinc blocks) to structures like pipelines and ship hulls, or by applying an impressed direct current that forces the entire metal structure to act as a cathode."
+    longAnswer: "Corrosion is the degradation of metals through electrochemical reactions with their environment. The electrochemical theory of wet corrosion applies when a metal is in contact with moisture or an electrolyte. Under these conditions, distinct anodic and cathodic areas form on the metal surface due to impurities, physical stress, or variations in oxygen concentration. At the anodic area, the metal undergoes oxidation and dissolves: Fe(s) → Fe²⁺(aq) + 2e⁻. The released electrons flow through the metal to the cathodic area. At the cathodic area, the electrons are consumed in a reduction reaction. In acidic solutions, hydrogen ions are reduced: 2H⁺(aq) + 2e⁻ → H₂(g). In neutral or basic solutions, dissolved oxygen is reduced: O₂(g) + 2H2O(l) + 4e⁻ → 4OH⁻(aq). The Fe²⁺ ions from the anode and the OH⁻ ions from the cathode diffuse through the electrolyte. They combine to form ferrous hydroxide: Fe²⁺ + 2OH⁻ → Fe(OH)₂. This precipitate is oxidized by dissolved oxygen to form hydrated ferric oxide, commonly known as rust: 4Fe(OH)₂ + O₂ + (2x-4)H₂O → 2(Fe₂O₃·xH₂O). Corrosion rates increase in regions with low oxygen concentration, a phenomenon called differential aeration corrosion. For example, in pitting corrosion, the bottom of a narrow pit has less oxygen than the metal surface. The oxygen-poor bottom acts as the anode and corrodes, while the oxygen-rich surface acts as the cathode. To prevent corrosion, metals can be isolated from the environment using barrier coatings (paints, grease, or polymer films). Alternatively, metallic coatings can be applied. Galvanizing coats steel with a layer of zinc. Since zinc is more active than iron (anode), it corrodes sacrificially to protect the iron, even if the coating is scratched. In contrast, tinning coats steel with tin. Since tin is less active than iron, it only protects the iron as a barrier. If a tin coating is scratched, the exposed iron acts as the anode and corrodes rapidly. Cathodic protection can also be achieved by attaching sacrificial anodes (like magnesium or zinc blocks) to structures like pipelines and ship hulls, or by applying an impressed direct current that forces the entire metal structure to act as a cathode.",
+    questionsAndAnswers: [
+      {
+        question: "What is corrosion? What are the different types of corrosion?",
+        answer: "**Corrosion** is the natural, slow oxidation and degradation of a refined metal into a chemically more stable form (such as oxide, hydroxide, or sulfide) due to chemical or electrochemical reactions with its environment.\\n\\n**Different Types of Corrosion:**\\n1. **Dry (Chemical) Corrosion:** Occurs in the complete absence of moisture through direct chemical attack of atmospheric gases (such as $O_2$, $SO_2$, $H_2S$, halogens) on the metal surface, forming an oxide scale. Example: tarnish of silver ($Ag_2S$ formation) or high-temperature oxidation of iron.\\n2. **Wet (Electrochemical) Corrosion:** Occurs in the presence of a conducting liquid (electrolyte like moisture, salt water, or damp air). It involves the formation of tiny galvanic cells where the metal undergoes oxidation at anodic regions (metal loss) and reduction occurs at cathodic regions. Example: rusting of iron ($Fe_2O_3 \\\\cdot nH_2O$).",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   },
   {
     unitNumber: 4,

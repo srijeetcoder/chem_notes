@@ -21,10 +21,10 @@ export const BookmarkButton: React.FC<BookmarkButtonProps> = ({ topicId }) => {
     <button
       onClick={handleToggle}
       disabled={isUpdating}
-      className={`p-2 rounded-lg border transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500/20 disabled:opacity-50 ${
+      className={`p-2.5 rounded-xl border transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500/10 disabled:opacity-50 ${
         isBookmarked
-          ? 'bg-amber-50 border-amber-200 text-amber-500 dark:bg-amber-950/20 dark:border-amber-800/40 dark:text-amber-400'
-          : 'bg-zinc-50 border-zinc-200 text-zinc-400 hover:text-zinc-600 dark:bg-zinc-900/40 dark:border-zinc-800/60 dark:text-zinc-500 dark:hover:text-zinc-300'
+          ? 'bg-amber-500/10 border-amber-500/20 text-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.15)]'
+          : 'bg-zinc-900/40 border-white/5 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800/40'
       }`}
       title={isBookmarked ? 'Remove Bookmark' : 'Bookmark Topic'}
     >

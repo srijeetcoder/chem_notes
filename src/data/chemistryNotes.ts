@@ -11,6 +11,13 @@ export interface DerivationStep {
   steps: string[]; // LaTeX strings, rendered by MathRenderer
 }
 
+export interface QuestionAnswer {
+  question: string;
+  answer: string;
+  type: 'very_short' | 'short' | 'long';
+  marks?: string;
+}
+
 export interface ChemistryNote {
   unitNumber: number;
   unitTitle: string;
@@ -27,6 +34,7 @@ export interface ChemistryNote {
   longAnswer: string;
   derivation?: DerivationStep[];
   diagramType?: 'ethane_conformations' | 'cyclic_ketones' | 'benzene_aromaticity' | 'diels_alder' | 'aspirin_synthesis' | 'paracetamol_synthesis' | 'cyclohexane_chair' | 'sn1_vs_sn2' | 'addition_mechanism' | 'aldol_condensation' | 'redox_alcohols' | 'stereoisomers_tartaric';
+  questionsAndAnswers?: QuestionAnswer[];
 }
 
 export const chemistryNotes: ChemistryNote[] = [

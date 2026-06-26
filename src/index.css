@@ -1,16 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --font-sans: 'Geist', 'Inter', 'Outfit', system-ui, sans-serif;
+  --color-zinc-950: #09090B;
+  --color-zinc-900: #121214;
+  --color-zinc-800: #1D1D22;
+  --color-zinc-700: #2A2A32;
+  --color-emerald-500: #10B981;
+  --color-cyan-400: #22D3EE;
+  --color-violet-500: #8B5CF6;
+  --color-rose-500: #F43F5E;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #09090B;
+    color: #FAFAFA;
+    font-family: var(--font-sans);
   }
   
   * {
-    transition-property: background-color, border-color, text-decoration-color, fill, stroke;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color, border-color, text-decoration-color, fill, stroke, transform, box-shadow, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   /* Premium scrollbar styling */
@@ -20,26 +36,141 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: rgba(9, 9, 11, 0.5);
+    backdrop-filter: blur(10px);
   }
   
   .dark ::-webkit-scrollbar-thumb {
-    background: #27272a; /* zinc-800 */
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #e4e4e7; /* zinc-200 */
-    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 9999px;
   }
 
   .dark ::-webkit-scrollbar-thumb:hover {
-    background: #3f3f46; /* zinc-700 */
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.2);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #d4d4d8; /* zinc-300 */
+    background: rgba(0, 0, 0, 0.3);
   }
+}
+
+/* Premium Background & Molecular Grid styling */
+.molecular-bg {
+  background-color: #09090B;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.07) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(34, 211, 238, 0.07) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(9, 9, 11, 0.8) 0px, transparent 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Premium Animated Grid Overlay */
+.scientific-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 40%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(18, 18, 20, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(24, 24, 28, 0.7);
+  border-color: rgba(34, 211, 238, 0.25);
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(16, 185, 129, 0.08);
+  transform: translateY(-2px);
+}
+
+.glass-panel-emerald {
+  background: rgba(16, 185, 129, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    inset 0 0 12px rgba(16, 185, 129, 0.05);
+}
+
+.glass-panel-cyan {
+  background: rgba(34, 211, 238, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    inset 0 0 12px rgba(34, 211, 238, 0.05);
+}
+
+.glass-panel-violet {
+  background: rgba(139, 92, 246, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    inset 0 0 12px rgba(139, 92, 246, 0.05);
+}
+
+/* Neon Edge Glows */
+.neon-glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+}
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+}
+.neon-glow-violet {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+/* Animations for atoms and floats */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(180deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg) translateX(130px) rotate(-360deg); }
+  to { transform: rotate(0deg) translateX(130px) rotate(0deg); }
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+.animate-grid-move {
+  animation: grid-move 20s linear infinite;
+}
+
+.animate-molecular-float {
+  animation: float 25s ease-in-out infinite;
 }
 
 /* KaTeX custom overrides */
@@ -47,8 +178,8 @@
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
 }
 
 .katex-display > .katex {
@@ -56,5 +187,14 @@
 }
 
 .dark .katex {
-  color: #e2e8f0;
+  color: #FAFAFA;
+}
+
+/* Hide scrollbar for elements that need it */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

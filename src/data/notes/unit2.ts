@@ -31,7 +31,21 @@ export const unit2Notes = [
       "Calculate the energy of a photon with wavelength 500 nm."
     ],
     shortAnswer: "Spectroscopy studies how electromagnetic radiation interacts with matter. Molecular energy is E_total = E_e + E_v + E_r. Absorption of EMR induces transitions: microwave radiation causes rotation, IR causes bond vibration, and UV-Vis causes electronic transitions.",
-    longAnswer: "Spectroscopy is the study of how matter interacts with electromagnetic radiation (EMR). EMR is self-propagating energy consisting of perpendicular oscillating electric and magnetic fields. According to quantum theory, EMR carries energy in quantized packets called photons, with energy defined by E = hν, where h is Planck's constant and ν is the frequency. In molecules, the total energy is the sum of electronic, vibrational, and rotational energies (E_total = E_e + E_v + E_r). These states are quantized. When a molecule is exposed to EMR, it can undergo transitions between these states if the photon's energy matches the gap between two states (ΔE = hν). Rotational transitions are lowest in energy and are induced by microwave radiation. Vibrational transitions require intermediate energy and are induced by infrared (IR) radiation. Electronic transitions require the highest energy and are excited by UV-Visible light. Measuring these interactions produces absorption or emission spectra that reveal details about the molecular structure, bond strength, and functional groups present."
+    longAnswer: "Spectroscopy is the study of how matter interacts with electromagnetic radiation (EMR). EMR is self-propagating energy consisting of perpendicular oscillating electric and magnetic fields. According to quantum theory, EMR carries energy in quantized packets called photons, with energy defined by E = hν, where h is Planck's constant and ν is the frequency. In molecules, the total energy is the sum of electronic, vibrational, and rotational energies (E_total = E_e + E_v + E_r). These states are quantized. When a molecule is exposed to EMR, it can undergo transitions between these states if the photon's energy matches the gap between two states (ΔE = hν). Rotational transitions are lowest in energy and are induced by microwave radiation. Vibrational transitions require intermediate energy and are induced by infrared (IR) radiation. Electronic transitions require the highest energy and are excited by UV-Visible light. Measuring these interactions produces absorption or emission spectra that reveal details about the molecular structure, bond strength, and functional groups present.",
+    questionsAndAnswers: [
+      {
+        question: "Which type of charge is carried by electromagnetic waves?",
+        answer: "Electromagnetic waves carry **no charge**; they are electrically neutral. They consist of oscillating electric and magnetic fields perpendicular to each other and to the direction of wave propagation, but they do not possess any net electrical charge.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Intensity of spectral line depends on which factor? What is Lambert\u2013Beer Law?",
+        answer: "The intensity of a spectral line depends primarily on three factors:\\n1. **Transition Probability:** The probability that a transition is quantum-mechanically allowed.\\n2. **Population of Energy Levels:** The number of atoms/molecules in the initial state, governed by the Boltzmann Distribution Law.\\n3. **Sample Amount:** The concentration of absorbing molecules in the light path.\\n\\n**Lambert-Beer Law:**\\nIt states that the absorbance ($A$) of a solution is directly proportional to both its concentration ($c$) and the path length ($l$):\\n\\n$A = \\\\varepsilon c l$\\n\\nwhere $\\\\varepsilon$ is the molar absorptivity.",
+        type: "short",
+        marks: "3 Marks"
+      }
+    ]
   },
   {
     unitNumber: 2,
@@ -130,6 +144,56 @@ export const unit2Notes = [
           "Since $\\varepsilon$ and $l$ are constants for a given system, this proves that the absorbance $A$ is linearly proportional to the concentration $c$ of the solution."
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "What will be the absorbance if % of Transmittance = 80?",
+        answer: "Absorbance ($A$) is related to Transmittance ($T$) or percent Transmittance ($\\\\text{%}T$) by the formula:\\n\\n$A = -\\\\log_{10}(T) = -\\\\log_{10}\\\\left(\\\\frac{\\\\text{%}T}{100}\\\\right)$\\n\\nGiven $\\\\text{%}T = 80$:\\n\\n$A = -\\\\log_{10}(0.8) \\\\approx 0.097$\\n\\nThus, the absorbance is approximately **0.097**.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "In UV spectroscopy, shift of $\\\\lambda_{max}$ towards shorter wavelength is called ____________.",
+        answer: "**Hypsochromic shift** (or **Blue shift**). This shift occurs when the absorption maximum of a compound moves to a shorter wavelength (higher energy), often due to solvent effects (e.g., stabilization of lone pairs in polar solvents) or loss of conjugation.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Explain chromophore and auxochrome with examples. Give UV range.",
+        answer: "1. **Chromophore:** A functional group containing unsaturated/delocalized electrons that undergo electronic transitions, directly responsible for imparting color to a compound. Examples: $-NO_2$, $-N=N-$, $>C=O$, $>C=C<$.\\n2. **Auxochrome:** An acidic or basic group containing non-bonding electrons (lone pairs) that does not produce color on its own, but when attached to a chromophore, alters the wavelength and intensifies the absorption. Examples: $-OH$, $-NH_2$, $-Cl$, $-OCH_3$.\\n\\n**UV Range:**\\n- **Far UV (Vacuum UV):** $10 - 200\\\\text{ nm}$ (requires vacuum as oxygen absorbs in this region).\\n- **Near UV (Quartz UV):** $200 - 400\\\\text{ nm}$ (analyzed using quartz cuvettes).\\n- **Visible Light Range:** $400 - 800\\\\text{ nm}$.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Why are absorption bands in UV\u2013Visible spectra generally broad?",
+        answer: "UV-Visible absorption bands appear as broad envelopes rather than sharp lines because:\\n1. **Vibrational and Rotational Sublevels:** Electronic energy levels are not isolated; each is subdivided into multiple vibrational levels, which are further split into rotational levels. When a molecule absorbs a photon, it transitions from a specific vibrational-rotational sublevel of the ground state to one of many possible sublevels in the excited state.\\n2. **Solvent Interactions:** In solution phase, the solute molecules are surrounded by solvent molecules. Fleet-occurring electrostatic interactions, dipole-dipole attractions, and hydrogen bonding perturb the electronic energy levels of individual molecules slightly differently, leading to a distribution of transition energies that broadens the absorption band.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "State and derive Lambert\u2013Beer law.",
+        answer: "**Lambert-Beer Law:**\\nIt states that the rate of decrease in light intensity ($I$) with path length ($x$) through an absorbing medium is directly proportional to the light intensity and the concentration ($c$) of the absorbing solute: $-\\\\frac{dI}{dx} = k' I c$, where $k'$ is a constant.\\n\\n**Derivation:**\\n1. Rearranging: $\\\\frac{dI}{I} = -k' c\\\\,dx$\\n2. Integrating from $x=0$ (intensity $I_0$) to $x=l$ (transmitted intensity $I_t$):\\n   $\\\\int_{I_0}^{I_t} \\\\frac{dI}{I} = -k' c \\\\int_0^l dx \\\\Rightarrow \\\\ln\\\\left(\\\\frac{I_t}{I_0}\\\\right) = -k' c l \\\\Rightarrow \\\\ln\\\\left(\\\\frac{I_0}{I_t}\\\\right) = k' c l$\\n3. Convert to base-10 log:\\n   $2.303 \\\\log_{10}\\\\left(\\\\frac{I_0}{I_t}\\\\right) = k' c l \\\\Rightarrow \\\\log_{10}\\\\left(\\\\frac{I_0}{I_t}\\\\right) = \\\\frac{k'}{2.303} c l$\\n4. Define Absorbance $A = \\\\log_{10}(I_0/I_t)$ and Molar Absorptivity $\\\\varepsilon = \\\\frac{k'}{2.303}$:\\n   $\\\\boxed{A = \\\\varepsilon c l}$\\nThis shows that absorbance is linearly proportional to concentration and path length.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Define bathochromic and hypsochromic shifts.",
+        answer: "1. **Bathochromic Shift (Red Shift):** A shift in the position of the absorption maximum ($\\\\lambda_{max}$) to a longer wavelength (lower energy). This is typically caused by the introduction of conjugation, the attachment of an auxochrome, or a change in solvent polarity that stabilizes the excited state relative to the ground state.\\n2. **Hypsochromic Shift (Blue Shift):** A shift in the position of the absorption maximum ($\\\\lambda_{max}$) to a shorter wavelength (higher energy). This occurs when conjugation is lost, when a lone-pair electron is protonated (removing non-bonding conjugation), or upon changing to a solvent that stabilizes the ground state more than the excited state.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Effect of conjugation on UV absorption. Which shift is observed if conjugation is increased?",
+        answer: "When conjugation is increased in a molecule, a **Bathochromic (Red) shift** is observed along with an increase in intensity (Hyperchromic effect).\\n\\n**Reasoning:**\\nConjugation involves the overlap of $\\\\pi$ orbitals over a larger molecular area. According to Molecular Orbital theory, as the number of conjugated double bonds increases, the energy of the Highest Occupied Molecular Orbital (HOMO) increases, while the energy of the Lowest Unoccupied Molecular Orbital (LUMO) decreases. \\n\\nThis significantly reduces the HOMO-LUMO energy gap ($\\\\Delta E$). Because $\\\\Delta E = \\\\frac{hc}{\\\\lambda}$, a smaller energy gap requires lower energy (longer wavelength) photons for excitation, shifting $\\\\lambda_{max}$ to longer wavelengths. For example, isolated ethene absorbs at $\\\\sim 171\\\\text{ nm}$, whereas conjugated 1,3-butadiene absorbs at $\\\\sim 217\\\\text{ nm}$.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Which electronic transitions are UV active for formaldehyde? Comment on their intensities of absorption.",
+        answer: "Formaldehyde ($HCHO$) contains $\\\\sigma$ and $\\\\pi$ bonding electrons in the $C-H$ and $C=O$ bonds, and non-bonding ($n$) lone pair electrons on the oxygen atom. The primary electronic transitions observed in its UV-Vis spectrum are:\\n\\n1. **$\\\\pi \\\\to \\\\pi^*$ Transition:** This involves excitation of an electron from the $C=O$ bonding $\\\\pi$ orbital to the antibonding $\\\\pi^*$ orbital. It is **spin-allowed** by symmetry rules, resulting in a **high-intensity** band (large molar absorptivity $\\\\varepsilon$) at shorter wavelengths (around $185\\\\text{ nm}$).\\n2. **$n \\\\to \\\\pi^*$ Transition:** This involves excitation of a non-bonding lone-pair electron on oxygen to the antibonding $\\\\pi^*$ orbital. It is **symmetry-forbidden** (Laporte-forbidden), resulting in a **very low-intensity** band (small $\\\\varepsilon$) at longer wavelengths (around $280 - 300\\\\text{ nm}$).",
+        type: "long",
+        marks: "5 Marks"
+      }
     ]
   },
   {
@@ -165,7 +229,21 @@ export const unit2Notes = [
       "Describe the Type I and Type II mechanisms of Photodynamic Therapy (PDT), including the chemical equations involved."
     ],
     shortAnswer: "Fluorescence is rapid emission (10⁻⁹ to 10⁻⁷ s) from S₁ → S₀ (spin-allowed). Phosphorescence is delayed emission from T₁ → S₀ (spin-forbidden) after Intersystem Crossing (ISC). Photodynamic therapy (PDT) exploits these states: Type I generates hydroxyl radicals (•OH) via superoxide/Fenton reactions; Type II transfers energy to produce reactive singlet oxygen (¹O₂).",
-    longAnswer: "Fluorescence and phosphorescence are photoluminescence pathways described by Jablonski diagrams. When a molecule absorbs a photon, it is promoted to an excited singlet state ¹ES (S₁). It rapidly relaxes to the lowest vibrational level of S₁ via non-radiative vibrational relaxation. Fluorescence is the radiative transition from this level back to the ground singlet state S₀. Since it is a spin-allowed transition (singlet-singlet), it occurs extremely rapidly (10⁻⁹ to 10⁻⁷ seconds). Phosphorescence occurs when the excited molecule undergoes Intersystem Crossing (ISC) to a lower-lying triplet state T₁ (³ES), where the electron spins are parallel. The subsequent radiative transition T₁ → S₀ is spin-forbidden, resulting in a much longer lifetime (10⁻¹ to 10⁻² seconds in PDF) and weaker intensity, typically requiring low temperatures to be observed.\n\nPhotodynamic Therapy (PDT) utilizes these excited states for cancer treatment. A photosensitizer (PS) is excited to ¹PS* and undergoes ISC to ³PS*. In the Type I mechanism, ³PS* abstracts an electron from biological substrates (like Glutathione, GSH) to form a radical anion PS•⁻ and a donor radical GS•. The PS•⁻ reacts with oxygen to generate superoxide radical anions O₂•⁻, which undergo dismutation to hydrogen peroxide H₂O₂. Intracellular ferrous iron (Fe²⁺) then reacts with H₂O₂ (Fenton reaction) to produce the highly destructive hydroxyl radical •OH, killing the cell. In the Type II mechanism, the ³PS* transfers energy directly to ground-state triplet oxygen ³O₂ (which has a triplet ground state), producing highly reactive singlet oxygen ¹O₂. This singlet oxygen rapidly oxidizes and destroys local cell components."
+    longAnswer: "Fluorescence and phosphorescence are photoluminescence pathways described by Jablonski diagrams. When a molecule absorbs a photon, it is promoted to an excited singlet state ¹ES (S₁). It rapidly relaxes to the lowest vibrational level of S₁ via non-radiative vibrational relaxation. Fluorescence is the radiative transition from this level back to the ground singlet state S₀. Since it is a spin-allowed transition (singlet-singlet), it occurs extremely rapidly (10⁻⁹ to 10⁻⁷ seconds). Phosphorescence occurs when the excited molecule undergoes Intersystem Crossing (ISC) to a lower-lying triplet state T₁ (³ES), where the electron spins are parallel. The subsequent radiative transition T₁ → S₀ is spin-forbidden, resulting in a much longer lifetime (10⁻¹ to 10⁻² seconds in PDF) and weaker intensity, typically requiring low temperatures to be observed.\n\nPhotodynamic Therapy (PDT) utilizes these excited states for cancer treatment. A photosensitizer (PS) is excited to ¹PS* and undergoes ISC to ³PS*. In the Type I mechanism, ³PS* abstracts an electron from biological substrates (like Glutathione, GSH) to form a radical anion PS•⁻ and a donor radical GS•. The PS•⁻ reacts with oxygen to generate superoxide radical anions O₂•⁻, which undergo dismutation to hydrogen peroxide H₂O₂. Intracellular ferrous iron (Fe²⁺) then reacts with H₂O₂ (Fenton reaction) to produce the highly destructive hydroxyl radical •OH, killing the cell. In the Type II mechanism, the ³PS* transfers energy directly to ground-state triplet oxygen ³O₂ (which has a triplet ground state), producing highly reactive singlet oxygen ¹O₂. This singlet oxygen rapidly oxidizes and destroys local cell components.",
+    questionsAndAnswers: [
+      {
+        question: "Write two types of luminescence.",
+        answer: "Two major types of photoluminescence are:\\n1. **Fluorescence:** Radiative transition from a singlet excited state to singlet ground state ($S_1 \\\\to S_0$). It is spin-allowed, occurring almost instantaneously (lifetime $\\\\sim 10^{-9}$ to $10^{-7}$ seconds) and stops when the excitation source is removed.\\n2. **Phosphorescence:** Radiative transition from a triplet excited state to singlet ground state ($T_1 \\\\to S_0$). It is spin-forbidden, occurring slowly with a delay (lifetime $\\\\sim 10^{-1}$ to $10^2$ seconds) and continues even after removing the excitation source.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Discuss Fluorescence process with diagram. Explain its uses.",
+        answer: "**Fluorescence Process:**\\nFluorescence is a photoluminescence process described by the Jablonski diagram:\\n1. **Absorption:** A molecule absorbs a photon of light, promoting an electron from the ground singlet state ($S_0$) to a higher singlet excited state ($S_1$ or $S_2$).\\n2. **Vibrational Relaxation (Non-Radiative):** The electron rapidly relaxes to the lowest vibrational level of the first singlet excited state ($S_1$) by losing energy as heat to surrounding molecules.\\n3. **Emission (Fluorescence):** The electron drops from the lowest level of $S_1$ back to the ground state $S_0$, emitting a photon. Because energy was lost during vibrational relaxation, the emitted photon has lower energy (longer wavelength) than the absorbed photon (Stokes shift).\\n\\n**Medical Uses:**\\n- **Photodynamic Therapy (PDT):** A treatment where a photosensitizer is excited to generate reactive oxygen species to destroy tumor cells. Type I mechanism generates hydroxyl radicals ($\\\\bullet OH$) via superoxide and Fenton chemistry; Type II transfers energy to oxygen to generate highly reactive singlet oxygen ($^1O_2$).\\n- **Bio-imaging:** Tracking specific proteins or molecules inside cells using fluorescent dyes.\\n- **Diagnostics:** Fluorescent angiography for checking blood flow in retinal vessels.",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   },
   {
     unitNumber: 2,
@@ -231,6 +309,44 @@ export const unit2Notes = [
           "Substitute values: $k = 4\\pi^2 \\cdot (6.3 \\times 10^{13})^2 \\cdot (1.139 \\times 10^{-26})$",
           "Calculation: $k = 4 \\times 9.87 \\times (3.969 \\times 10^{27}) \\times (1.139 \\times 10^{-26}) \\approx 39.48 \\times 39.69 \\times 1.139 \\approx \\boxed{1784\\text{ N/m}}$ (or $\\approx 1.78 \\times 10^6\\text{ dyn/cm}$)"
         ]
+      }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Which spectroscopic technique is most useful to identify the presence of known impurity in a drug substance?",
+        answer: "**Infrared (IR) spectroscopy**. It is highly sensitive to organic functional groups. Since each chemical compound has a unique \"fingerprint\" region ($1500 - 500\\\\text{ cm}^{-1}$), comparing the IR spectrum of a drug substance to a reference standard easily reveals the presence of impurities.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "What is fingerprint region range in IR spectra?",
+        answer: "The fingerprint region range is **$1500 - 500\\\\text{ cm}^{-1}$**. This region contains a complex set of absorption bands caused by bending, rocking, and skeletal vibrations of the entire molecular framework. It is unique for every compound (except enantiomers).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "IR spectra can detect ____________.",
+        answer: "**Functional groups** (and identify molecular structures). IR spectroscopy detects bonds that undergo changes in their dipole moments during vibration, allowing identification of functional groups like hydroxyl ($-OH$), carbonyl ($C=O$), and amines ($-NH_2$).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "What kind of molecules show IR spectra? \u201cIR spectra are often characterized as molecular fingerprints.\u201d Justify the statement.",
+        answer: "**Molecules showing IR spectra:** Only molecules whose bond vibrations produce a dynamic change in their net dipole moment can absorb infrared radiation. Homonuclear diatomic molecules ($H_2, N_2, O_2$) do not show IR spectra, whereas heteronuclear molecules ($HCl, CO, CO_2$) do.\\n\\n**Justification of \"Molecular Fingerprints\":**\\nThe IR spectrum is divided into the Functional Group region ($4000-1500\\\\text{ cm}^{-1}$) and the Fingerprint region ($1500-500\\\\text{ cm}^{-1}$):\\n1. The fingerprint region is highly complex and unique because it contains various bending, twisting, and rotational vibrations of the entire carbon skeleton.\\n2. No two different compounds (except enantiomers) share the exact same absorption pattern in this region. Thus, even similar molecules with identical functional groups (like propan-1-ol and propan-2-ol) show distinct fingerprint regions, allowing exact identification.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Which molecules are IR inactive? Give example.",
+        answer: "Molecules are **IR inactive** if their bond stretching or bending vibrations do not produce a change in the net dipole moment of the molecule.\\n\\n**Examples:**\\n1. **Homonuclear diatomic molecules:** $N_2, O_2, H_2, Cl_2$. Because both atoms share the same electronegativity, the dipole moment is zero and remains zero during stretching, so they do not absorb IR light.\\n2. **Symmetric vibrations of polyatomic molecules:** The symmetric stretching mode of carbon dioxide ($CO_2$, $\\\\leftarrow O=C=O \\\\rightarrow$) is IR inactive because the dipole moment changes of the two bonds cancel each other out, leaving a net dipole moment of zero.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Calculate force constant ($k$) for CO bond showing IR peak at 2100 cm\u207b\u00b9.",
+        answer: "**Given Data:**\\n- Wavenumber ($\\\\bar{\\\\nu}$) = $2100\\\\text{ cm}^{-1}$\\n- Atomic masses: $m_C = 12.01\\\\text{ g/mol}$, $m_O = 16.00\\\\text{ g/mol}$\\n- Speed of light ($c$) = $2.998 \\\\times 10^{10}\\\\text{ cm/s}$\\n- Avogadro's number ($N_A$) = $6.022 \\\\times 10^{23}\\\\text{ mol}^{-1}$\\n\\n**1. Calculate Reduced Mass ($\\\\mu$):**\\n\\n$\\\\mu = \\\\frac{m_C \\\\times m_O}{m_C + m_O} = \\\\frac{12.01 \\\\times 16.00}{12.01 + 16.00} \\\\approx 6.8604\\\\text{ g/mol}$\\n\\nConvert to kg per molecule:\\n\\n$\\\\mu = \\\\frac{6.8604 \\\\times 10^{-3}\\\\text{ kg/mol}}{6.022 \\\\times 10^{23}\\\\text{ mol}^{-1}} \\\\approx 1.139 \\\\times 10^{-26}\\\\text{ kg}$\\n\\n**2. Calculate Force Constant ($k$):**\\nFrom the formula $\\\\bar{\\\\nu} = \\\\frac{1}{2\\\\pi c} \\\\sqrt{\\\\frac{k}{\\\\mu}}$, we rearrange for $k$:\\n\\n$k = 4\\\\pi^2 c^2 \\\\bar{\\\\nu}^2 \\\\mu$\\n\\nSubstitute the values using $c = 2.998 \\\\times 10^{10}\\\\text{ cm/s}$ and $\\\\bar{\\\\nu} = 2100\\\\text{ cm}^{-1}$:\\n\\n$k = 4 \\\\times (3.1416)^2 \\\\times (2.998 \\\\times 10^{10})^2 \\\\times (2100)^2 \\\\times (1.139 \\\\times 10^{-26})$\\n\\n$k \\\\approx 4 \\\\times (9.8696) \\\\times (8.988 \\\\times 10^{20}) \\\\times (4.41 \\\\times 10^6) \\\\times (1.139 \\\\times 10^{-26})$\\n\\n$k \\\\approx 1782\\\\text{ N/m}$ (or $1.78 \\\\times 10^6\\\\text{ dyn/cm}$)\\n\\n**Final Answer:** The force constant of the $CO$ bond is approximately **1782 N/m**.",
+        type: "long",
+        marks: "5 Marks"
       }
     ]
   },
@@ -303,6 +419,14 @@ export const unit2Notes = [
           "Solving for $J$: $2J + 1 = \\sqrt{\\dfrac{2kT}{Bhc}} \\implies \\boxed{J_{max} = \\sqrt{\\dfrac{kT}{2Bhc}} - \\dfrac{1}{2}}$"
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Explain vibrational and rotational spectroscopy for diatomic molecules.",
+        answer: "1. **Rotational Spectroscopy (Microwave Region):**\\n- **Condition:** The diatomic molecule must possess a permanent dipole moment (e.g., $HCl, CO$; homonuclear molecules like $H_2, N_2$ are rotationally inactive).\\n- **Energy:** Quantized rotational energy levels are given by $E_J = J(J+1)Bhc$, where $B$ is the rotational constant ($B = \\\\frac{h}{8\\\\pi^2 I c}$) and $J$ is the quantum number ($J = 0, 1, 2...$).\\n- **Selection Rule:** $\\\\Delta J = \\\\pm 1$. The absorption spectrum consists of equally spaced lines separated by $2B$.\\n\\n2. **Vibrational Spectroscopy (Infrared Region):**\\n- **Condition:** The vibration must produce a dynamic change in the molecular dipole moment.\\n- **Energy:** Modeled as a harmonic oscillator ($E_v = (v + 1/2)hf$) or anharmonic oscillator ($E_v = (v + 1/2)hf - (v + 1/2)^2 hf\\\\chi_e$), where $v$ is the vibrational quantum number ($v = 0, 1, 2...$).\\n- **Selection Rule:** $\\\\Delta v = \\\\pm 1$. It reveals details about bond strength (force constant $k$).",
+        type: "short",
+        marks: "3 Marks"
+      }
     ]
   },
   {
@@ -340,7 +464,45 @@ export const unit2Notes = [
       "Describe the D₂O exchange test. How is it used to identify alcohol, amine, or thiol protons?"
     ],
     shortAnswer: "NMR relies on nuclear spin splitting in an external field (Zeeman Effect: ΔE = γћB₀). Local electron shielding modifies the field (B_eff = B₀(1-σ)), causing chemical shifts relative to TMS (0 ppm). Neighboring spins split signals (n+1 rule) with spacing J (coupling constant). Exchangeable protons (-OH, -NH) disappear via D₂O exchange.",
-    longAnswer: "Nuclear Magnetic Resonance (NMR) spectroscopy is based on the magnetic properties of nuclei with non-zero spin (I ≠ 0), such as protons (¹H, I = 1/2). When placed in a strong external magnetic field B0, these spins align in 2I + 1 states, splitting into a low-energy α-state and a high-energy β-state. This splitting is the Zeeman Effect, where the energy gap is ΔE = γћB₀. Resonant absorption of radiofrequency (RF) energy occurs when the frequency matches the Larmor frequency. Electrons shielding the nucleus create an induced local field that opposes B0, so B_eff = B₀(1 - σ). Deshielding (e.g., near electronegative groups) shifts peaks downfield (higher ppm), while shielding shifts them upfield. Magnetic anisotropy also affects shift: circulating π-electrons in benzene/alkenes create fields that reinforce B0 (deshielding, downfield shift), whereas in alkynes they oppose B0 (shielding, upfield shift). Nearby spins couple through bonds, splitting peaks into multiplets according to the n+1 rule, with relative intensities corresponding to Pascal's triangle. The coupling constant J (in Hz) measures this splitting and is field-independent, helping distinguish vicinal (6-8 Hz) and geminal (10-16 Hz) protons. Labile protons (in -OH, -NH₂, -SH) undergo rapid hydrogen-deuterium exchange with D₂O, forming R-OD. Because deuterium is NMR-inactive under ¹H NMR conditions, these peaks disappear from the spectrum, providing a diagnostic test for these functional groups."
+    longAnswer: "Nuclear Magnetic Resonance (NMR) spectroscopy is based on the magnetic properties of nuclei with non-zero spin (I ≠ 0), such as protons (¹H, I = 1/2). When placed in a strong external magnetic field B0, these spins align in 2I + 1 states, splitting into a low-energy α-state and a high-energy β-state. This splitting is the Zeeman Effect, where the energy gap is ΔE = γћB₀. Resonant absorption of radiofrequency (RF) energy occurs when the frequency matches the Larmor frequency. Electrons shielding the nucleus create an induced local field that opposes B0, so B_eff = B₀(1 - σ). Deshielding (e.g., near electronegative groups) shifts peaks downfield (higher ppm), while shielding shifts them upfield. Magnetic anisotropy also affects shift: circulating π-electrons in benzene/alkenes create fields that reinforce B0 (deshielding, downfield shift), whereas in alkynes they oppose B0 (shielding, upfield shift). Nearby spins couple through bonds, splitting peaks into multiplets according to the n+1 rule, with relative intensities corresponding to Pascal's triangle. The coupling constant J (in Hz) measures this splitting and is field-independent, helping distinguish vicinal (6-8 Hz) and geminal (10-16 Hz) protons. Labile protons (in -OH, -NH₂, -SH) undergo rapid hydrogen-deuterium exchange with D₂O, forming R-OD. Because deuterium is NMR-inactive under ¹H NMR conditions, these peaks disappear from the spectrum, providing a diagnostic test for these functional groups.",
+    questionsAndAnswers: [
+      {
+        question: "How many NMR signals are obtained for isopropanol [CH\u2083CH(OH)CH\u2083]?",
+        answer: "**Three signals** are obtained in the $^1H$ NMR spectrum of isopropanol:\\n1. **Signal 1:** A doublet for the 6 equivalent methyl ($CH_3$) protons (split by the single neighboring $CH$ proton).\\n2. **Signal 2:** A septet for the single methine ($CH$) proton (split by the 6 neighboring methyl protons).\\n3. **Signal 3:** A singlet for the single hydroxyl ($OH$) proton (which usually appears as a broad singlet due to rapid intermolecular proton exchange, preventing coupling).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Predict the proton NMR spectrum of CH\u2084.",
+        answer: "In methane ($CH_4$), all four hydrogen atoms (protons) are in identical electronic environments, making them chemically and magnetically **equivalent**. \\n\\nBecause they are equivalent, there is no spin-spin coupling between them. Consequently, the proton NMR spectrum of methane shows only **one singlet signal** (a single sharp peak) with zero splitting. Its chemical shift appears upfield at $\\\\delta \\\\approx 0.23\\\\text{ ppm}$.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Explain shielding and deshielding effects involved in NMR spectroscopy.",
+        answer: "The magnetic field experienced by a nucleus ($B_{eff}$) is modified by the surrounding electron cloud:\\n\\n$B_{eff} = B_0(1 - \\\\sigma)$ where $\\\\sigma$ is the shielding constant.\\n\\n1. **Shielding Effect:** In electron-rich environments, the circulating electrons generate an induced magnetic field that opposes the external magnetic field ($B_0$). The nucleus experiences a weaker effective field ($B_{eff} < B_0$). Consequently, it requires a lower resonant frequency to undergo transition, shifting the NMR signal **upfield** (to the right, lower $\\\\delta$ ppm value). Example: protons in methyl groups ($-CH_3$) or $TMS$.\\n2. **Deshielding Effect:** When electronegative atoms (like $O, N, F, Cl$) pull electron density away from the nucleus, the opposing induced field weakens. The nucleus is more exposed to the external field and experiences a stronger effective field ($B_{eff} \\\\approx B_0$). It resonates at a higher frequency, shifting the signal **downfield** (to the left, higher $\\\\delta$ ppm value). Example: protons attached to oxygen ($-OH$) or in carboxylic acids ($-COOH$).",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Which atoms are NMR inactive and why?",
+        answer: "Nuclei are **NMR inactive** if they have a nuclear spin quantum number ($I$) of **zero**.\\n\\n**Reasoning:**\\nNuclei with even atomic numbers ($Z$) and even mass numbers ($A$) have all their protons and neutrons paired in opposite directions, canceling out their angular momenta. Lacking spin, they have no magnetic dipole moment and cannot interact with an external magnetic field.\\n\\n**Examples:**\\n- **Carbon-12 ($^{12}C$, $Z=6, A=12$)**\\n- **Oxygen-16 ($^{16}O$, $Z=8, A=16$)**\\n- **Sulfur-32 ($^{32}S$, $Z=16, A=32$)**\\nThese nuclei show no signals in NMR spectroscopy.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Define chemical shift of proton.",
+        answer: "The **chemical shift ($\\\\delta$)** is the position of an NMR signal relative to a standard reference compound, usually Tetramethylsilane (TMS, assigned $\\\\delta = 0\\\\text{ ppm}$).\\n\\nIt is defined as the difference between the resonance frequency of the sample ($f_{sample}$) and the reference ($f_{ref}$), divided by the operating frequency of the spectrometer ($f_{inst}$), expressed in parts per million (ppm):\\n\\n$\\\\delta\\\\text{ (ppm)} = \\\\frac{f_{sample} - f_{ref}}{f_{inst}} \\\\times 10^6$\\n\\nChemical shift is independent of the applied magnetic field strength, making it a constant molecular property that directly reflects the local electronic environment (shielding/deshielding) of the proton.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Explain why $^{13}C$ is NMR active while $^{12}C$ is not.",
+        answer: "1. **$^{12}C$ (NMR Inactive):** Has an even mass number (12) and even atomic number (6). Both its protons (6) and neutrons (6) are paired, resulting in a net nuclear spin $I = 0$. Since it has no spin, it has no magnetic moment and cannot undergo NMR transitions.\\n2. **$^{13}C$ (NMR Active):** Has an odd mass number (13) due to an extra neutron (7 neutrons, 6 protons). The unpaired neutron gives the nucleus a net spin quantum number $I = 1/2$. This non-zero spin generates a magnetic moment, allowing it to align in an external magnetic field and absorb radiofrequency radiation, making it NMR active.",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   },
   {
     unitNumber: 2,
@@ -372,7 +534,15 @@ export const unit2Notes = [
       "Why is MRI preferred over CT scans for imaging soft tissues, and what are its primary safety limitations?"
     ],
     shortAnswer: "MRI uses NMR principles to image the human body by targeting water protons. A strong magnetic field aligns the protons, and radiofrequency pulses excite them. When the pulses stop, the protons relax at rates (T1 and T2) that vary by tissue type. Computers translate these differences into high-resolution images of soft tissues.",
-    longAnswer: "Magnetic Resonance Imaging (MRI) is a diagnostic technique based on Nuclear Magnetic Resonance. It targets hydrogen protons, which are abundant in the body's water and fat. The patient is placed in a strong magnetic field (B0), aligning the magnetic moments of the protons. This alignment creates a net magnetization vector along the field axis. Radiofrequency (RF) coils apply a pulse at the Larmor frequency (ν = γB0/2π), rotating the magnetization vector into the transverse plane. When the RF pulse is turned off, the system returns to equilibrium through relaxation. Spin-lattice relaxation (T1) is the recovery of magnetization along the longitudinal axis. Spin-spin relaxation (T2) is the decay of phase coherence in the transverse plane. Different tissues have unique T1 and T2 relaxation times due to their molecular structures. In T1-weighted scans, tissues with short T1 times (like fat) appear bright, while water appears dark. In T2-weighted scans, tissues with long T2 times (like cerebrospinal fluid or areas of inflammation) appear bright. MRI uses gradient coils to apply weak magnetic fields that vary linearly across the body. This variation alters the resonance frequency of the protons based on their position, allowing spatial encoding. MRI is preferred for soft-tissue imaging because it offers superior contrast resolution without the risk of ionizing radiation associated with CT scans. However, it is contraindicated for patients with pacemakers, ferromagnetic implants, or severe claustrophobia."
+    longAnswer: "Magnetic Resonance Imaging (MRI) is a diagnostic technique based on Nuclear Magnetic Resonance. It targets hydrogen protons, which are abundant in the body's water and fat. The patient is placed in a strong magnetic field (B0), aligning the magnetic moments of the protons. This alignment creates a net magnetization vector along the field axis. Radiofrequency (RF) coils apply a pulse at the Larmor frequency (ν = γB0/2π), rotating the magnetization vector into the transverse plane. When the RF pulse is turned off, the system returns to equilibrium through relaxation. Spin-lattice relaxation (T1) is the recovery of magnetization along the longitudinal axis. Spin-spin relaxation (T2) is the decay of phase coherence in the transverse plane. Different tissues have unique T1 and T2 relaxation times due to their molecular structures. In T1-weighted scans, tissues with short T1 times (like fat) appear bright, while water appears dark. In T2-weighted scans, tissues with long T2 times (like cerebrospinal fluid or areas of inflammation) appear bright. MRI uses gradient coils to apply weak magnetic fields that vary linearly across the body. This variation alters the resonance frequency of the protons based on their position, allowing spatial encoding. MRI is preferred for soft-tissue imaging because it offers superior contrast resolution without the risk of ionizing radiation associated with CT scans. However, it is contraindicated for patients with pacemakers, ferromagnetic implants, or severe claustrophobia.",
+    questionsAndAnswers: [
+      {
+        question: "What is MRI? State its uses.",
+        answer: "**MRI (Magnetic Resonance Imaging)** is a non-invasive medical imaging technique based on the principles of Nuclear Magnetic Resonance (NMR). It uses strong magnetic fields and radiofrequency pulses to detect the resonance signals from hydrogen nuclei (protons) in water and fat molecules inside the body.\\n\\n**Uses:**\\n- Imaging soft tissues like the brain, spinal cord, and muscles (which contain high water content).\\n- Detecting tumors, cysts, and inflammatory tissue diseases.\\n- Monitoring cardiovascular function and blood flow (functional MRI or fMRI).\\n- Diagnosing joint disorders and ligament tears.",
+        type: "short",
+        marks: "3 Marks"
+      }
+    ]
   },
   {
     unitNumber: 2,
@@ -404,7 +574,15 @@ export const unit2Notes = [
       "Why is ultra-high vacuum (UHV) required for electron-based surface characterization techniques?"
     ],
     shortAnswer: "Surface characterization techniques analyze the top 1-10 nm of materials. XPS uses soft X-rays to eject core electrons, measuring their binding energies to identify elements and oxidation states. SEM scans a focused electron beam to image surface topography, while AFM uses a physical probe tip to map surface features at the atomic scale.",
-    longAnswer: "Surface characterization techniques are essential for studying solid interfaces. X-ray Photoelectron Spectroscopy (XPS), also known as Electron Spectroscopy for Chemical Analysis (ESCA), is based on the photoelectric effect. The sample surface is irradiated with soft X-rays (such as Al Kα, 1486.6 eV). These X-rays eject core-level electrons from surface atoms. The kinetic energy (Ek) of the emitted photoelectrons is measured by an analyzer. The binding energy (Eb) is calculated using the equation: Eb = hν - Ek - Φ, where hν is the X-ray energy and Φ is the spectrometer work function. Each element has characteristic binding energies, allowing elemental identification. Electronegative substituents shift these binding energies, revealing the oxidation state and chemical bonding environment. XPS is highly surface-sensitive; only electrons from the top 1-10 nm can escape without losing energy. Scanning Electron Microscopy (SEM) images surface topography by rastering a focused electron beam (0.2 to 40 keV) across a sample. The incident electrons interact with the sample, generating secondary electrons (SE) and backscattered electrons (BSE). SEs originate from near-surface regions, providing high-resolution topographical images. BSEs are elastic reflections from deeper regions; heavier elements scatter electrons more strongly, creating composition contrast. Atomic Force Microscopy (AFM) is a scanning probe method. A sharp silicon tip on a flexible cantilever scans the surface. van der Waals and electrostatic forces between the tip and the surface deflect the cantilever. A laser reflecting off the back of the cantilever onto a photodiode detects these movements, mapping surface topography with sub-nanometer vertical resolution."
+    longAnswer: "Surface characterization techniques are essential for studying solid interfaces. X-ray Photoelectron Spectroscopy (XPS), also known as Electron Spectroscopy for Chemical Analysis (ESCA), is based on the photoelectric effect. The sample surface is irradiated with soft X-rays (such as Al Kα, 1486.6 eV). These X-rays eject core-level electrons from surface atoms. The kinetic energy (Ek) of the emitted photoelectrons is measured by an analyzer. The binding energy (Eb) is calculated using the equation: Eb = hν - Ek - Φ, where hν is the X-ray energy and Φ is the spectrometer work function. Each element has characteristic binding energies, allowing elemental identification. Electronegative substituents shift these binding energies, revealing the oxidation state and chemical bonding environment. XPS is highly surface-sensitive; only electrons from the top 1-10 nm can escape without losing energy. Scanning Electron Microscopy (SEM) images surface topography by rastering a focused electron beam (0.2 to 40 keV) across a sample. The incident electrons interact with the sample, generating secondary electrons (SE) and backscattered electrons (BSE). SEs originate from near-surface regions, providing high-resolution topographical images. BSEs are elastic reflections from deeper regions; heavier elements scatter electrons more strongly, creating composition contrast. Atomic Force Microscopy (AFM) is a scanning probe method. A sharp silicon tip on a flexible cantilever scans the surface. van der Waals and electrostatic forces between the tip and the surface deflect the cantilever. A laser reflecting off the back of the cantilever onto a photodiode detects these movements, mapping surface topography with sub-nanometer vertical resolution.",
+    questionsAndAnswers: [
+      {
+        question: "Name any four surface characterization techniques.",
+        answer: "Four primary techniques used to analyze the surface morphology and composition of materials are:\\n1. **SEM (Scanning Electron Microscopy):** Uses a focused beam of electrons to produce high-resolution 3D images of surface topography.\\n2. **TEM (Transmission Electron Microscopy):** Transmits electrons through an ultra-thin sample to image internal structure and crystal lattices at atomic resolution.\\n3. **AFM (Atomic Force Microscopy):** Uses a physical cantilever probe to map surface topography at the nanometer scale.\\n4. **XRD (X-ray Diffraction):** Directs X-rays at a crystal lattice to analyze crystal structures, phase identification, and orientation.",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   },
   {
     unitNumber: 2,

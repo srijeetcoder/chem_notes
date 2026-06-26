@@ -63,6 +63,20 @@ export const unit1Notes = [
           "Physical interpretation: Solutions $\\psi_{nlm}$ under boundary conditions give quantized energies $E_n$ and quantum numbers $n, l, m_l$ naturally, without postulating them as in the Bohr model."
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Write down the time-independent 1D Schrödinger wave equation and mention the terms involved.",
+        answer: "The time-independent 1D Schrödinger wave equation is:\n\n$-\\frac{h^2}{8\\pi^2 m}\\frac{d^2\\psi}{dx^2} + V\\psi = E\\psi$\n\nWhere:\n- $h$ is Planck's constant\n- $m$ is the mass of the particle (e.g., electron)\n- $V$ is the potential energy of the particle\n- $E$ is the total energy of the particle\n- $\\psi$ is the wave function representing the quantum state of the system.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Prove that $(V - \\frac{h^2}{8\\pi^2 m}\\nabla^2)\\Psi = E\\Psi$.",
+        answer: "The classical wave equation for a standing wave $\\Psi$ along the x-axis is:\n\n$\\frac{d^2\\Psi}{dx^2} + \\frac{4\\pi^2}{\\lambda^2}\\Psi = 0$\n\nAccording to the de Broglie hypothesis, the wavelength of a particle is given by:\n\n$\\lambda = \\frac{h}{p} = \\frac{h}{\\sqrt{2m(E - V)}}$\n\nwhere $p$ is momentum, $m$ is mass, $E$ is total energy, and $V$ is potential energy ($KE = E - V = \\frac{p^2}{2m} \\Rightarrow p = \\sqrt{2m(E-V)}$).\n\nSubstituting $\\lambda^2 = \\frac{h^2}{2m(E-V)}$ into the wave equation:\n\n$\\frac{d^2\\Psi}{dx^2} + \\frac{8\\pi^2 m(E - V)}{h^2}\\Psi = 0$\n\nRearranging the terms:\n\n$-\\frac{h^2}{8\\pi^2 m}\\frac{d^2\\Psi}{dx^2} + V\\Psi = E\\Psi$\n\nUsing the Laplacian operator $\\nabla^2 = \\frac{d^2}{dx^2} + \\frac{d^2}{dy^2} + \\frac{d^2}{dz^2}$ to generalize to three dimensions:\n\n$-\\frac{h^2}{8\\pi^2 m}\\nabla^2\\Psi + V\\Psi = E\\Psi$\n\nFactoring out $\\Psi$ on the left side yields:\n\n$(V - \\frac{h^2}{8\\pi^2 m}\\nabla^2)\\Psi = E\\Psi$\n\nThis is the time-independent Schrödinger wave equation.",
+        type: "short",
+        marks: "3 Marks"
+      }
     ]
   },
   {
@@ -143,6 +157,14 @@ export const unit1Notes = [
           "Therefore: $\\Delta E = 3 \\times 37.6\\text{ eV} = 112.8\\text{ eV}$ (or $1.81 \\times 10^{-17}\\text{ J}$)"
         ]
       }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "An electron is confined in a one-dimensional box. Calculate the ground state energy and separation between energy levels.",
+        answer: "For a particle of mass $m$ confined in a 1D box of length $a$ (or $L$), the energy eigenvalues are:\n\n$E_n = \\frac{n^2 h^2}{8ma^2}$ where $n = 1, 2, 3, \\dots$\n\n1. **Ground State Energy ($n = 1$):**\n\n$E_1 = \\frac{h^2}{8ma^2}$\n\n2. **Energy Separation between levels $n = 2$ and $n = 3$:**\n\n$\\Delta E = E_3 - E_2 = \\frac{3^2 h^2}{8ma^2} - \\frac{2^2 h^2}{8ma^2} = \\frac{(9 - 4)h^2}{8ma^2} = \\frac{5h^2}{8ma^2}$\n\nThus, the ground state energy is $\\frac{h^2}{8ma^2}$ and the separation between the second and third energy levels is $\\frac{5h^2}{8ma^2}$.",
+        type: "short",
+        marks: "3 Marks"
+      }
     ]
   },
   {
@@ -177,7 +199,15 @@ export const unit1Notes = [
       "Explain s-p mixing and how it affects the molecular orbital energy ordering of N₂ versus O₂."
     ],
     shortAnswer: "MO theory combines atomic orbitals via LCAO to form bonding (low energy) and antibonding (high energy) molecular orbitals. It successfully explains why O₂ is paramagnetic (having two unpaired electrons in π*2p orbitals) and why N₂ has a triple bond (bond order = 3) with no unpaired electrons (diamagnetic).",
-    longAnswer: "Molecular Orbital (MO) Theory provides a wave mechanical explanation of chemical bonding using the Linear Combination of Atomic Orbitals (LCAO). For diatomic molecules, bonding is evaluated by calculating the bond order: BO = (N_b - N_a)/2. In homonuclear diatomic molecules, the relative energies of MOs depend on the energy difference between 2s and 2p atomic orbitals. In N₂ (14 electrons), the 2s-2p energy gap is small, leading to s-p mixing. This mixing raises the energy of the σ_2pz orbital above the degenerate π_2px and π_2py orbitals, giving the configuration: KK σ_2s² σ*_2s² π_2px² = π_2py² σ_2pz². Its bond order is (10 - 4)/2 = 3 (a triple bond), and it is diamagnetic. In O₂ (16 electrons), the 2s-2p gap is larger, so no s-p mixing occurs. The σ_2pz orbital remains below the π_2p orbitals: KK σ_2s² σ*_2s² σ_2pz² π_2px² = π_2py² π*_2px¹ = π*_2py¹. This configuration results in a bond order of (10 - 6)/2 = 2 and shows two unpaired electrons in the π* orbitals, making O₂ paramagnetic. For heteronuclear molecules like CO (14 valence/total electrons, isoelectronic with N₂), the atomic orbitals of oxygen are lower in energy than those of carbon due to oxygen's greater electronegativity. The resulting bonding MOs have more oxygen character, and the antibonding MOs have more carbon character. The bond order of CO is 3, and it is diamagnetic."
+    longAnswer: "Molecular Orbital (MO) Theory provides a wave mechanical explanation of chemical bonding using the Linear Combination of Atomic Orbitals (LCAO). For diatomic molecules, bonding is evaluated by calculating the bond order: BO = (N_b - N_a)/2. In homonuclear diatomic molecules, the relative energies of MOs depend on the energy difference between 2s and 2p atomic orbitals. In N₂ (14 electrons), the 2s-2p energy gap is small, leading to s-p mixing. This mixing raises the energy of the σ_2pz orbital above the degenerate π_2px and π_2py orbitals, giving the configuration: KK σ_2s² σ*_2s² π_2px² = π_2py² σ_2pz². Its bond order is (10 - 4)/2 = 3 (a triple bond), and it is diamagnetic. In O₂ (16 electrons), the 2s-2p gap is larger, so no s-p mixing occurs. The σ_2pz orbital remains below the π_2p orbitals: KK σ_2s² σ*_2s² σ_2pz² π_2px² = π_2py² π*_2px¹ = π*_2py¹. This configuration results in a bond order of (10 - 6)/2 = 2 and shows two unpaired electrons in the π* orbitals, making O₂ paramagnetic. For heteronuclear molecules like CO (14 valence/total electrons, isoelectronic with N₂), the atomic orbitals of oxygen are lower in energy than those of carbon due to oxygen's greater electronegativity. The resulting bonding MOs have more oxygen character, and the antibonding MOs have more carbon character. The bond order of CO is 3, and it is diamagnetic.",
+    questionsAndAnswers: [
+      {
+        question: "Why does $He_2$ molecule not exist?",
+        answer: "Helium ($He$) has atomic number 2 and electronic configuration $1s^2$. A diatomic $He_2$ molecule would have a total of 4 electrons. According to Molecular Orbital theory, the configuration of $He_2$ is:\n\n$\\sigma_{1s}^2 \\sigma^*_{1s}{}^2$\n\nHere, the number of bonding electrons ($N_b$) is 2 and the number of antibonding electrons ($N_a$) is 2.\n\nThe Bond Order (BO) is calculated as:\n\n$BO = \\frac{N_b - N_a}{2} = \\frac{2 - 2}{2} = 0$\n\nSince the bond order is zero, no chemical bond is formed between the two helium atoms. Therefore, the $He_2$ molecule is unstable and does not exist in nature.",
+        type: "very_short",
+        marks: "1 Mark"
+      }
+    ]
   },
   {
     unitNumber: 1,
@@ -316,7 +346,21 @@ export const unit1Notes = [
       "Explain the criteria of aromaticity using benzene and cyclooctatetraene as examples."
     ],
     shortAnswer: "Aromaticity is the extra stability found in cyclic, planar, fully conjugated systems with (4n + 2) π-electrons (Huckel's Rule). Compounds with 4n π-electrons are antiaromatic (highly unstable), while those lacking planarity, cyclicity, or full conjugation are non-aromatic.",
-    longAnswer: "Huckel's rule provides a quantum mechanical explanation for the stability of aromatic systems. For a molecule to be aromatic, it must meet four criteria: it must be cyclic, planar, fully conjugated (sp² or sp hybridized atoms), and have (4n + 2) π-electrons, where n is a whole number. This specific count (2, 6, 10, 14, 18...) completes a closed shell of bonding molecular orbitals, similar to noble gas configurations in atoms. For example, benzene has a planar hexagon shape with six p-orbitals containing six π-electrons. Fitting this into the formula 4n + 2 = 6 gives n = 1, meaning benzene is aromatic and possesses high resonance stability. Cyclobutadiene is cyclic, planar, and fully conjugated, but has four π-electrons. Since 4n = 4 (n=1), it is antiaromatic and extremely unstable. Cyclooctatetraene has eight π-electrons, which matches the antiaromatic 4n formula. To avoid this unstable state, the molecule bends into a non-planar 'tub' shape. Lacking a planar configuration, the p-orbitals cannot align, making it non-aromatic. Huckel's rule also applies to ions: cyclopentadiene is not aromatic because it contains an sp³ carbon. However, deprotonation yields the cyclopentadienyl anion. The sp³ carbon becomes sp² hybridized, placing the lone pair in a p-orbital. This gives the ring a total of 6 π-electrons (4n+2, n=1) delocalized over the five carbons, making the anion aromatic and explaining its ease of formation."
+    longAnswer: "Huckel's rule provides a quantum mechanical explanation for the stability of aromatic systems. For a molecule to be aromatic, it must meet four criteria: it must be cyclic, planar, fully conjugated (sp² or sp hybridized atoms), and have (4n + 2) π-electrons, where n is a whole number. This specific count (2, 6, 10, 14, 18...) completes a closed shell of bonding molecular orbitals, similar to noble gas configurations in atoms. For example, benzene has a planar hexagon shape with six p-orbitals containing six π-electrons. Fitting this into the formula 4n + 2 = 6 gives n = 1, meaning benzene is aromatic and possesses high resonance stability. Cyclobutadiene is cyclic, planar, and fully conjugated, but has four π-electrons. Since 4n = 4 (n=1), it is antiaromatic and extremely unstable. Cyclooctatetraene has eight π-electrons, which matches the antiaromatic 4n formula. To avoid this unstable state, the molecule bends into a non-planar 'tub' shape. Lacking a planar configuration, the p-orbitals cannot align, making it non-aromatic. Huckel's rule also applies to ions: cyclopentadiene is not aromatic because it contains an sp³ carbon. However, deprotonation yields the cyclopentadienyl anion. The sp³ carbon becomes sp² hybridized, placing the lone pair in a p-orbital. This gives the ring a total of 6 π-electrons (4n+2, n=1) delocalized over the five carbons, making the anion aromatic and explaining its ease of formation.",
+    questionsAndAnswers: [
+      {
+        question: "Write the criteria for a compound to be aromatic.",
+        answer: "For a compound to be classified as aromatic, it must fulfill the following four criteria:\n1. **Cyclic structure:** The molecule must contain one or more rings of atoms.\n2. **Planarity:** The ring atoms must lie in the same plane to allow parallel alignment of p-orbitals.\n3. **Complete conjugation:** There must be a continuous loop of overlapping p-orbitals (every ring atom must be $sp^2$ or $sp$ hybridized).\n4. **Hückel's Rule:** The conjugated system must contain $(4n+2)\\pi$ electrons, where $n = 0, 1, 2, 3, \\dots$ (i.e., 2, 6, 10, 14... $\\pi$ electrons).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "What are anti-aromatic compounds? Give examples.",
+        answer: "Anti-aromatic compounds are cyclic, planar, and fully conjugated molecules that contain $4n\\pi$ electrons (where $n = 1, 2, 3, \\dots$) instead of $(4n+2)\\pi$ electrons. \n\nDue to the $4n\\pi$ electronic arrangement, these compounds have unpaired electrons in non-bonding or high-energy molecular orbitals, which destroys thermodynamic stability. As a result, anti-aromatic systems are highly unstable and exceptionally reactive compared to their open-chain counterparts.\n\n**Example:** Cyclobutadiene ($C_4H_4$, which has 4 $\\pi$ electrons, satisfying $4n$ for $n=1$).",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   },
   {
     unitNumber: 1,
@@ -383,6 +427,20 @@ export const unit1Notes = [
           "The spin-only magnetic moment formula is derived from: $\\mu_s = g_s\\sqrt{S(S+1)}\\,\\mu_B$, where $g_s \\approx 2$ and $S = \\tfrac{n}{2}$ for $n$ unpaired electrons.",
           "$\\mu_s = 2\\sqrt{\\tfrac{n}{2}\\left(\\tfrac{n}{2}+1\\right)} = \\sqrt{n(n+2)}\\,\\mu_B$, giving the familiar $\\boxed{\\mu_s = \\sqrt{n(n+2)}\\text{ BM}}$"
         ]
+      }
+    ],
+    questionsAndAnswers: [
+      {
+        question: "Show the splitting of d-orbitals in a tetrahedral field.",
+        answer: "In a tetrahedral crystal field, four ligands approach the central metal ion from directions that lie between the cartesian axes ($x, y, z$). \n\nConsequently, the $d_{xy}, d_{yz},$ and $d_{xz}$ orbitals (which point between the axes) experience stronger electrostatic repulsion from the incoming ligands than the $d_{x^2-y^2}$ and $d_{z^2}$ orbitals (which point directly along the axes).\n\nThis causes the five degenerate d-orbitals of the free metal ion to split into two groups:\n1. **Lower Energy Set:** The doubly degenerate $e$ set containing the $d_{x^2-y^2}$ and $d_{z^2}$ orbitals (stabilized by $-0.6\\Delta_t$ relative to the barycenter).\n2. **Higher Energy Set:** The triply degenerate $t_2$ set containing the $d_{xy}, d_{yz},$ and $d_{xz}$ orbitals (destabilized by $+0.4\\Delta_t$ relative to the barycenter).\n\nThe energy separation between the two sets is represented as $\\Delta_t$ (tetrahedral crystal field splitting energy). Note that the 'g' subscript is omitted because tetrahedral geometry lacks a center of inversion.",
+        type: "long",
+        marks: "5 Marks"
+      },
+      {
+        question: "Why are low-spin complexes not formed in tetrahedral fields?",
+        answer: "Low-spin complexes are formed when the crystal field splitting energy ($\\Delta$) is larger than the spin-pairing energy ($P$), forcing electrons to pair up in the lower energy orbitals.\n\nIn tetrahedral complexes, low-spin configurations are virtually never observed due to two reasons:\n1. **Fewer Ligands:** There are only 4 ligands in a tetrahedral geometry compared to 6 in octahedral, which reduces the electrostatic field strength.\n2. **Indirect Approach:** The ligands do not point directly at any of the d-orbitals, reducing the magnitude of the orbital interactions.\n\nQuantitatively, the splitting energy is related to octahedral splitting by:\n\n$\\Delta_t = \\frac{4}{9}\\Delta_o \\approx 0.44\\Delta_o$\n\nSince $\\Delta_t$ is extremely small, it almost never exceeds the pairing energy $P$ ($\\Delta_t < P$). Thus, it is energetically more favorable for electrons to occupy the higher-energy $t_2$ orbitals singly before pairing up in the lower $e$ orbitals, leading exclusively to high-spin complexes.",
+        type: "long",
+        marks: "5 Marks"
       }
     ]
   },
@@ -486,6 +544,44 @@ export const unit1Notes = [
       "How does the Fermi energy level change when an intrinsic semiconductor is doped with donor and acceptor impurities?"
     ],
     shortAnswer: "Band theory explains solid conductivity through valence (filled) and conduction (vacant) bands. Doping modifies these bands: n-type doping adds a donor level near the conduction band, increasing free electrons; p-type doping adds an acceptor level near the valence band, creating holes.",
-    longAnswer: "Band theory of solids is an extension of Molecular Orbital theory applied to crystalline lattices. When N atoms combine to form a solid, N molecular orbitals are generated. These orbitals lie so close in energy that they form continuous bands. The valence band contains the valence electrons, and the conduction band is the next higher energy band. The energy separation between them is the band gap (Eg). In conductors, the conduction and valence bands overlap (Eg = 0), allowing free electron movement. In insulators, Eg is large (typically > 3 eV), preventing electrons from crossing. In semiconductors, Eg is small (0.5 to 2 eV), allowing some thermal excitation. Intrinsic semiconductors have low conductivity. Doping introduces impurity atoms that create new energy levels within the band gap. In n-type doping, silicon (group 14) is doped with phosphorus (group 15). The phosphorus atoms replace silicon in the lattice. Four of their five valence electrons form covalent bonds, while the fifth is weakly bound. This creates a donor energy level just below the conduction band. The energy required to promote these electrons is very small (~0.05 eV), increasing the concentration of conduction electrons. In p-type doping, silicon is doped with boron (group 13). The boron atom has only three valence electrons, leaving a vacant bond (a hole). This creates an acceptor energy level just above the valence band. Valence electrons can easily jump into this acceptor level, leaving mobile holes in the valence band that conduct electricity."
+    longAnswer: "Band theory of solids is an extension of Molecular Orbital theory applied to crystalline lattices. When N atoms combine to form a solid, N molecular orbitals are generated. These orbitals lie so close in energy that they form continuous bands. The valence band contains the valence electrons, and the conduction band is the next higher energy band. The energy separation between them is the band gap (Eg). In conductors, the conduction and valence bands overlap (Eg = 0), allowing free electron movement. In insulators, Eg is large (typically > 3 eV), preventing electrons from crossing. In semiconductors, Eg is small (0.5 to 2 eV), allowing some thermal excitation. Intrinsic semiconductors have low conductivity. Doping introduces impurity atoms that create new energy levels within the band gap. In n-type doping, silicon (group 14) is doped with phosphorus (group 15). The phosphorus atoms replace silicon in the lattice. Four of their five valence electrons form covalent bonds, while the fifth is weakly bound. This creates a donor energy level just below the conduction band. The energy required to promote these electrons is very small (~0.05 eV), increasing the concentration of conduction electrons. In p-type doping, silicon is doped with boron (group 13). The boron atom has only three valence electrons, leaving a vacant bond (a hole). This creates an acceptor energy level just above the valence band. Valence electrons can easily jump into this acceptor level, leaving mobile holes in the valence band that conduct electricity.",
+    questionsAndAnswers: [
+      {
+        question: "Which type of semiconductor is formed when germanium is doped with aluminium?",
+        answer: "A **p-type (positive-type) semiconductor** is formed. Germanium is a Group 14 element with 4 valence electrons, whereas Aluminium is a Group 13 trivalent element with 3 valence electrons. When Germanium is doped with Aluminium, Aluminium atoms replace some Germanium atoms in the crystal lattice. Since Aluminium has only 3 valence electrons, it leaves one bond incomplete with a neighboring Germanium atom, creating a positive electron vacancy or 'hole'. These holes act as charge carriers.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "For n-type semiconductor which metal is doped with silicon?",
+        answer: "To form an n-type semiconductor, Silicon (a Group 14 element with 4 valence electrons) is doped with a pentavalent (Group 15) element such as **Phosphorus (P)**, **Arsenic (As)**, or **Antimony (Sb)** which have 5 valence electrons. This introduces free conduction electrons.",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "How does conductivity of a semiconductor change with temperature?",
+        answer: "The electrical conductivity of a semiconductor **increases** with an increase in temperature. As the temperature rises, valence electrons gain thermal energy and can overcome the small band gap ($E_g$), jumping from the valence band to the conduction band. This increases the concentration of free charge carriers (electrons in conduction band and holes in valence band).",
+        type: "very_short",
+        marks: "1 Mark"
+      },
+      {
+        question: "Why does germanium act as n-type semiconductor? What is the difference between n-type and p-type semiconductor?",
+        answer: "Germanium (Group 14, 4 valence electrons) acts as an n-type semiconductor when doped with a pentavalent Group 15 impurity (like Phosphorus, Arsenic, or Antimony). Four of the impurity's valence electrons form covalent bonds with surrounding Germanium atoms, leaving the 5th electron unbonded and loosely attached. Even minimal thermal energy detaches this electron, creating a free electron in the conduction band, increasing conductivity.\n\n**Key Differences:**\n\n| Feature | n-type Semiconductor | p-type Semiconductor |\n|---|---|---|\n| **Dopant** | Pentavalent (Group 15) e.g., P, As, Sb | Trivalent (Group 13) e.g., B, Al, Ga |\n| **Nature** | Donor impurity (donates electrons) | Acceptor impurity (creates holes) |\n| **Majority Carriers** | Electrons (negative) | Holes (positive) |\n| **Minority Carriers** | Holes | Electrons |\n| **Fermi Level** | Shifts upward near the Conduction Band | Shifts downward near the Valence Band |",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "Explain the role of doping on the band structure of solids.",
+        answer: "Doping introduces localized impurity energy levels within the forbidden band gap of a semiconductor, which significantly decreases the energy required to promote charge carriers:\n1. **n-type Doping:** Adds donor impurity levels just below the bottom of the Conduction Band. Electrons from these donor levels require very little energy ($\\approx 0.01-0.05\\text{ eV}$) to be excited into the conduction band.\n2. **p-type Doping:** Adds acceptor impurity levels just above the top of the Valence Band. Electrons from the valence band can easily jump into these acceptor levels, leaving behind mobile positive holes in the valence band that can conduct current.",
+        type: "short",
+        marks: "3 Marks"
+      },
+      {
+        question: "On the basis of band theory differentiate between conductors, semiconductors and insulators.",
+        answer: "According to band theory, the electrical conductivity of solids is determined by the size of the forbidden band gap ($E_g$) between the valence band (VB) and the conduction band (CB):\n\n1. **Conductors (Metals):** The valence band and conduction band overlap entirely, or the valence band is only partially filled. There is no band gap ($E_g \\approx 0\\text{ eV}$), enabling valence electrons to move freely into the conduction band and conduct electricity under any applied potential.\n2. **Semiconductors:** There is a small forbidden band gap ($E_g \\approx 0.5 - 2\\text{ eV}$) between the filled valence band and empty conduction band. At $0\\text{ K}$, they act as insulators. At room temperature, thermal energy is sufficient to excite a small fraction of electrons across the gap into the conduction band, enabling moderate conductivity.\n3. **Insulators:** A very large band gap exists between the valence and conduction bands ($E_g > 3\\text{ eV}$). Extremely high energy is required to promote electrons across this gap, meaning no conduction can occur under normal conditions.",
+        type: "long",
+        marks: "5 Marks"
+      }
+    ]
   }
 ];

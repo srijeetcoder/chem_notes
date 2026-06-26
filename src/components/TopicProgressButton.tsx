@@ -16,22 +16,22 @@ export const TopicProgressButton: React.FC<TopicProgressButtonProps> = ({ topicI
   const statusConfig = {
     not_started: {
       label: 'Not Started',
-      color: 'text-zinc-500 bg-zinc-100 border-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-800/80',
+      color: 'text-zinc-400 bg-zinc-900/40 border-white/5 hover:border-white/10 hover:bg-zinc-800/40',
       icon: Circle,
     },
     in_progress: {
       label: 'In Progress',
-      color: 'text-blue-600 bg-blue-50 border-blue-200 dark:bg-blue-950/20 dark:text-blue-400 dark:border-blue-800/40',
+      color: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20 shadow-[0_0_12px_rgba(34,211,238,0.15)]',
       icon: Clock,
     },
     completed: {
       label: 'Completed',
-      color: 'text-emerald-600 bg-emerald-50 border-emerald-200 dark:bg-emerald-950/20 dark:text-emerald-400 dark:border-emerald-800/40',
+      color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20 shadow-[0_0_12px_rgba(16,185,129,0.15)]',
       icon: CheckCircle,
     },
     revision_needed: {
       label: 'Revision Needed',
-      color: 'text-rose-600 bg-rose-50 border-rose-200 dark:bg-rose-950/20 dark:text-rose-400 dark:border-rose-800/40',
+      color: 'text-rose-400 bg-rose-500/10 border-rose-500/20 shadow-[0_0_12px_rgba(244,63,94,0.15)]',
       icon: AlertCircle,
     },
   };
@@ -51,7 +51,7 @@ export const TopicProgressButton: React.FC<TopicProgressButtonProps> = ({ topicI
       <button
         onClick={() => setIsOpen(!isOpen)}
         disabled={isUpdating}
-        className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20 cursor-pointer disabled:opacity-50 ${active.color}`}
+        className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs font-bold transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20 cursor-pointer disabled:opacity-50 ${active.color}`}
       >
         <Icon className="w-4 h-4" />
         <span>{active.label}</span>
@@ -61,15 +61,15 @@ export const TopicProgressButton: React.FC<TopicProgressButtonProps> = ({ topicI
       {isOpen && (
         <>
           <div className="fixed inset-0 z-30" onClick={() => setIsOpen(false)} />
-          <div className="absolute right-0 mt-2 w-48 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-lg ring-1 ring-black/5 focus:outline-none z-40 overflow-hidden divide-y divide-zinc-100 dark:divide-zinc-900">
+          <div className="absolute right-0 mt-2.5 w-48 rounded-2xl glass-panel border-white/5 shadow-2xl focus:outline-none z-40 overflow-hidden divide-y divide-white/5">
             {Object.entries(statusConfig).map(([statusKey, config]) => {
               const StatusIcon = config.icon;
               return (
                 <button
                   key={statusKey}
                   onClick={() => handleStatusChange(statusKey as ProgressStatus)}
-                  className={`flex items-center gap-2.5 w-full px-4 py-2.5 text-sm transition-colors text-left text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/80 cursor-pointer ${
-                    currentStatus === statusKey ? 'bg-zinc-50/50 dark:bg-zinc-900/40 font-semibold text-zinc-900 dark:text-zinc-100' : ''
+                  className={`flex items-center gap-2.5 w-full px-4 py-3 text-xs transition-colors text-left text-zinc-300 hover:bg-white/5 hover:text-white cursor-pointer ${
+                    currentStatus === statusKey ? 'bg-white/5 font-bold text-white' : ''
                   }`}
                 >
                   <StatusIcon className="w-4 h-4" />
