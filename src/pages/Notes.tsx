@@ -536,6 +536,78 @@ export const Notes: React.FC = () => {
                         </div>
                       </div>
                     )}
+
+                    {/* MAKAUT Exam Q&A Bank */}
+                    {activeNote.questionsAndAnswers && activeNote.questionsAndAnswers.length > 0 && (
+                      <div className="glass-panel rounded-3xl p-6 shadow-md border-white/5 space-y-5">
+                        <div className="border-b border-white/5 pb-3 mb-4 flex items-center justify-between">
+                          <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-200 flex items-center gap-1.5 font-mono">
+                            <Sparkles className="w-4.5 h-4.5 text-cyan-400 animate-pulse" /> MAKAUT Exam Q&A Bank
+                          </h3>
+                          <span className="text-[9px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                            {activeNote.questionsAndAnswers.length} Questions Mapped
+                          </span>
+                        </div>
+
+                        <div className="space-y-3.5">
+                          {activeNote.questionsAndAnswers.map((qa, idx) => {
+                            const isExpanded = !!expandedAnswers[idx];
+                            
+                            // Badge color selection based on marks/type
+                            let badgeStyle = "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+                            let typeText = "Very Short Answer";
+                            if (qa.type === 'short') {
+                              badgeStyle = "bg-cyan-400/10 text-cyan-400 border-cyan-400/20";
+                              typeText = "Short Answer";
+                            } else if (qa.type === 'long') {
+                              badgeStyle = "bg-violet-500/10 text-violet-400 border-violet-500/20";
+                              typeText = "Long Answer";
+                            }
+
+                            return (
+                              <div 
+                                key={idx} 
+                                className="group border border-white/5 rounded-2xl overflow-hidden hover:border-cyan-400/20 transition-all duration-300 bg-zinc-950/40 shadow-sm"
+                              >
+                                {/* Question Header */}
+                                <div 
+                                  onClick={() => setExpandedAnswers(prev => ({ ...prev, [idx]: !isExpanded }))}
+                                  className="p-4 flex items-start justify-between gap-4 cursor-pointer select-none hover:bg-white/5 transition-all"
+                                >
+                                  <div className="space-y-2 text-left">
+                                    <div className="flex flex-wrap items-center gap-2">
+                                      <span className={`text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-md border ${badgeStyle}`}>
+                                        {typeText} {qa.marks ? `(${qa.marks})` : ''}
+                                      </span>
+                                    </div>
+                                    <h4 className="text-xs md:text-sm font-bold text-white leading-relaxed group-hover:text-emerald-400 transition-colors">
+                                      {qa.question}
+                                    </h4>
+                                  </div>
+
+                                  <button 
+                                    className="shrink-0 mt-0.5 p-1.5 rounded-xl border border-white/5 bg-zinc-900/60 hover:bg-zinc-800/60 text-zinc-400 hover:text-white transition-all cursor-pointer shadow-md"
+                                  >
+                                    <ChevronDown 
+                                      className={`w-3.5 h-3.5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
+                                    />
+                                  </button>
+                                </div>
+
+                                {/* Answer Body */}
+                                {isExpanded && (
+                                  <div className="px-4 pb-4 pt-1 border-t border-white/5 bg-zinc-950/60 text-left">
+                                    <div className="text-xs md:text-sm text-zinc-300 leading-relaxed font-sans pt-3 border-l-2 border-emerald-500/50 pl-3.5 font-medium">
+                                      <TextWithMath text={qa.answer} />
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 
