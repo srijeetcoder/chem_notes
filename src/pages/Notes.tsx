@@ -385,8 +385,8 @@ export const Notes: React.FC = () => {
             <div className="max-w-4xl mx-auto space-y-6">
               
               {/* Note Header & Action Ribbon */}
-              <div className="glass-panel p-6 rounded-3xl border-white/80 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-80 h-full bg-gradient-to-l from-emerald-500/5 to-transparent pointer-events-none" />
+              <div className="glass-panel p-6 rounded-3xl border-white/80 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 relative group">
+                <div className="absolute top-0 right-0 w-80 h-full bg-gradient-to-l from-emerald-500/5 to-transparent pointer-events-none rounded-r-3xl" />
                 <div className="relative z-10">
                   <span className="text-[10px] bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent font-bold uppercase tracking-widest block">
                     Unit {activeNote.unitNumber}: {activeNote.unitTitle}
