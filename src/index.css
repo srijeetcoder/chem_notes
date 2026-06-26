@@ -3,12 +3,97 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --bg-primary: #FAFAFA;
+  --bg-fade: rgba(250, 250, 250, 0.8);
+  --text-primary: #09090B;
+  --text-secondary: #3F3F46;
+  --border-primary: rgba(9, 9, 11, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(9, 9, 11, 0.07);
+  --grid-color: rgba(9, 9, 11, 0.02);
+
+  --glass-emerald-bg: rgba(16, 185, 129, 0.04);
+  --glass-emerald-border: rgba(16, 185, 129, 0.25);
+  --glass-cyan-bg: rgba(34, 211, 238, 0.04);
+  --glass-cyan-border: rgba(34, 211, 238, 0.25);
+  --glass-violet-bg: rgba(139, 92, 246, 0.04);
+  --glass-violet-border: rgba(139, 92, 246, 0.25);
+
+  --zinc-950: #FAFAFA;
+  --zinc-900: #F4F4F5;
+  --zinc-850: #E4E4E7;
+  --zinc-800: #E4E4E7;
+  --zinc-700: #D4D4D8;
+  --zinc-650: #A1A1AA;
+  --zinc-600: #71717A;
+  --zinc-550: #52525B;
+  --zinc-500: #71717A;
+  --zinc-455: #3F3F46;
+  --zinc-450: #3F3F46;
+  --zinc-400: #52525B;
+  --zinc-355: #27272A;
+  --zinc-300: #27272A;
+  --zinc-200: #18181B;
+  --zinc-150: #18181B;
+  --zinc-100: #09090B;
+}
+
+.dark {
+  --bg-primary: #09090B;
+  --bg-fade: rgba(9, 9, 11, 0.8);
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --border-primary: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(18, 18, 20, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --grid-color: rgba(255, 255, 255, 0.015);
+
+  --glass-emerald-bg: rgba(16, 185, 129, 0.03);
+  --glass-emerald-border: rgba(16, 185, 129, 0.15);
+  --glass-cyan-bg: rgba(34, 211, 238, 0.03);
+  --glass-cyan-border: rgba(34, 211, 238, 0.15);
+  --glass-violet-bg: rgba(139, 92, 246, 0.03);
+  --glass-violet-border: rgba(139, 92, 246, 0.15);
+
+  --zinc-950: #09090B;
+  --zinc-900: #121214;
+  --zinc-850: #18181B;
+  --zinc-800: #1D1D22;
+  --zinc-700: #2A2A32;
+  --zinc-650: #3F3F46;
+  --zinc-600: #52525B;
+  --zinc-550: #71717A;
+  --zinc-500: #71717A;
+  --zinc-455: #A1A1AA;
+  --zinc-450: #A1A1AA;
+  --zinc-400: #A1A1AA;
+  --zinc-355: #D4D4D8;
+  --zinc-300: #D4D4D8;
+  --zinc-200: #E4E4E7;
+  --zinc-150: #ECECED;
+  --zinc-100: #FAFAFA;
+}
+
 @theme {
   --font-sans: 'Geist', 'Inter', 'Outfit', system-ui, sans-serif;
-  --color-zinc-950: #09090B;
-  --color-zinc-900: #121214;
-  --color-zinc-800: #1D1D22;
-  --color-zinc-700: #2A2A32;
+  --color-zinc-950: var(--zinc-950);
+  --color-zinc-900: var(--zinc-900);
+  --color-zinc-850: var(--zinc-850);
+  --color-zinc-800: var(--zinc-800);
+  --color-zinc-700: var(--zinc-700);
+  --color-zinc-650: var(--zinc-650);
+  --color-zinc-600: var(--zinc-600);
+  --color-zinc-550: var(--zinc-550);
+  --color-zinc-500: var(--zinc-500);
+  --color-zinc-455: var(--zinc-455);
+  --color-zinc-450: var(--zinc-450);
+  --color-zinc-400: var(--zinc-400);
+  --color-zinc-355: var(--zinc-355);
+  --color-zinc-300: var(--zinc-300);
+  --color-zinc-200: var(--zinc-200);
+  --color-zinc-150: var(--zinc-150);
+  --color-zinc-100: var(--zinc-100);
   --color-emerald-500: #10B981;
   --color-cyan-400: #22D3EE;
   --color-violet-500: #8B5CF6;
@@ -18,8 +103,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #09090B;
-    color: #FAFAFA;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     font-family: var(--font-sans);
   }
   
@@ -63,12 +148,12 @@
 
 /* Premium Background & Molecular Grid styling */
 .molecular-bg {
-  background-color: #09090B;
+  background-color: var(--bg-primary);
   background-image: 
     radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.07) 0px, transparent 50%),
     radial-gradient(at 50% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(34, 211, 238, 0.07) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(9, 9, 11, 0.8) 0px, transparent 100%);
+    radial-gradient(at 50% 100%, var(--bg-fade) 0px, transparent 100%);
   position: relative;
   overflow: hidden;
 }
@@ -78,8 +163,8 @@
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: center;
   mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 40%, transparent 100%);
@@ -89,46 +174,46 @@
 
 /* Glassmorphism Panels */
 .glass-panel {
-  background: rgba(18, 18, 20, 0.6);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
 
 .glass-panel-hover:hover {
-  background: rgba(24, 24, 28, 0.7);
+  background: var(--glass-bg);
   border-color: rgba(34, 211, 238, 0.25);
   box-shadow: 
-    0 12px 40px 0 rgba(0, 0, 0, 0.5),
+    0 12px 40px 0 rgba(0, 0, 0, 0.2),
     0 0 20px rgba(16, 185, 129, 0.08);
   transform: translateY(-2px);
 }
 
 .glass-panel-emerald {
-  background: rgba(16, 185, 129, 0.03);
+  background: var(--glass-emerald-bg);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--glass-emerald-border);
   box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    0 8px 32px 0 rgba(0, 0, 0, 0.1),
     inset 0 0 12px rgba(16, 185, 129, 0.05);
 }
 
 .glass-panel-cyan {
-  background: rgba(34, 211, 238, 0.03);
+  background: var(--glass-cyan-bg);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(34, 211, 238, 0.15);
+  border: 1px solid var(--glass-cyan-border);
   box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    0 8px 32px 0 rgba(0, 0, 0, 0.1),
     inset 0 0 12px rgba(34, 211, 238, 0.05);
 }
 
 .glass-panel-violet {
-  background: rgba(139, 92, 246, 0.03);
+  background: var(--glass-violet-bg);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(139, 92, 246, 0.15);
+  border: 1px solid var(--glass-violet-border);
   box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    0 8px 32px 0 rgba(0, 0, 0, 0.1),
     inset 0 0 12px rgba(139, 92, 246, 0.05);
 }
 
@@ -186,10 +271,6 @@
   text-align: left !important;
 }
 
-.dark .katex {
-  color: #FAFAFA;
-}
-
 /* Hide scrollbar for elements that need it */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
@@ -197,4 +278,58 @@
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Premium Light Mode Utility Class Overrides */
+html:not(.dark) .text-white {
+  color: #09090B !important;
+}
+html:not(.dark) .hover\:text-white:hover {
+  color: #09090B !important;
+}
+html:not(.dark) .border-white\/5 {
+  border-color: rgba(9, 9, 11, 0.08) !important;
+}
+html:not(.dark) .border-white\/10 {
+  border-color: rgba(9, 9, 11, 0.12) !important;
+}
+html:not(.dark) .border-white\/20 {
+  border-color: rgba(9, 9, 11, 0.2) !important;
+}
+html:not(.dark) .border-white\/80 {
+  border-color: rgba(9, 9, 11, 0.6) !important;
+}
+html:not(.dark) .bg-white\/5 {
+  background-color: rgba(9, 9, 11, 0.05) !important;
+}
+html:not(.dark) .hover\:bg-white\/5:hover {
+  background-color: rgba(9, 9, 11, 0.05) !important;
+}
+html:not(.dark) .bg-white\/10 {
+  background-color: rgba(9, 9, 11, 0.1) !important;
+}
+html:not(.dark) .text-white\/5 {
+  color: rgba(9, 9, 11, 0.05) !important;
+}
+html:not(.dark) .text-white\/10 {
+  color: rgba(9, 9, 11, 0.1) !important;
+}
+
+/* Light mode text gradient overrides */
+html:not(.dark) .bg-gradient-to-r.from-white.via-zinc-100.to-zinc-400 {
+  background-image: linear-gradient(to right, var(--zinc-100), var(--zinc-300), var(--zinc-500)) !important;
+}
+
+/* Maintain dark text on green/cyan gradient buttons in all modes */
+.bg-gradient-to-r.from-emerald-500.to-cyan-500,
+.bg-gradient-to-r.from-emerald-500.to-cyan-500 * {
+  color: #09090B !important;
+}
+
+/* MathRenderer custom dark/light mode KaTeX overrides */
+.dark .katex {
+  color: #FAFAFA;
+}
+html:not(.dark) .katex {
+  color: #09090B;
 }

@@ -36,7 +36,7 @@ export const MathRenderer: React.FC<MathRendererProps> = ({ math, inline = false
       );
     }
     return (
-      <div className={`font-mono text-rose-600 dark:text-rose-455 bg-rose-100/10 p-2.5 rounded-lg border border-rose-200/50 dark:border-rose-900/40 text-xs overflow-x-auto whitespace-pre-wrap ${className}`}>
+      <div className={`font-mono text-rose-600 dark:text-rose-400 bg-rose-100/10 p-2.5 rounded-lg border border-rose-200/50 dark:border-rose-900/40 text-xs overflow-x-auto whitespace-pre-wrap ${className}`}>
         <strong>KaTeX Compile Error:</strong> {result.errorMessage}
         <pre className="mt-1.5 p-2 bg-zinc-100 dark:bg-zinc-950 rounded border border-zinc-200/50 dark:border-zinc-900 overflow-x-auto">{result.html}</pre>
       </div>
