@@ -11,9 +11,11 @@ interface MathRendererProps {
 
 export const MathRenderer: React.FC<MathRendererProps> = ({ math, inline = false, className = '' }) => {
   const result = useMemo(() => {
+    // Sanitize math string: replace multiple backslashes with a single one before letters/symbols
+    const sanitizedMath = math.replace(/\\{2,}(?=[a-zA-Z{}[\]()_&%#$~^])/g, '\\');
     try {
       // Test rendering with throwOnError: true first to catch errors
-      const html = katex.renderToString(math, {
+      const html = katex.renderToString(sanitizedMath, {
         displayMode: !inline,
         throwOnError: true,
         strict: false,
@@ -21,7 +23,7 @@ export const MathRenderer: React.FC<MathRendererProps> = ({ math, inline = false
       return { html, isError: false, errorMessage: '' };
     } catch (err: any) {
       // Gracefully fall back to plain text display if KaTeX fails
-      return { html: math, isError: true, errorMessage: err?.message || String(err) };
+      return { html: sanitizedMath, isError: true, errorMessage: err?.message || String(err) };
     }
   }, [math, inline]);
 
@@ -110,7 +112,7 @@ export const TextWithMath: React.FC<TextWithMathProps> = ({ text }) => {
         part.isMath ? (
           <MathRenderer key={i} math={part.text} inline={!part.display} />
         ) : (
-          <span key={i}>{part.text}</span>
+          <span key={i}>{part.text.replace(/\\n/g, '\n')}</span>
         )
       )}
     </span>
