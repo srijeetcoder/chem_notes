@@ -80,6 +80,8 @@ VITE_SUPABASE_ANON_KEY=your_anon_key`}
   );
 };
 
+const HUB_URL = import.meta.env.PROD ? 'https://secondsem-makautbusters.vercel.app' : 'http://localhost:3000';
+
 // Protected Route Wrapper
 const ProtectedRouteWrapper: React.FC = () => {
   const { user, loading, authLoading } = useUser();
@@ -102,7 +104,7 @@ const ProtectedRouteWrapper: React.FC = () => {
 
   if (!user) {
     if (typeof window !== 'undefined') {
-      window.location.replace('http://localhost:3000/?next=' + encodeURIComponent(window.location.origin + window.location.pathname));
+      window.location.replace(`${HUB_URL}/?next=` + encodeURIComponent(window.location.origin + window.location.pathname));
     }
     return null;
   }
