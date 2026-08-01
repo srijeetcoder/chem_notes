@@ -101,7 +101,10 @@ const ProtectedRouteWrapper: React.FC = () => {
   }
 
   if (!user) {
-    return <Navigate to="/login" replace />;
+    if (typeof window !== 'undefined') {
+      window.location.replace('http://localhost:3000/?next=' + encodeURIComponent(window.location.origin + window.location.pathname));
+    }
+    return null;
   }
 
   return (
@@ -120,8 +123,8 @@ export const App: React.FC = () => {
 
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Navigate to="/" replace />} />
+      <Route path="/register" element={<Navigate to="/" replace />} />
       
       {/* Fallback to protected routes */}
       <Route path="/*" element={<ProtectedRouteWrapper />} />

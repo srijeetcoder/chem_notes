@@ -91,17 +91,37 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     let mounted = true;
 
-    // Get current session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    // Adopt session tokens from URL hash or query params
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    const query = new URLSearchParams(window.location.search);
+    const accessToken = hash.get('access_token') ?? query.get('access_token');
+    const refreshToken = hash.get('refresh_token') ?? query.get('refresh_token');
+
+    const initSession = async () => {
+      if (accessToken && refreshToken) {
+        try {
+          await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+          window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+        } catch (err) {
+          console.error('[auth] Failed to adopt session:', err);
+        }
+      }
+
+      const { data: { session } } = await supabase.auth.getSession();
       if (!mounted) return;
       if (session) {
         setUser(session.user);
-        loadUserData(session.user.id);
+        await loadUserData(session.user.id);
       } else {
         setAuthLoading(false);
         setLoading(false);
       }
-    });
+    };
+
+    initSession();
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
