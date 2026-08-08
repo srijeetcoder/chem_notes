@@ -96,6 +96,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const query = new URLSearchParams(window.location.search);
     const accessToken = hash.get('access_token') ?? query.get('access_token');
     const refreshToken = hash.get('refresh_token') ?? query.get('refresh_token');
+    const isHandoffActive = !!(accessToken && refreshToken);
 
     const initSession = async () => {
       if (accessToken && refreshToken) {
@@ -132,6 +133,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
           setAuthLoading(false);
           await loadUserData(session.user.id);
         } else {
+          if (isHandoffActive) return;
           setUser(null);
           setProfile(null);
           setSettings({ theme: 'dark', last_opened_topic: null });
