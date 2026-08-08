@@ -106,8 +106,8 @@ export const Notes: React.FC = () => {
     if (!searchQuery.trim()) return [];
     const q = searchQuery.toLowerCase().trim();
     return SEARCH_INDEX.filter(item => {
-      // Exclude Chemistry-I and Chemistry Lab topics
-      if (item.subjectCode === 'BSCH 201' || item.subjectCode === 'BSCH 291') return false;
+      // Exclude Chemistry-I topics
+      if (item.subjectCode === 'BSCH 201') return false;
       return item.title.toLowerCase().includes(q) || item.keywords.some(k => k.includes(q));
     }).slice(0, 5);
   }, [searchQuery]);
