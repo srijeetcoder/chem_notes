@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 import { syllabus } from '../data/syllabus';
 import { chemistryNotes, ChemistryNote } from '../data/chemistryNotes';
+import { SEARCH_INDEX } from '../data/searchIndex';
 import { TopicProgressButton } from '../components/TopicProgressButton';
 import { BookmarkButton } from '../components/BookmarkButton';
 import { PersonalNoteBox } from '../components/PersonalNoteBox';
@@ -98,6 +99,17 @@ export const Notes: React.FC = () => {
       n.definition.toLowerCase().includes(q) ||
       n.shortAnswer.toLowerCase().includes(q)
     );
+  }, [searchQuery]);
+
+  // Cross-domain search results from other subjects
+  const globalResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase().trim();
+    return SEARCH_INDEX.filter(item => {
+      // Exclude Chemistry-I and Chemistry Lab topics
+      if (item.subjectCode === 'BSCH 201' || item.subjectCode === 'BSCH 291') return false;
+      return item.title.toLowerCase().includes(q) || item.keywords.some(k => k.includes(q));
+    }).slice(0, 5);
   }, [searchQuery]);
 
   // Handle topic selection
@@ -305,6 +317,9 @@ export const Notes: React.FC = () => {
               // Search Results View
               <div className="space-y-1">
                 <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-widest block px-2 mb-2">Search Results ({filteredNotes.length})</span>
+                {filteredNotes.length === 0 && globalResults.length === 0 && (
+                  <div className="text-zinc-500 text-xs p-2">No matches found.</div>
+                )}
                 {filteredNotes.map((note, idx) => {
                   const status = progress[note.topicTitle] || 'not_started';
                   let dotColor = 'bg-zinc-650';
@@ -330,6 +345,27 @@ export const Notes: React.FC = () => {
                     </button>
                   );
                 })}
+
+                {globalResults.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-white/5 space-y-1">
+                    <span className="text-[9px] text-[#22d3ee] font-bold uppercase tracking-widest block px-2 mb-2">Cross-Subject Results ({globalResults.length})</span>
+                    {globalResults.map((item, idx) => (
+                      <a
+                        key={idx}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full text-left p-2.5 rounded-xl border border-transparent bg-transparent text-zinc-400 hover:bg-white/5 hover:text-zinc-150 pl-3 flex items-start gap-2.5 group transition-all"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 bg-[#22d3ee] shadow-[0_0_6px_rgba(34,211,238,0.4)]" />
+                        <div>
+                          <span className="text-[8px] text-[#22d3ee] block mb-0.5 font-mono">{item.subjectCode} · {item.category}</span>
+                          <span className="line-clamp-2 leading-relaxed group-hover:text-[#22d3ee] transition-colors">{item.title}</span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             ) : (
               // Structured Syllabus View
