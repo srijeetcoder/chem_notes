@@ -14,9 +14,10 @@ import {
   ChevronDown, LayoutDashboard, FileText, Sparkles, HelpCircle,
   CheckSquare, Menu, X
 } from 'lucide-react';
+import { supabase } from '../lib/supabaseClient';
 
 export const Notes: React.FC = () => {
-  const { progress, settings, changeSettings, signOut } = useUser();
+  const { user, progress, settings, changeSettings, signOut } = useUser();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   
@@ -40,12 +41,31 @@ export const Notes: React.FC = () => {
     return chemistryNotes.find(n => n.topicTitle === activeTopicTitle) || chemistryNotes[0];
   }, [activeTopicTitle]);
 
-  // Sync last opened topic with database settings
+  // Sync last opened topic with database settings & log study history
   useEffect(() => {
-    if (activeNote && settings.last_opened_topic !== activeNote.topicTitle) {
-      changeSettings({ last_opened_topic: activeNote.topicTitle });
+    if (activeNote) {
+      if (settings.last_opened_topic !== activeNote.topicTitle) {
+        changeSettings({ last_opened_topic: activeNote.topicTitle });
+      }
+      
+      // Log study history in Chemistry notes
+      if (user) {
+        supabase
+          .from('study_history')
+          .insert({
+            user_id: user.id,
+            subject_id: 'bsch-201',
+            subject_title: 'Chemistry-I',
+            topic_title: activeNote.topicTitle,
+            url: window.location.href,
+            timestamp: new Date().toISOString()
+          })
+          .then(({ error }) => {
+            if (error) console.error('[history] Error logging Chemistry note study:', error);
+          });
+      }
     }
-  }, [activeNote, settings.last_opened_topic, changeSettings]);
+  }, [activeNote, settings.last_opened_topic, changeSettings, user]);
 
   const handleToggleTheme = () => {
     changeSettings({ theme: settings.theme === 'dark' ? 'light' : 'dark' });
